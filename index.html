@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ECVC App Selector</title>
+  <title>App Menu</title>
   
   <!-- Tailwind CSS for modern styling -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -55,8 +55,7 @@
         <!-- Logo and Title -->
         <div class="flex items-center space-x-4">
           <div>
-            <h1 class="text-2xl font-extrabold text-slate-900">ECVC</h1>
-            <h2 class="text-md font-medium text-blue-600">App Menu</h2>
+            <h2 class="text-lg font-semibold text-slate-900">App Menu</h2>
           </div>
         </div>
         <!-- Desktop Navigation -->
@@ -95,14 +94,14 @@
   <main class="container mx-auto px-4 sm:px-6 lg:px-8">
   
     <!-- Hero Section -->
-    <section class="text-center py-16 sm:py-24 fade-in-section">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
-            Digital Tools for ECVCs
+    <section class="text-left py-12 sm:py-16 fade-in-section">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
+            Prototype apps and Field Resources
         </h1>
-        <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-600">
-            Web-based applications and resources by Niall Brown
+        <p class="mt-6 max-w-2xl text-lg text-slate-600">
+            By Niall Brown
         </p>
-        <div class="mt-8 flex justify-center gap-4">
+        <div class="mt-8 flex justify-start gap-4">
             <a href="#calculator-apps" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30">Explore Apps</a>
         </div>
     </section>
@@ -134,7 +133,7 @@
             <div class="flex-grow">
               <div class="text-xs inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-full mb-2 font-semibold">Calculator</div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">Age by Weeks & Category Calculator</h3>
-              <p class="text-slate-600 mb-4">A tool for calculating a child's age in weeks, and their age category. The date input has predictive complete, a universal accommodation that speeds up input and accepts multiple date formats.</p>
+              <p class="text-slate-600 mb-4">A tool for calculating a child's age in weeks, and their age category. It has a predictive month function to speed up input and a countdown to kindergarten alert.</p>
             </div>
             <a href="https://microswitchers.github.io/agebyweekscalc/" class="mt-4 inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">Use the Age by Weeks and Category Calculator</a>
           </div>
@@ -180,7 +179,7 @@
             <div class="flex-grow">
               <div class="text-xs inline-block bg-teal-100 text-teal-800 px-2 py-1 rounded-full mb-2 font-semibold">Braille</div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">BrailleFlex</h3>
-              <p class="text-slate-600 mb-4">Provides flexible key placement for practicing Braille on a tablet.</p>
+              <p class="text-slate-600 mb-4">Provides flexible key placement for practicing Braille on a tablet and works with 6 key keyboard input. It's a quick and basic tool for practicing 6 key input visually and not a full featured Braille app.</p>
             </div>
             <a href="https://microswitchers.github.io/BrailleFlex/" class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use BrailleFlex</a>
           </div>
@@ -236,7 +235,10 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- GlowFrames -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="glowframes.png" alt="GlowFrames Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/dcfce7/22c55e?text=glowframes.png';">
+           <div class="h-56 w-full flex gap-2 p-2 bg-green-50">
+             <img class="h-full w-1/2 object-cover object-top rounded-lg clickable-img cursor-pointer" src="glowframes.png" alt="GlowFrames Screenshot 1" onerror="this.onerror=null;this.src='https://placehold.co/300x400/dcfce7/22c55e?text=glowframes.png';">
+             <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer" src="glowframes2.png" alt="GlowFrames Screenshot 2" onerror="this.onerror=null;this.src='https://placehold.co/300x400/dcfce7/22c55e?text=glowframes2.png';">
+          </div>
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow"><div class="text-xs inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full mb-2 font-semibold">Sensory</div><h3 class="text-xl font-semibold text-slate-900 mb-2">GlowFrames</h3><p class="text-slate-600 mb-4">An app for making a tablet or phone into a light box. Illuminated shapes can be arranged to illuminate translucent materials.</p></div>
             <a href="https://microswitchers.github.io/GlowFrames/" class="mt-4 inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition-colors text-center">Use GlowFrames</a>
@@ -246,7 +248,7 @@
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="scanning.png" alt="Selection Scanner Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/dcfce7/22c55e?text=scanning.png';">
           <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow"><div class="text-xs inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full mb-2 font-semibold">Scanning</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Selection Scanner</h3><p class="text-slate-600 mb-4">A simple auditory scanning app.</p></div>
+            <div class="flex-grow"><div class="text-xs inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full mb-2 font-semibold">Scanning</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Selection Scanner</h3><p class="text-slate-600 mb-4">A simple auditory scanning app that reads words in a timed sequence. The user can select the word using a single switch or another signal to their communication partner.</p></div>
             <a href="https://microswitchers.github.io/selectionscanner/" class="mt-4 inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition-colors text-center">Use Selection Scanner</a>
           </div>
         </div>
@@ -286,7 +288,7 @@
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="buttontest.png" alt="Assistive Device Activation Tester Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffe4e6/f43f5e?text=buttontest.png';">
           <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow"><div class="text-xs inline-block bg-rose-100 text-rose-800 px-2 py-1 rounded-full mb-2 font-semibold">Utility</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Assistive Device Activation Tester</h3><p class="text-slate-600 mb-4">A tool for testing the activation of assistive devices, ensuring they respond correctly to mouse and touch screen inputs.</p></div>
+            <div class="flex-grow"><div class="text-xs inline-block bg-rose-100 text-rose-800 px-2 py-1 rounded-full mb-2 font-semibold">Utility</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Assistive Device Activation Tester</h3><p class="text-slate-600 mb-4">For testing how assistive human interface devices interact with various button formats.</p></div>
             <a href="https://microswitchers.github.io/SwitchandButtonTester/" class="mt-4 inline-block bg-rose-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-rose-700 transition-colors text-center">Use the Assistive Device Activation Tester</a>
           </div>
         </div>
@@ -321,7 +323,7 @@
   <!-- Footer -->
   <footer class="bg-slate-100 border-t border-slate-200">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-slate-500">
-      <p>Created by Niall Brown - Early Childhood Vision Consultant (ECVC), with assistance from AI.</p>
+      <p>Created by Niall Brown, with assistance from AI.</p>
       <a href="https://github.com/MicroSwitchers?tab=repositories" class="text-blue-600 hover:text-blue-700 hover:underline">View more on GitHub</a>
     </div>
   </footer>
