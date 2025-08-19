@@ -12,25 +12,25 @@
   "categories": ["education", "productivity", "utilities", "accessibility"],
   "icons": [
     {
-      "src": "./icon.svg",
+      "src": "./appsicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "./icon.svg",
+      "src": "./appsicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "maskable"
     },
     {
-      "src": "./icon.svg",
+      "src": "./appsicon.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "./icon.svg",
+      "src": "./appsicon.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any"
@@ -44,7 +44,7 @@
       "url": "./index.html#calculator-apps",
       "icons": [
         {
-          "src": "./icon.svg",
+          "src": "./appsicon.svg",
           "sizes": "any",
           "type": "image/svg+xml"
         }
@@ -57,7 +57,7 @@
       "url": "./index.html#braille",
       "icons": [
         {
-          "src": "./icon.svg",
+          "src": "./appsicon.svg",
           "sizes": "any",
           "type": "image/svg+xml"
         }
@@ -70,7 +70,7 @@
       "url": "./index.html#single-switch-apps",
       "icons": [
         {
-          "src": "./icon.svg",
+          "src": "./appsicon.svg",
           "sizes": "any",
           "type": "image/svg+xml"
         }
@@ -83,7 +83,7 @@
       "url": "./index.html#assistive-devices",
       "icons": [
         {
-          "src": "./icon.svg",
+          "src": "./appsicon.svg",
           "sizes": "any",
           "type": "image/svg+xml"
         }
