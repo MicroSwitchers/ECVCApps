@@ -118,8 +118,9 @@
           </div>
         </div>
         <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center space-x-2">
+        <nav class="hidden xl:flex items-center space-x-2">
            <a href="#calculator-apps" class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Calculators</a>
+           <a href="#gaze-tracking" class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Gaze Tracking</a>
            <a href="#braille" class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Braille</a>
            <a href="#single-switch-apps" class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Switch Apps</a>
            <a href="#assistive-devices" class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Assistive Devices</a>
@@ -130,7 +131,7 @@
            </button>
         </nav>
         <!-- Mobile Menu Button -->
-        <div class="lg:hidden">
+        <div class="xl:hidden">
             <button id="mobile-menu-button" class="p-2 rounded-md text-slate-500 hover:bg-slate-100">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -139,9 +140,10 @@
         </div>
       </div>
       <!-- Mobile Navigation -->
-      <div id="mobile-menu" class="hidden lg:hidden pb-4">
+      <div id="mobile-menu" class="hidden xl:hidden pb-4">
         <nav class="flex flex-col space-y-2">
            <a href="#calculator-apps" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Calculators</a>
+           <a href="#gaze-tracking" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Gaze Tracking</a>
            <a href="#braille" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Braille</a>
            <a href="#single-switch-apps" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Switch Apps</a>
            <a href="#assistive-devices" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Assistive Devices</a>
@@ -159,7 +161,7 @@
   <main class="container mx-auto px-4 sm:px-6 lg:px-8">
   
     <!-- Hero Section -->
-    <section class="hero-gradient text-left pt-12 sm:pt-16 pb-20 sm:pb-24 fade-in-section relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+    <section class="hero-gradient text-left pt-12 sm:pt-16 pb-16 fade-in-section relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
         <!-- Decorative elements -->
         <div class="absolute inset-0 overflow-hidden">
             <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -185,6 +187,15 @@
                     Learn More
                 </a>
             </div>
+            <!-- PWA Installation Tip -->
+            <div class="mt-12 bg-blue-100/70 backdrop-blur-sm border border-blue-200/50 text-blue-900 p-4 rounded-xl shadow-sm max-w-2xl" role="alert">
+              <p class="flex items-center text-sm">
+                <span class="font-bold text-lg mr-3">💡</span>
+                <span>
+                  <strong class="font-semibold">Tip:</strong> Some apps benefit from being installed as Progressive Web Apps (PWAs). To do this, look for the 'Add to Homescreen' or 'Install App' option in your browser's settings menu.
+                </span>
+              </p>
+            </div>
         </div>
     </section>
     
@@ -192,7 +203,7 @@
     <div class="section-divider"></div>
 
     <!-- Calculator Apps Section -->
-    <section id="calculator-apps" class="py-16 fade-in-section">
+    <section id="calculator-apps" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Calculator Apps</h2>
         <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
@@ -228,7 +239,7 @@
                 <span class="text-xs inline-block bg-green-600 text-white px-2 py-1 rounded-full font-medium">Stable</span>
               </div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">Age by Weeks & Category Calculator</h3>
-              <p class="text-slate-600 mb-4">A tool for calculating a child's age in weeks, and their age category. It has a predictive month function to speed up input and a countdown to kindergarten alert.</p>
+              <p class="text-slate-600 mb-4">This tool is designed for professionals to quickly calculate a child's age in weeks and determine their age category, It includes time-saving features like a predictive month function for faster input and a 'countdown to kindergarten' alert for transition to school planning.</p>
             </div>
             <a href="https://microswitchers.github.io/agebyweekscalc/" class="mt-4 inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">Use the Age by Weeks and Category Calculator</a>
           </div>
@@ -266,8 +277,46 @@
       <div class="section-divider"></div>
     </section>
 
+    <!-- Gaze Tracking Section -->
+    <section id="gaze-tracking" class="py-12 fade-in-section">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">Gaze Tracking</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-indigo-600 mx-auto rounded-full"></div>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Tools designed for use with gaze tracking hardware</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- GazeCanvas 1 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
+          <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="gazetrakerc1.png" alt="GazeCanvas 1 Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e0e7ff/6366f1?text=gazetrakerc1.png';">
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex-grow">
+                <div class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Gaze Tracking</div>
+                <h3 class="text-xl font-semibold text-slate-900 mb-2">GazeCanvas 1</h3>
+                <p class="text-slate-600 mb-4">A minimal image canvas designed to be simple and flexible to import images and text for use with a gaze tracking device overlay. This requires a gaze tracking device with its own overlay software.</p>
+            </div>
+            <a href="https://microswitchers.github.io/gazecanvas/" class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use GazeCanvas 1</a>
+          </div>
+        </div>
+        <!-- GazeCanvas 2 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
+          <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="gazetrakerc2.png" alt="GazeCanvas 2 Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e0e7ff/6366f1?text=gazetrakerc2.png';">
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex-grow">
+                <div class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Gaze Tracking</div>
+                <h3 class="text-xl font-semibold text-slate-900 mb-2">GazeCanvas 2</h3>
+                <p class="text-slate-600 mb-4">A minimal image canvas designed to be simple and flexible to import images and text for use with a gaze tracking device overlay. This requires a gaze tracking device with its own overlay software.</p>
+            </div>
+            <a href="https://microswitchers.github.io/gazetrakercanvas2/" class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use GazeCanvas 2</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
     <!-- Braille Section -->
-    <section id="braille" class="py-16 fade-in-section">
+    <section id="braille" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Braille Apps</h2>
         <div class="w-24 h-1 bg-gradient-to-r from-teal-500 to-teal-600 mx-auto rounded-full"></div>
@@ -287,7 +336,13 @@
                 <span class="text-xs inline-block bg-slate-600 text-white px-2 py-1 rounded-full font-medium">Keyboard</span>
               </div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">Mechanical Braille Writer Simulator</h3>
-              <p class="text-slate-600 mb-4">An interactive simulator for practicing input with a Mechanical Braille Writer. This app emulates the features and limitations of a Braille writer to build muscle memory and conserve paper waste.</p>
+              <div class="relative">
+                <div class="description-drawer max-h-24 overflow-hidden transition-all duration-500 ease-in-out relative">
+                    <p class="text-slate-600">Practice using a mechanical Braille writer with this interactive simulator. It emulates the writer's features and limitations to help build muscle memory, while conserving paper. The app supports two input methods: use the sdf and jkl keys on a standard keyboard, or press the virtual keys directly on a tablet's screen. For the best experience using touch on a tablet, install the app to your device from your web browser's settings and use full-screen landscape mode.</p>
+                </div>
+                <div class="fade-overlay absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none transition-opacity duration-300"></div>
+              </div>
+              <button class="read-more-btn text-blue-600 font-semibold text-sm mt-2 hover:underline">Read More</button>
             </div>
             <a href="https://microswitchers.github.io/braillesim/" class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use the Mechanical Braille Writer Simulator</a>
           </div>
@@ -305,7 +360,13 @@
                 <span class="text-xs inline-block bg-slate-600 text-white px-2 py-1 rounded-full font-medium">Keyboard</span>
               </div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">SixKey - Braille Practice Pad</h3>
-              <p class="text-slate-600 mb-4">A minimal Braille writing pad for practicing 6 key input with a computer keyboard. Simple controls are provided for Unicode import and export (.txt) format that can be read in any text reader.</p>
+               <div class="relative">
+                <div class="description-drawer max-h-24 overflow-hidden transition-all duration-500 ease-in-out relative">
+                    <p class="text-slate-600">A minimal Braille writing jot pad for practicing 6 key input with a standard computer keyboard using the sdf and jkl keys to produce braille cells. The app is intended to be small and efficient with minimal features or distractions. A dark mode is provided to reduce eye strain, a zoom feature can enlarge the cells, and an import and export feature allows the text to be saved and opened. It exports a standard Unicode (.txt) file, allowing you to open your work as Braille cells in any basic text editor.</p>
+                </div>
+                <div class="fade-overlay absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none transition-opacity duration-300"></div>
+              </div>
+              <button class="read-more-btn text-blue-600 font-semibold text-sm mt-2 hover:underline">Read More</button>
             </div>
             <a href="https://microswitchers.github.io/sixkey/" class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use the SixKey - Braille Practice Pad</a>
           </div>
@@ -321,7 +382,13 @@
                 <span class="text-xs inline-block bg-slate-600 text-white px-2 py-1 rounded-full font-medium">Keyboard</span>
               </div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">BrailleFlex</h3>
-              <p class="text-slate-600 mb-4">Provides flexible key placement for practicing Braille on a tablet and works with 6 key keyboard input. It's a quick and basic tool for practicing 6 key input visually and not a full featured Braille app.</p>
+              <div class="relative">
+                <div class="description-drawer max-h-24 overflow-hidden transition-all duration-500 ease-in-out relative">
+                    <p class="text-slate-600">Practice Braille with flexible key placement. This app works with a keyboard's `sdf` and `jkl` keys, or with adjustable on-screen touch keys that can be shifted for a more comfortable position on a tablet. It's a quick and basic tool for practicing 6 key input visually and not a full featured Braille app. For best results using the touch keys install the app through your browser and use landscape mode in full screen.</p>
+                </div>
+                <div class="fade-overlay absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none transition-opacity duration-300"></div>
+              </div>
+              <button class="read-more-btn text-blue-600 font-semibold text-sm mt-2 hover:underline">Read More</button>
             </div>
             <a href="https://microswitchers.github.io/BrailleFlex/" class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use BrailleFlex</a>
           </div>
@@ -333,7 +400,7 @@
     </section>
 
     <!-- Single Switch Apps Section -->
-    <section id="single-switch-apps" class="py-16 fade-in-section">
+    <section id="single-switch-apps" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Single Switch Apps</h2>
         <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-600 mx-auto rounded-full"></div>
@@ -382,7 +449,7 @@
     </section>
     
     <!-- Assistive Devices Section -->
-    <section id="assistive-devices" class="py-16 fade-in-section">
+    <section id="assistive-devices" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Assistive Devices</h2>
         <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-green-600 mx-auto rounded-full"></div>
@@ -423,7 +490,7 @@
     </section>
 
     <!-- Microcontroller Devices Section -->
-    <section id="microcontroller-devices" class="py-16 fade-in-section">
+    <section id="microcontroller-devices" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Microcontroller Devices</h2>
         <div class="w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
@@ -459,7 +526,7 @@
     </section>
 
     <!-- Experimental Projects Section -->
-    <section id="experimental-projects" class="py-16 fade-in-section">
+    <section id="experimental-projects" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Experimental Projects</h2>
         <div class="w-24 h-1 bg-gradient-to-r from-rose-500 to-rose-600 mx-auto rounded-full"></div>
@@ -480,21 +547,6 @@
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow"><div class="text-xs inline-block bg-rose-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Utility</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Appointment Reminder App</h3><p class="text-slate-600 mb-4">A visual timer that provides alerts for upcoming appointments. Meant to be left open on a desktop computer to give a persistent visual reminder.</p></div>
             <a href="https://microswitchers.github.io/AppointmentReminderApp/" class="mt-4 inline-block bg-rose-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-rose-700 transition-colors text-center">Use the Appointment Reminder App</a>
-          </div>
-        </div>
-        <!-- GazeCanvas -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="image7.png" alt="GazeCanvas App Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffe4e6/f43f5e?text=image7.png';">
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow">
-                <div class="text-xs inline-block bg-rose-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Gaze Tracking</div>
-                <h3 class="text-xl font-semibold text-slate-900 mb-2">GazeCanvas</h3>
-                <p class="text-slate-600 mb-4">A minimal image canvas designed to be simple and flexible to import images and text for use with a gaze tracking device overlay. This requires a gaze tracking device with its own overlay software.</p>
-            </div>
-            <div class="mt-4 flex flex-col gap-2">
-                <a href="https://microswitchers.github.io/gazecanvas/" class="block text-center bg-rose-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-rose-700 transition-colors">Use GazeCanvas 1</a>
-                <a href="https://microswitchers.github.io/gazetrakercanvas2/" class="block text-center bg-rose-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-rose-700 transition-colors">Use GazeCanvas 2</a>
-            </div>
           </div>
         </div>
       </div>
@@ -659,6 +711,35 @@
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.style.display = 'none';
+        }
+    });
+
+    // --- Accordion for long descriptions in Braille section ---
+    const brailleCards = document.querySelectorAll('#braille .card-hover-effect');
+
+    brailleCards.forEach(card => {
+        const button = card.querySelector('.read-more-btn');
+        const drawer = card.querySelector('.description-drawer');
+        const overlay = card.querySelector('.fade-overlay');
+
+        if (button && drawer && overlay) { 
+            button.addEventListener('click', () => {
+                const isOpen = drawer.classList.contains('max-h-screen');
+
+                if (isOpen) {
+                    // Close it
+                    drawer.classList.remove('max-h-screen');
+                    drawer.classList.add('max-h-24');
+                    button.textContent = 'Read More';
+                    overlay.classList.remove('opacity-0');
+                } else {
+                    // Open it
+                    drawer.classList.remove('max-h-24');
+                    drawer.classList.add('max-h-screen');
+                    button.textContent = 'Read Less';
+                    overlay.classList.add('opacity-0');
+                }
+            });
         }
     });
   </script>
