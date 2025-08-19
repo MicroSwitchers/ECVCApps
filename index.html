@@ -125,6 +125,9 @@
            <a href="#assistive-devices" class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Assistive Devices</a>
            <a href="#microcontroller-devices" class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Microcontrollers</a>
            <a href="#experimental-projects" class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Experimental</a>
+           <button id="installButton" class="ml-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md transition-colors duration-200 hidden">
+             Install as App
+           </button>
         </nav>
         <!-- Mobile Menu Button -->
         <div class="lg:hidden">
@@ -144,6 +147,9 @@
            <a href="#assistive-devices" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Assistive Devices</a>
            <a href="#microcontroller-devices" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Microcontrollers</a>
            <a href="#experimental-projects" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Experimental</a>
+           <button id="installButtonMobile" class="mt-2 mx-3 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md transition-colors duration-200 hidden text-left">
+             Install as App
+           </button>
         </nav>
       </div>
     </div>
@@ -689,22 +695,21 @@
 
     // PWA Install Prompt
     let deferredPrompt;
-    const installButton = document.createElement('button');
-    installButton.textContent = 'Install App';
-    installButton.className = 'hidden fixed bottom-6 left-6 bg-purple-600 text-white px-4 py-3 rounded-lg shadow-lg hover:bg-purple-700 transition-all duration-300 z-50 font-semibold text-sm';
-    installButton.id = 'install-button';
-    document.body.appendChild(installButton);
+    const installButton = document.getElementById('installButton');
+    const installButtonMobile = document.getElementById('installButtonMobile');
 
     window.addEventListener('beforeinstallprompt', (e) => {
       // Prevent the mini-infobar from appearing on mobile
       e.preventDefault();
       // Stash the event so it can be triggered later
       deferredPrompt = e;
-      // Show the install button
+      // Show the install buttons
       installButton.classList.remove('hidden');
+      installButtonMobile.classList.remove('hidden');
     });
 
-    installButton.addEventListener('click', async () => {
+    // Handle click for both desktop and mobile install buttons
+    const handleInstallClick = async () => {
       if (deferredPrompt) {
         // Show the install prompt
         deferredPrompt.prompt();
@@ -713,15 +718,20 @@
         console.log(`User response to the install prompt: ${outcome}`);
         // Clear the deferredPrompt variable
         deferredPrompt = null;
-        // Hide the install button
+        // Hide the install buttons
         installButton.classList.add('hidden');
+        installButtonMobile.classList.add('hidden');
       }
-    });
+    };
+
+    installButton.addEventListener('click', handleInstallClick);
+    installButtonMobile.addEventListener('click', handleInstallClick);
 
     // Hide install button if app is already installed
     window.addEventListener('appinstalled', () => {
       console.log('PWA was installed');
       installButton.classList.add('hidden');
+      installButtonMobile.classList.add('hidden');
       deferredPrompt = null;
     });
 
