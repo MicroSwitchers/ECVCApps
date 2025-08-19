@@ -11,7 +11,7 @@
   <!-- PWA Meta Tags -->
   <meta name="theme-color" content="#3b82f6">
   <meta name="msapplication-TileColor" content="#3b82f6">
-  <meta name="msapplication-TileImage" content="./icon.svg">
+  <meta name="msapplication-TileImage" content="./appsicon.svg">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="App Menu">
@@ -24,19 +24,19 @@
   <meta name="msapplication-config" content="./browserconfig.xml">
   
   <!-- Icons for all platforms -->
-  <link rel="icon" type="image/svg+xml" href="./icon.svg">
-  <link rel="icon" type="image/png" sizes="192x192" href="./icon.svg">
-  <link rel="icon" type="image/png" sizes="512x512" href="./icon.svg">
-  <link rel="apple-touch-icon" href="./icon.svg">
-  <link rel="apple-touch-icon" sizes="192x192" href="./icon.svg">
-  <link rel="apple-touch-icon" sizes="512x512" href="./icon.svg">
-  <link rel="shortcut icon" href="./icon.svg">
+  <link rel="icon" type="image/svg+xml" href="./appsicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="./appsicon.svg">
+  <link rel="icon" type="image/png" sizes="512x512" href="./appsicon.svg">
+  <link rel="apple-touch-icon" href="./appsicon.svg">
+  <link rel="apple-touch-icon" sizes="192x192" href="./appsicon.svg">
+  <link rel="apple-touch-icon" sizes="512x512" href="./appsicon.svg">
+  <link rel="shortcut icon" href="./appsicon.svg">
   
   <!-- Windows specific -->
-  <meta name="msapplication-square70x70logo" content="./icon.svg">
-  <meta name="msapplication-square150x150logo" content="./icon.svg">
-  <meta name="msapplication-wide310x150logo" content="./icon.svg">
-  <meta name="msapplication-square310x310logo" content="./icon.svg">
+  <meta name="msapplication-square70x70logo" content="./appsicon.svg">
+  <meta name="msapplication-square150x150logo" content="./appsicon.svg">
+  <meta name="msapplication-wide310x150logo" content="./appsicon.svg">
+  <meta name="msapplication-square310x310logo" content="./appsicon.svg">
   
   <!-- Tailwind CSS for modern styling -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -50,23 +50,25 @@
     /* Use the Inter font family defined above */
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f8fafc; /* A slightly lighter slate color */
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      min-height: 100vh;
     }
     
     /* Card hover effect */
     .card-hover-effect {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
     }
     .card-hover-effect:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25), 0 0 0 1px rgb(255 255 255 / 0.1);
     }
     
     /* Fade-in animation on scroll */
     .fade-in-section {
         opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .fade-in-section.is-visible {
         opacity: 1;
@@ -76,6 +78,29 @@
     /* New class to align object-cover images to the top */
     .object-top {
       object-position: top;
+    }
+    
+    /* Hero gradient background */
+    .hero-gradient {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+    }
+    
+    /* Section dividers */
+    .section-divider {
+        background: linear-gradient(90deg, transparent 0%, rgba(148, 163, 184, 0.3) 50%, transparent 100%);
+        height: 1px;
+        margin: 4rem 0;
+    }
+    
+    /* Enhanced button styling */
+    .btn-primary {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
     }
   </style>
 </head>
@@ -128,38 +153,62 @@
   <main class="container mx-auto px-4 sm:px-6 lg:px-8">
   
     <!-- Hero Section -->
-    <section class="text-left pt-6 sm:pt-8 pb-12 sm:pb-16 fade-in-section">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
-            Prototype apps and Field Resources
-        </h1>
-        <p class="mt-6 max-w-2xl text-lg text-slate-600">
-            By Niall Brown
-        </p>
-        <div class="mt-8 flex justify-start gap-4">
-            <a href="#calculator-apps" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30">Explore Apps</a>
+    <section class="hero-gradient text-left pt-12 sm:pt-16 pb-20 sm:pb-24 fade-in-section relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+        <!-- Decorative elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        </div>
+        
+        <div class="relative z-10">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+                MicroSwitchers - Experimental<br>
+                <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">Apps and Tools</span>
+            </h1>
+            <p class="mt-8 max-w-2xl text-xl text-slate-600 leading-relaxed">
+                By <span class="font-semibold text-slate-800">Niall Brown</span> — A collection of apps that explore the early use of vibe coding to create field-specific resources and tools.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-start gap-4">
+                <a href="#calculator-apps" class="btn-primary inline-block text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition-all text-center">
+                    Explore Apps
+                    <svg class="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+                <a href="#about" class="inline-block bg-white/80 backdrop-blur-sm text-slate-700 font-semibold px-8 py-4 rounded-xl hover:bg-white transition-all text-center border border-slate-200 hover:border-slate-300">
+                    Learn More
+                </a>
+            </div>
         </div>
     </section>
+    
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
 
     <!-- Calculator Apps Section -->
-    <section id="calculator-apps" class="py-12 fade-in-section">
-      <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-blue-500 pl-4">Calculator Apps</h2>
+    <section id="calculator-apps" class="py-16 fade-in-section">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">Calculator Apps</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Specialized calculation tools designed for assistive technology professionals</p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- CVI Range Rating II Calculator -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-          <div class="h-56 w-full flex gap-2 p-2 bg-blue-50">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden card-hover-effect flex flex-col border border-white/20">
+          <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-blue-50 to-blue-100">
              <img class="h-full w-1/2 object-cover object-top rounded-lg clickable-img cursor-pointer" src="cvicalc1.jpg" alt="CVI Calculator Screenshot 1" onerror="this.onerror=null;this.src='https://placehold.co/300x400/e0f2fe/0ea5e9?text=cvicalc1.jpg';">
              <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer" src="cvicalc2.png" alt="CVI Calculator Screenshot 2" onerror="this.onerror=null;this.src='https://placehold.co/300x400/e0f2fe/0ea5e9?text=cvicalc2.png';">
           </div>
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-              <div class="text-xs inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-full mb-2 font-semibold">Calculator</div>
-              <div class="flex flex-wrap gap-1 mb-2">
-                <span class="text-xs inline-block bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">Stable</span>
+              <div class="text-xs inline-block bg-blue-600 text-white px-3 py-1.5 rounded-full mb-3 font-semibold">Calculator</div>
+              <div class="flex flex-wrap gap-1 mb-3">
+                <span class="text-xs inline-block bg-green-600 text-white px-2 py-1 rounded-full font-medium">Stable</span>
               </div>
-              <h3 class="text-xl font-semibold text-slate-900 mb-2">CVI Range Rating II Calculator</h3>
-              <p class="text-slate-600 mb-4">This calculator assists with double-checking assessment totals for the CVI Range Rating II method. This process is based on the work of Dr. Roman-Lantzy.</p>
+              <h3 class="text-xl font-semibold text-slate-900 mb-3">CVI Range Rating II Calculator</h3>
+              <p class="text-slate-600 mb-4 leading-relaxed">This calculator assists with double-checking assessment totals for the CVI Range Rating II method. This process is based on the work of Dr. Roman-Lantzy.</p>
             </div>
-            <a href="https://microswitchers.github.io/RangeCalc/" class="mt-4 inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">Use the CVI Range Rating II Calculator</a>
+            <a href="https://microswitchers.github.io/RangeCalc/" class="btn-primary mt-4 inline-block text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 transition-all text-center">Use the CVI Range Rating II Calculator</a>
           </div>
         </div>
         <!-- Age by Weeks and Category Calculator -->
@@ -168,9 +217,9 @@
           <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="agecalc.png" alt="Age by Weeks and Category Calculator Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=agecalc.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-              <div class="text-xs inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-full mb-2 font-semibold">Calculator</div>
+              <div class="text-xs inline-block bg-blue-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Calculator</div>
               <div class="flex flex-wrap gap-1 mb-2">
-                <span class="text-xs inline-block bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">Stable</span>
+                <span class="text-xs inline-block bg-green-600 text-white px-2 py-1 rounded-full font-medium">Stable</span>
               </div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">Age by Weeks & Category Calculator</h3>
               <p class="text-slate-600 mb-4">A tool for calculating a child's age in weeks, and their age category. It has a predictive month function to speed up input and a countdown to kindergarten alert.</p>
@@ -183,7 +232,7 @@
           <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="endtimecalc.png" alt="End Time Calculator interface showing time calculation features" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=endtimecalc.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-              <div class="text-xs inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-full mb-2 font-semibold">Calculator</div>
+              <div class="text-xs inline-block bg-blue-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Calculator</div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">End Time Calculator</h3>
               <p class="text-slate-600 mb-4">For people who have difficulty counting up minutes. i.e., to find the end time of a phone call based on the start time and minutes on the call.</p>
             </div>
@@ -195,9 +244,9 @@
           <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="excelformulasscreen.png" alt="Excel Formula Generator interface showing formula creation tools" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=excelformulasscreen.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-              <div class="text-xs inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-full mb-2 font-semibold">Calculator</div>
+              <div class="text-xs inline-block bg-blue-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Calculator</div>
               <div class="flex flex-wrap gap-1 mb-2">
-                <span class="text-xs inline-block bg-orange-100 text-orange-700 px-2 py-1 rounded-full font-medium">Unstable</span>
+                <span class="text-xs inline-block bg-orange-600 text-white px-2 py-1 rounded-full font-medium">Unstable</span>
               </div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">Excel Formula Generator</h3>
               <p class="text-slate-600 mb-4">ECVCs can use this app to easily create formulas to calculate time elapsed, ages and age categories in Excel.</p>
@@ -206,23 +255,30 @@
           </div>
         </div>
       </div>
+      
+      <!-- Section Divider -->
+      <div class="section-divider"></div>
     </section>
 
     <!-- Braille Section -->
-    <section id="braille" class="py-12 fade-in-section">
-      <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-teal-500 pl-4">Braille Apps</h2>
+    <section id="braille" class="py-16 fade-in-section">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">Braille Apps</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-teal-500 to-teal-600 mx-auto rounded-full"></div>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Interactive tools for Braille learning and practice</p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Mechanical Braille Writer Simulator -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="mecbraille.jpg" alt="Mechanical Braille Writer Simulator Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/a7f3d0/0f766e?text=mecbraille.jpg';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-              <div class="text-xs inline-block bg-teal-100 text-teal-800 px-2 py-1 rounded-full mb-2 font-semibold">Braille</div>
+              <div class="text-xs inline-block bg-teal-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Braille</div>
               <div class="flex flex-wrap gap-1 mb-2">
-                <span class="text-xs inline-block bg-orange-100 text-orange-700 px-2 py-1 rounded-full font-medium">Unstable</span>
-                <span class="text-xs inline-block bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-medium">Concept</span>
-                <span class="text-xs inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full font-medium">Tablet</span>
-                <span class="text-xs inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full font-medium">Keyboard</span>
+                <span class="text-xs inline-block bg-orange-600 text-white px-2 py-1 rounded-full font-medium">Unstable</span>
+                <span class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full font-medium">Concept</span>
+                <span class="text-xs inline-block bg-slate-600 text-white px-2 py-1 rounded-full font-medium">Tablet</span>
+                <span class="text-xs inline-block bg-slate-600 text-white px-2 py-1 rounded-full font-medium">Keyboard</span>
               </div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">Mechanical Braille Writer Simulator</h3>
               <p class="text-slate-600 mb-4">An interactive simulator for practicing input with a Mechanical Braille Writer. This app emulates the features and limitations of a Braille writer to build muscle memory and conserve paper waste.</p>
@@ -238,9 +294,9 @@
           </div>
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-              <div class="text-xs inline-block bg-teal-100 text-teal-800 px-2 py-1 rounded-full mb-2 font-semibold">Braille</div>
+              <div class="text-xs inline-block bg-teal-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Braille</div>
               <div class="flex flex-wrap gap-1 mb-2">
-                <span class="text-xs inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full font-medium">Keyboard</span>
+                <span class="text-xs inline-block bg-slate-600 text-white px-2 py-1 rounded-full font-medium">Keyboard</span>
               </div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">SixKey - Braille Practice Pad</h3>
               <p class="text-slate-600 mb-4">A minimal Braille writing pad for practicing 6 key input with a computer keyboard. Simple controls are provided for Unicode import and export (.txt) format that can be read in any text reader.</p>
@@ -253,10 +309,10 @@
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="brailleflex.jpg" alt="BrailleFlex Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/a7f3d0/0f766e?text=brailleflex.jpg';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-              <div class="text-xs inline-block bg-teal-100 text-teal-800 px-2 py-1 rounded-full mb-2 font-semibold">Braille</div>
+              <div class="text-xs inline-block bg-teal-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Braille</div>
               <div class="flex flex-wrap gap-1 mb-2">
-                <span class="text-xs inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full font-medium">Tablet</span>
-                <span class="text-xs inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full font-medium">Keyboard</span>
+                <span class="text-xs inline-block bg-slate-600 text-white px-2 py-1 rounded-full font-medium">Tablet</span>
+                <span class="text-xs inline-block bg-slate-600 text-white px-2 py-1 rounded-full font-medium">Keyboard</span>
               </div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">BrailleFlex</h3>
               <p class="text-slate-600 mb-4">Provides flexible key placement for practicing Braille on a tablet and works with 6 key keyboard input. It's a quick and basic tool for practicing 6 key input visually and not a full featured Braille app.</p>
@@ -265,17 +321,24 @@
           </div>
         </div>
       </div>
+      
+      <!-- Section Divider -->
+      <div class="section-divider"></div>
     </section>
 
     <!-- Single Switch Apps Section -->
-    <section id="single-switch-apps" class="py-12 fade-in-section">
-      <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-purple-500 pl-4">Single Switch Apps</h2>
+    <section id="single-switch-apps" class="py-16 fade-in-section">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">Single Switch Apps</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-600 mx-auto rounded-full"></div>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Engaging cause-and-effect applications for single switch users</p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Cause and Effect Fireworks -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="image4.png" alt="Cause and Effect Fireworks Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3e8ff/8b5cf6?text=image4.png';">
           <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow"><div class="text-xs inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded-full mb-2 font-semibold">Sensory</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Cause and Effect Fireworks</h3><p class="text-slate-600 mb-4">An interactive app designed to create visual fireworks effects in response to adapted single switch activation.</p></div>
+            <div class="flex-grow"><div class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Cause and Effect</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Cause and Effect Fireworks</h3><p class="text-slate-600 mb-4">An interactive app designed to create visual fireworks effects in response to adapted single switch activation.</p></div>
             <a href="https://microswitchers.github.io/fireworks/" class="mt-4 inline-block bg-purple-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-purple-700 transition-colors text-center">Use Cause and Effect Fireworks</a>
           </div>
         </div>
@@ -283,7 +346,7 @@
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="image6.png" alt="Cause and Effect Ball Drop Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3e8ff/8b5cf6?text=image6.png';">
           <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow"><div class="text-xs inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded-full mb-2 font-semibold">Sensory</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Cause and Effect Ball Drop</h3><p class="text-slate-600 mb-4">An app that provides calming, colorful balls that respond to single switch inputs.</p></div>
+            <div class="flex-grow"><div class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Cause and Effect</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Cause and Effect Ball Drop</h3><p class="text-slate-600 mb-4">An app that provides calming, colorful balls that respond to single switch inputs.</p></div>
             <a href="https://microswitchers.github.io/bouncingballs/" class="mt-4 inline-block bg-purple-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-purple-700 transition-colors text-center">Use Cause and Effect Ball Drop</a>
           </div>
         </div>
@@ -291,7 +354,7 @@
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="image9.png" alt="AstroBounce Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3e8ff/8b5cf6?text=image9.png';">
           <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow"><div class="text-xs inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded-full mb-2 font-semibold">Sensory</div><h3 class="text-xl font-semibold text-slate-900 mb-2">AstroBounce</h3><p class="text-slate-600 mb-4">A sensory app where users activate a visual sensory experience using a single switch.</p></div>
+            <div class="flex-grow"><div class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Cause and Effect</div><h3 class="text-xl font-semibold text-slate-900 mb-2">AstroBounce</h3><p class="text-slate-600 mb-4">A sensory app where users activate a visual sensory experience using a single switch.</p></div>
             <a href="https://microswitchers.github.io/Astro-Bounce/" class="mt-4 inline-block bg-purple-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-purple-700 transition-colors text-center">Use AstroBounce</a>
           </div>
         </div>
@@ -302,16 +365,23 @@
              <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer" src="image11.png" alt="HarmonyHopper Screenshot 2" onerror="this.onerror=null;this.src='https://placehold.co/300x400/f3e8ff/8b5cf6?text=image11.png';">
           </div>
           <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow"><div class="text-xs inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded-full mb-2 font-semibold">Music</div><h3 class="text-xl font-semibold text-slate-900 mb-2">HarmonyHopper</h3><p class="text-slate-600 mb-4">A music scanning toy controlled by an adapted single switch.</p></div>
+            <div class="flex-grow"><div class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Music</div><h3 class="text-xl font-semibold text-slate-900 mb-2">HarmonyHopper</h3><p class="text-slate-600 mb-4">A music scanning toy controlled by an adapted single switch.</p></div>
             <a href="https://microswitchers.github.io/HarmonyHopper/" class="mt-4 inline-block bg-purple-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-purple-700 transition-colors text-center">Use HarmonyHopper</a>
           </div>
         </div>
       </div>
+      
+      <!-- Section Divider -->
+      <div class="section-divider"></div>
     </section>
     
     <!-- Assistive Devices Section -->
-    <section id="assistive-devices" class="py-12 fade-in-section">
-      <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-green-500 pl-4">Assistive Devices</h2>
+    <section id="assistive-devices" class="py-16 fade-in-section">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">Assistive Devices</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-green-600 mx-auto rounded-full"></div>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Specialized tools that transform devices into assistive technology</p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- GlowFrames -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
@@ -320,7 +390,7 @@
              <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer" src="glowframes2.png" alt="GlowFrames Screenshot 2" onerror="this.onerror=null;this.src='https://placehold.co/300x400/dcfce7/22c55e?text=glowframes2.png';">
           </div>
           <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow"><div class="text-xs inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full mb-2 font-semibold">Sensory</div><h3 class="text-xl font-semibold text-slate-900 mb-2">GlowFrames</h3><p class="text-slate-600 mb-4">An app for making a tablet or phone into a light box. Illuminated shapes can be arranged to illuminate translucent materials.</p></div>
+            <div class="flex-grow"><div class="text-xs inline-block bg-green-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Assistive Devices</div><h3 class="text-xl font-semibold text-slate-900 mb-2">GlowFrames</h3><p class="text-slate-600 mb-4">An app for making a tablet or phone into a light box. Illuminated shapes can be arranged to illuminate translucent materials.</p></div>
             <a href="https://microswitchers.github.io/GlowFrames/" class="mt-4 inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition-colors text-center">Use GlowFrames</a>
           </div>
         </div>
@@ -329,10 +399,10 @@
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="scanning.png" alt="Selection Scanner Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/dcfce7/22c55e?text=scanning.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-              <div class="text-xs inline-block bg-green-100 text-green-800 px-2 py-1 rounded-full mb-2 font-semibold">Scanning</div>
+              <div class="text-xs inline-block bg-green-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Assistive Devices</div>
               <div class="flex flex-wrap gap-1 mb-2">
-                <span class="text-xs inline-block bg-red-100 text-red-700 px-2 py-1 rounded-full font-medium">Experimental</span>
-                <span class="text-xs inline-block bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-medium">Concept</span>
+                <span class="text-xs inline-block bg-red-600 text-white px-2 py-1 rounded-full font-medium">Experimental</span>
+                <span class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full font-medium">Concept</span>
               </div>
               <h3 class="text-xl font-semibold text-slate-900 mb-2">Selection Scanner</h3>
               <p class="text-slate-600 mb-4">A simple auditory scanning app that reads words in a timed sequence. The user can select the word using a single switch or another signal to their communication partner.</p>
@@ -341,18 +411,25 @@
           </div>
         </div>
       </div>
+      
+      <!-- Section Divider -->
+      <div class="section-divider"></div>
     </section>
 
     <!-- Microcontroller Devices Section -->
-    <section id="microcontroller-devices" class="py-12 fade-in-section">
-      <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-orange-500 pl-4">Microcontroller Devices</h2>
+    <section id="microcontroller-devices" class="py-16 fade-in-section">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">Microcontroller Devices</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Hardware solutions for enhanced accessibility and interaction</p>
+      </div>
        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect">
         <div class="md:flex">
           <div class="p-8 flex-1">
-            <div class="text-xs inline-block bg-orange-100 text-orange-800 px-2 py-1 rounded-full mb-2 font-semibold">Hardware</div>
+            <div class="text-xs inline-block bg-orange-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Hardware</div>
             <div class="flex flex-wrap gap-1 mb-2">
-              <span class="text-xs inline-block bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full font-medium">Microcontroller</span>
-              <span class="text-xs inline-block bg-red-100 text-red-700 px-2 py-1 rounded-full font-medium">Experimental</span>
+              <span class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-medium">Microcontroller</span>
+              <span class="text-xs inline-block bg-red-600 text-white px-2 py-1 rounded-full font-medium">Experimental</span>
             </div>
             <h3 class="text-xl font-semibold text-slate-900 mb-2">3-Function Cause & Effect Single Switch Port</h3>
             <div class="mb-4 text-slate-600 space-y-2">
@@ -370,17 +447,24 @@
           </div>
         </div>
       </div>
+      
+      <!-- Section Divider -->
+      <div class="section-divider"></div>
     </section>
 
     <!-- Experimental Projects Section -->
-    <section id="experimental-projects" class="py-12 fade-in-section">
-      <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-rose-500 pl-4">Experimental Projects</h2>
+    <section id="experimental-projects" class="py-16 fade-in-section">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">Experimental Projects</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-rose-500 to-rose-600 mx-auto rounded-full"></div>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Cutting-edge prototypes and research-driven applications</p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Assistive Device Activation Tester -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="buttontest.png" alt="Assistive Device Activation Tester Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffe4e6/f43f5e?text=buttontest.png';">
           <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow"><div class="text-xs inline-block bg-rose-100 text-rose-800 px-2 py-1 rounded-full mb-2 font-semibold">Utility</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Assistive Device Activation Tester</h3><p class="text-slate-600 mb-4">For testing how assistive human interface devices interact with various button formats.</p></div>
+            <div class="flex-grow"><div class="text-xs inline-block bg-rose-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Utility</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Assistive Device Activation Tester</h3><p class="text-slate-600 mb-4">For testing how assistive human interface devices interact with various button formats.</p></div>
             <a href="https://microswitchers.github.io/SwitchandButtonTester/" class="mt-4 inline-block bg-rose-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-rose-700 transition-colors text-center">Use the Assistive Device Activation Tester</a>
           </div>
         </div>
@@ -388,7 +472,7 @@
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="appointmentreminder.png" alt="Appointment Reminder App Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffe4e6/f43f5e?text=appointmentreminder.png';">
           <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow"><div class="text-xs inline-block bg-rose-100 text-rose-800 px-2 py-1 rounded-full mb-2 font-semibold">Utility</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Appointment Reminder App</h3><p class="text-slate-600 mb-4">A visual timer that provides alerts for upcoming appointments. Meant to be left open on a desktop computer to give a persistent visual reminder.</p></div>
+            <div class="flex-grow"><div class="text-xs inline-block bg-rose-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Utility</div><h3 class="text-xl font-semibold text-slate-900 mb-2">Appointment Reminder App</h3><p class="text-slate-600 mb-4">A visual timer that provides alerts for upcoming appointments. Meant to be left open on a desktop computer to give a persistent visual reminder.</p></div>
             <a href="https://microswitchers.github.io/AppointmentReminderApp/" class="mt-4 inline-block bg-rose-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-rose-700 transition-colors text-center">Use the Appointment Reminder App</a>
           </div>
         </div>
@@ -397,7 +481,7 @@
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="image7.png" alt="GazeCanvas App Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffe4e6/f43f5e?text=image7.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-                <div class="text-xs inline-block bg-rose-100 text-rose-800 px-2 py-1 rounded-full mb-2 font-semibold">Gaze Tracking</div>
+                <div class="text-xs inline-block bg-rose-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Gaze Tracking</div>
                 <h3 class="text-xl font-semibold text-slate-900 mb-2">GazeCanvas</h3>
                 <p class="text-slate-600 mb-4">A minimal image canvas designed to be simple and flexible to import images and text for use with a gaze tracking device overlay. This requires a gaze tracking device with its own overlay software.</p>
             </div>
@@ -413,10 +497,67 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-slate-100 border-t border-slate-200">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-slate-500">
-      <p>Created by Niall Brown, with assistance from AI.</p>
-      <a href="https://github.com/MicroSwitchers?tab=repositories" class="text-blue-600 hover:text-blue-700 hover:underline">View more on GitHub</a>
+  <footer id="about" class="bg-slate-800 text-white border-t border-slate-700">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 text-center md:text-left mb-12">
+        
+        <!-- Project Info - Takes up more space -->
+        <div class="lg:col-span-3 space-y-6">
+          <h3 class="text-2xl font-bold text-white mb-6">About This Project</h3>
+          <div class="text-slate-300 text-base leading-relaxed space-y-4">
+            <p>A collection of prototype apps and field resources designed to explore the possibility of using vibe coding to develop simple tools and assistive technology. It's early days and vibe coding is not yet stable enough to support non-coders to create robust, stable projects.</p>
+            <p>While some of the apps and microcontroller resources may be useful, expect them to be simple, potentially unstable, and expect some bugs.</p>
+            <div class="bg-slate-700/50 rounded-lg p-4 border-l-4 border-blue-500">
+              <p class="text-slate-300 text-sm">
+                <strong class="text-blue-300">Privacy Note:</strong> These apps process data locally. They do not send any information outside of your browser. None of the apps will ask you to input any identifying information or context. For example, age calculators will never allow the user to input anything other than an arbitrary date, disconnected from any context.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Creator & Resources Combined -->
+        <div class="lg:col-span-2 space-y-8">
+          <!-- Creator Info -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white mb-4">Created By</h3>
+            <div class="space-y-3">
+              <p class="text-slate-200 text-base font-medium">Niall Brown</p>
+              <p class="text-slate-400 text-sm">With assistance from AI</p>
+              <p class="text-slate-400 text-xs">Exploring vibe coding methodologies</p>
+            </div>
+          </div>
+          
+          <!-- Resources -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white">Resources</h3>
+            <a href="https://github.com/MicroSwitchers?tab=repositories" class="block text-blue-400 hover:text-blue-300 hover:underline text-base transition-colors font-medium">
+              <svg class="inline-block w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              View Source Code
+            </a>
+            <p class="text-slate-400 text-sm leading-relaxed">Access and use the source code for these projects. Most projects are released under the MIT license, allowing free use, modification, and distribution.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- MicroSwitchers Branding - Full Width Row -->
+      <div class="border-t border-slate-600 pt-8 mb-8">
+        <div class="bg-slate-700/30 rounded-lg p-6">
+          <div class="flex items-center justify-center space-x-4">
+            <img src="logocut.png" alt="MicroSwitchers Logo" class="h-16 w-16 rounded-lg bg-white/10 p-2 flex-shrink-0">
+            <div>
+              <p class="text-slate-200 text-xl font-semibold">MicroSwitchers</p>
+              <p class="text-slate-400 text-base">Experimental Project</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-slate-600 pt-8 text-center">
+        <p class="text-slate-400 text-sm">&copy; 2025 Niall Brown. All rights reserved.</p>
+      </div>
     </div>
   </footer>
   
