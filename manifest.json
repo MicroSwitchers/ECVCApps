@@ -1,0 +1,93 @@
+{
+  "name": "App Menu - Prototype apps and Field Resources",
+  "short_name": "App Menu",
+  "description": "A collection of prototype apps and field resources by Niall Brown, including calculators, braille tools, single switch apps, assistive devices, and microcontroller projects.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#3b82f6",
+  "orientation": "any",
+  "scope": "./",
+  "lang": "en",
+  "categories": ["education", "productivity", "utilities", "accessibility"],
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Calculator Apps",
+      "short_name": "Calculators",
+      "description": "Access calculator applications",
+      "url": "./index.html#calculator-apps",
+      "icons": [
+        {
+          "src": "./icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Braille Apps",
+      "short_name": "Braille",
+      "description": "Access Braille learning tools",
+      "url": "./index.html#braille",
+      "icons": [
+        {
+          "src": "./icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Single Switch Apps",
+      "short_name": "Switch Apps",
+      "description": "Access single switch applications",
+      "url": "./index.html#single-switch-apps",
+      "icons": [
+        {
+          "src": "./icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Assistive Devices",
+      "short_name": "Assistive",
+      "description": "Access assistive device tools",
+      "url": "./index.html#assistive-devices",
+      "icons": [
+        {
+          "src": "./icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

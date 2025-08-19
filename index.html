@@ -3,12 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App Menu</title>
+  <title>App Menu - Prototype apps and Field Resources</title>
+  <meta name="description" content="A collection of prototype apps and field resources by Niall Brown, including calculators, braille tools, single switch apps, assistive devices, and microcontroller projects.">
+  <meta name="keywords" content="assistive technology, accessibility, braille, single switch, calculator, CVI, prototype apps">
+  <meta name="author" content="Niall Brown">
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#3b82f6">
+  <meta name="msapplication-TileColor" content="#3b82f6">
+  <meta name="msapplication-TileImage" content="./icon.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="App Menu">
+  <meta name="application-name" content="App Menu">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="./manifest.json">
+  
+  <!-- Windows configuration -->
+  <meta name="msapplication-config" content="./browserconfig.xml">
+  
+  <!-- Icons for all platforms -->
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon.svg">
+  <link rel="icon" type="image/png" sizes="512x512" href="./icon.svg">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="apple-touch-icon" sizes="192x192" href="./icon.svg">
+  <link rel="apple-touch-icon" sizes="512x512" href="./icon.svg">
+  <link rel="shortcut icon" href="./icon.svg">
+  
+  <!-- Windows specific -->
+  <meta name="msapplication-square70x70logo" content="./icon.svg">
+  <meta name="msapplication-square150x150logo" content="./icon.svg">
+  <meta name="msapplication-wide310x150logo" content="./icon.svg">
+  <meta name="msapplication-square310x310logo" content="./icon.svg">
   
   <!-- Tailwind CSS for modern styling -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Inter for better readability -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -54,6 +87,7 @@
       <div class="flex items-center justify-between h-20">
         <!-- Logo and Title -->
         <div class="flex items-center space-x-4">
+          <img src="appsicon.svg" alt="App Menu Icon" class="h-8 w-8">
           <div>
             <h2 class="text-lg font-semibold text-slate-900">App Menu</h2>
           </div>
@@ -109,7 +143,7 @@
     <!-- Calculator Apps Section -->
     <section id="calculator-apps" class="py-12 fade-in-section">
       <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-blue-500 pl-4">Calculator Apps</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- CVI Range Rating II Calculator -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <div class="h-56 w-full flex gap-2 p-2 bg-blue-50">
@@ -136,6 +170,18 @@
               <p class="text-slate-600 mb-4">A tool for calculating a child's age in weeks, and their age category. It has a predictive month function to speed up input and a countdown to kindergarten alert.</p>
             </div>
             <a href="https://microswitchers.github.io/agebyweekscalc/" class="mt-4 inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">Use the Age by Weeks and Category Calculator</a>
+          </div>
+        </div>
+        <!-- End Time Calculator -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
+          <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="endtimecalc.png" alt="End Time Calculator interface showing time calculation features" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=endtimecalc.png';">
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex-grow">
+              <div class="text-xs inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded-full mb-2 font-semibold">Calculator</div>
+              <h3 class="text-xl font-semibold text-slate-900 mb-2">End Time Calculator</h3>
+              <p class="text-slate-600 mb-4">For people who have difficulty counting up minutes. i.e., to find the end time of a phone call based on the start time and minutes on the call.</p>
+            </div>
+            <a href="https://microswitchers.github.io/endtimecalc/" class="mt-4 inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">Use the End Time Calculator</a>
           </div>
         </div>
       </div>
@@ -422,6 +468,82 @@
             modal.style.display = 'none';
         }
     });
+  </script>
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    // Register service worker for PWA functionality
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then((registration) => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            
+            // Check for updates
+            registration.addEventListener('updatefound', () => {
+              const newWorker = registration.installing;
+              if (newWorker) {
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    // New content is available, show update notification
+                    if (confirm('New version available! Reload to update?')) {
+                      window.location.reload();
+                    }
+                  }
+                });
+              }
+            });
+          })
+          .catch((error) => {
+            console.log('ServiceWorker registration failed: ', error);
+          });
+      });
+    }
+
+    // PWA Install Prompt
+    let deferredPrompt;
+    const installButton = document.createElement('button');
+    installButton.textContent = 'Install App';
+    installButton.className = 'hidden fixed bottom-6 left-6 bg-purple-600 text-white px-4 py-3 rounded-lg shadow-lg hover:bg-purple-700 transition-all duration-300 z-50 font-semibold text-sm';
+    installButton.id = 'install-button';
+    document.body.appendChild(installButton);
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent the mini-infobar from appearing on mobile
+      e.preventDefault();
+      // Stash the event so it can be triggered later
+      deferredPrompt = e;
+      // Show the install button
+      installButton.classList.remove('hidden');
+    });
+
+    installButton.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        // Show the install prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log(`User response to the install prompt: ${outcome}`);
+        // Clear the deferredPrompt variable
+        deferredPrompt = null;
+        // Hide the install button
+        installButton.classList.add('hidden');
+      }
+    });
+
+    // Hide install button if app is already installed
+    window.addEventListener('appinstalled', () => {
+      console.log('PWA was installed');
+      installButton.classList.add('hidden');
+      deferredPrompt = null;
+    });
+
+    // Track if the app is running as a PWA
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+      console.log('Running as PWA');
+      // Add any PWA-specific functionality here
+      document.body.classList.add('pwa-mode');
+    }
   </script>
 </body>
 </html>
