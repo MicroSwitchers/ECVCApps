@@ -80,6 +80,16 @@
       object-position: top;
     }
     
+    /* Class to align object-cover images to the left */
+    .object-left {
+      object-position: left;
+    }
+    
+    /* Class to align object-cover images to the right */
+    .object-right {
+      object-position: right;
+    }
+    
     /* Hero gradient background */
     .hero-gradient {
         background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
@@ -244,18 +254,6 @@
             <a href="https://microswitchers.github.io/agebyweekscalc/" class="mt-4 inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">Use the Age by Weeks and Category Calculator</a>
           </div>
         </div>
-        <!-- End Time Calculator -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="endtimecalc.png" alt="End Time Calculator interface showing time calculation features" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=endtimecalc.png';">
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow">
-              <div class="text-xs inline-block bg-blue-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Calculator</div>
-              <h3 class="text-xl font-semibold text-slate-900 mb-2">End Time Calculator</h3>
-              <p class="text-slate-600 mb-4">For people who have difficulty counting up minutes. i.e., to find the end time of a phone call based on the start time and minutes on the call.</p>
-            </div>
-            <a href="https://microswitchers.github.io/endtimecalc/" class="mt-4 inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">Use the End Time Calculator</a>
-          </div>
-        </div>
         <!-- Excel Formula Generator -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="excelformulasscreen.png" alt="Excel Formula Generator interface showing formula creation tools" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=excelformulasscreen.png';">
@@ -285,28 +283,40 @@
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Tools designed for use with gaze tracking hardware</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- GazeCanvas 1 -->
+        <!-- GazeCanvas v1 -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="gazetrakerc1.png" alt="GazeCanvas 1 Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e0e7ff/6366f1?text=gazetrakerc1.png';">
+          <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 to-indigo-100">
+             <img class="h-full w-2/3 object-cover object-left rounded-lg clickable-img cursor-pointer" src="gazet1.png" alt="GazeCanvas v1 main screenshot" onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=gazet1.png';">
+             <img class="h-full w-1/3 object-cover object-right rounded-lg clickable-img cursor-pointer" src="gazet1bar.png" alt="GazeCanvas v1 side panel" onerror="this.onerror=null;this.src='https://placehold.co/200x600/e0e7ff/6366f1?text=gazet1bar.png';">
+          </div>
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-                <div class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Gaze Tracking</div>
-                <h3 class="text-xl font-semibold text-slate-900 mb-2">GazeCanvas 1</h3>
-                <p class="text-slate-600 mb-4">A minimal image canvas designed to be simple and flexible to import images and text for use with a gaze tracking device overlay. This requires a gaze tracking device with its own overlay software.</p>
+                <div class="flex items-center justify-between mb-2">
+                    <div class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-semibold">Gaze Tracking</div>
+                    <span class="text-xs inline-block bg-slate-200 text-slate-600 px-2 py-1 rounded-full font-medium">V1</span>
+                </div>
+                <h3 class="text-xl font-semibold text-slate-900 mb-2">GazeCanvas v1</h3>
+                <p class="text-slate-600 mb-4">Version 1 of GazeCanvas is a minimal image canvas designed to be simple and flexible to import images and text for use with a gaze tracking device overlay. This requires a gaze tracking device with its own overlay software.</p>
             </div>
-            <a href="https://microswitchers.github.io/gazecanvas/" class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use GazeCanvas 1</a>
+            <a href="https://microswitchers.github.io/gazecanvas/" class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use GazeCanvas v1</a>
           </div>
         </div>
-        <!-- GazeCanvas 2 -->
+        <!-- GazeCanvas v2 -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="gazetrakerc2.png" alt="GazeCanvas 2 Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e0e7ff/6366f1?text=gazetrakerc2.png';">
+          <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 to-indigo-100">
+             <img class="h-full w-2/3 object-cover object-left rounded-lg clickable-img cursor-pointer" src="gazet2.png" alt="GazeCanvas v2 main screenshot" onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=gazet2.png';">
+             <img class="h-full w-1/3 object-cover object-left rounded-lg clickable-img cursor-pointer" src="gazet2bar.png" alt="GazeCanvas v2 side panel" onerror="this.onerror=null;this.src='https://placehold.co/200x600/e0e7ff/6366f1?text=gazet2bar.png';">
+          </div>
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-                <div class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Gaze Tracking</div>
-                <h3 class="text-xl font-semibold text-slate-900 mb-2">GazeCanvas 2</h3>
-                <p class="text-slate-600 mb-4">A minimal image canvas designed to be simple and flexible to import images and text for use with a gaze tracking device overlay. This requires a gaze tracking device with its own overlay software.</p>
+                <div class="flex items-center justify-between mb-2">
+                    <div class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-semibold">Gaze Tracking</div>
+                    <span class="text-xs inline-block bg-slate-200 text-slate-600 px-2 py-1 rounded-full font-medium">V2</span>
+                </div>
+                <h3 class="text-xl font-semibold text-slate-900 mb-2">GazeCanvas v2</h3>
+                <p class="text-slate-600 mb-4">Version 2 of GazeCanvas is a minimal image canvas designed to be simple and flexible to import images and text for use with a gaze tracking device overlay. This is the most recent branch of the project. This requires a gaze tracking device with its own overlay software.</p>
             </div>
-            <a href="https://microswitchers.github.io/gazetrakercanvas2/" class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use GazeCanvas 2</a>
+            <a href="https://microswitchers.github.io/gazetrakercanvas2/" class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use GazeCanvas v2</a>
           </div>
         </div>
       </div>
