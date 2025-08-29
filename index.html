@@ -8,7 +8,6 @@
   <meta name="keywords" content="assistive technology, accessibility, braille, single switch, calculator, CVI, prototype apps">
   <meta name="author" content="Niall Brown">
   
-  <!-- PWA Meta Tags -->
   <meta name="theme-color" content="#3b82f6">
   <meta name="msapplication-TileColor" content="#3b82f6">
   <meta name="msapplication-TileImage" content="./appsicon.svg">
@@ -17,13 +16,10 @@
   <meta name="apple-mobile-web-app-title" content="App Menu">
   <meta name="application-name" content="App Menu">
   
-  <!-- PWA Manifest -->
   <link rel="manifest" href="./manifest.json">
   
-  <!-- Windows configuration -->
   <meta name="msapplication-config" content="./browserconfig.xml">
   
-  <!-- Icons for all platforms -->
   <link rel="icon" type="image/svg+xml" href="./appsicon.svg">
   <link rel="icon" type="image/png" sizes="192x192" href="./appsicon.svg">
   <link rel="icon" type="image/png" sizes="512x512" href="./appsicon.svg">
@@ -32,16 +28,13 @@
   <link rel="apple-touch-icon" sizes="512x512" href="./appsicon.svg">
   <link rel="shortcut icon" href="./appsicon.svg">
   
-  <!-- Windows specific -->
   <meta name="msapplication-square70x70logo" content="./appsicon.svg">
   <meta name="msapplication-square150x150logo" content="./appsicon.svg">
   <meta name="msapplication-wide310x150logo" content="./appsicon.svg">
   <meta name="msapplication-square310x310logo" content="./appsicon.svg">
   
-  <!-- Tailwind CSS for modern styling -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts: Inter for better readability -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -116,18 +109,15 @@
 </head>
 <body class="text-slate-700">
 
-  <!-- Header and Navigation -->
   <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-40 border-b border-slate-200">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <!-- Logo and Title -->
         <div class="flex items-center space-x-4">
           <img src="appsicon.svg" alt="App Menu Icon" class="h-8 w-8">
           <div>
             <h2 class="text-lg font-semibold text-slate-900">App Menu</h2>
           </div>
         </div>
-        <!-- Desktop Navigation -->
         <nav class="hidden xl:flex items-center space-x-2">
            <a href="#calculator-apps" class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Calculators</a>
            <a href="#gaze-tracking" class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Gaze Tracking</a>
@@ -140,7 +130,6 @@
              Install as App
            </button>
         </nav>
-        <!-- Mobile Menu Button -->
         <div class="xl:hidden">
             <button id="mobile-menu-button" class="p-2 rounded-md text-slate-500 hover:bg-slate-100">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -149,7 +138,6 @@
             </button>
         </div>
       </div>
-      <!-- Mobile Navigation -->
       <div id="mobile-menu" class="hidden xl:hidden pb-4">
         <nav class="flex flex-col space-y-2">
            <a href="#calculator-apps" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Calculators</a>
@@ -167,12 +155,9 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <main class="container mx-auto px-4 sm:px-6 lg:px-8">
   
-    <!-- Hero Section -->
     <section class="hero-gradient text-left pt-12 sm:pt-16 pb-16 fade-in-section relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-        <!-- Decorative elements -->
         <div class="absolute inset-0 overflow-hidden">
             <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
             <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -197,7 +182,6 @@
                     Learn More
                 </a>
             </div>
-            <!-- PWA Installation Tip -->
             <div class="mt-12 bg-blue-100/70 backdrop-blur-sm border border-blue-200/50 text-blue-900 p-4 rounded-xl shadow-sm max-w-2xl" role="alert">
               <p class="flex items-center text-sm">
                 <span class="font-bold text-lg mr-3">💡</span>
@@ -209,10 +193,8 @@
         </div>
     </section>
     
-    <!-- Section Divider -->
     <div class="section-divider"></div>
 
-    <!-- Calculator Apps Section -->
     <section id="calculator-apps" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Calculator Apps</h2>
@@ -220,7 +202,6 @@
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Specialized calculation tools designed for assistive technology professionals</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- CVI Range Rating II Calculator -->
         <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden card-hover-effect flex flex-col border border-white/20">
           <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-blue-50 to-blue-100">
              <img class="h-full w-1/2 object-cover object-top rounded-lg clickable-img cursor-pointer" src="cvicalc1.jpg" alt="CVI Calculator Screenshot 1" onerror="this.onerror=null;this.src='https://placehold.co/300x400/e0f2fe/0ea5e9?text=cvicalc1.jpg';">
@@ -238,9 +219,7 @@
             <a href="https://microswitchers.github.io/RangeCalc/" class="btn-primary mt-4 inline-block text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 transition-all text-center">Use the CVI Range Rating II Calculator</a>
           </div>
         </div>
-        <!-- Age by Weeks and Category Calculator -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-          <!-- Replace src with your image path -->
           <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="agecalc.png" alt="Age by Weeks and Category Calculator Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=agecalc.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
@@ -254,7 +233,6 @@
             <a href="https://microswitchers.github.io/agebyweekscalc/" class="mt-4 inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">Use the Age by Weeks and Category Calculator</a>
           </div>
         </div>
-        <!-- Excel Formula Generator -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="excelformulasscreen.png" alt="Excel Formula Generator interface showing formula creation tools" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=excelformulasscreen.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -271,11 +249,9 @@
         </div>
       </div>
       
-      <!-- Section Divider -->
       <div class="section-divider"></div>
     </section>
 
-    <!-- Gaze Tracking Section -->
     <section id="gaze-tracking" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Gaze Tracking</h2>
@@ -283,7 +259,6 @@
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Tools designed for use with gaze tracking hardware</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- GazeCanvas v1 -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 to-indigo-100">
              <img class="h-full w-2/3 object-cover object-left rounded-lg clickable-img cursor-pointer" src="gazet1.png" alt="GazeCanvas v1 main screenshot" onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=gazet1.png';">
@@ -301,7 +276,6 @@
             <a href="https://microswitchers.github.io/gazecanvas/" class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use GazeCanvas v1</a>
           </div>
         </div>
-        <!-- GazeCanvas v2 -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 to-indigo-100">
              <img class="h-full w-2/3 object-cover object-left rounded-lg clickable-img cursor-pointer" src="gazet2.png" alt="GazeCanvas v2 main screenshot" onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=gazet2.png';">
@@ -319,11 +293,10 @@
             <a href="https://microswitchers.github.io/gazetrakercanvas2/" class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use GazeCanvas v2</a>
           </div>
         </div>
-        <!-- 3D Printed Tobii Cradle -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col md:col-span-2">
           <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 to-indigo-100">
-             <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer" src="tcradleone.jpg" alt="3D printed cradle for Tobii Eye Tracker 5, view one" onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=tcradleone.jpg';">
-             <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer" src="tcradletwo.jpg" alt="3D printed cradle for Tobii Eye Tracker 5, view two" onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=tcradletwo.jpg';">
+             <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer" src="ECVCApps/tcradleone.jpg" alt="3D printed cradle for Tobii Eye Tracker 5, view one">
+             <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer" src="ECVCApps/tcradletwo.jpg" alt="3D printed cradle for Tobii Eye Tracker 5, view two">
           </div>
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
@@ -341,10 +314,8 @@
       </div>
     </section>
 
-    <!-- Section Divider -->
     <div class="section-divider"></div>
 
-    <!-- Braille Section -->
     <section id="braille" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Braille Apps</h2>
@@ -352,7 +323,6 @@
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Interactive tools for Braille learning and practice</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Mechanical Braille Writer Simulator -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="mecbraille.jpg" alt="Mechanical Braille Writer Simulator Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/a7f3d0/0f766e?text=mecbraille.jpg';">
           <div class="p-6 flex-grow flex flex-col">
@@ -376,7 +346,6 @@
             <a href="https://microswitchers.github.io/braillesim/" class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use the Mechanical Braille Writer Simulator</a>
           </div>
         </div>
-        <!-- SixKey - Braille Practice Pad -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
            <div class="h-56 w-full flex gap-2 p-2 bg-teal-50">
              <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer" src="sixkey1.jpg" alt="SixKey Practice Pad Screenshot 1" onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=sixkey1.jpg';">
@@ -400,7 +369,6 @@
             <a href="https://microswitchers.github.io/sixkey/" class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use the SixKey - Braille Practice Pad</a>
           </div>
         </div>
-        <!-- BrailleFlex -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="brailleflex.jpg" alt="BrailleFlex Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/a7f3d0/0f766e?text=brailleflex.jpg';">
           <div class="p-6 flex-grow flex flex-col">
@@ -424,11 +392,9 @@
         </div>
       </div>
       
-      <!-- Section Divider -->
       <div class="section-divider"></div>
     </section>
 
-    <!-- Single Switch Apps Section -->
     <section id="single-switch-apps" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Single Switch Apps</h2>
@@ -436,7 +402,6 @@
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Engaging cause-and-effect applications for single switch users</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Cause and Effect Fireworks -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="image4.png" alt="Cause and Effect Fireworks Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3e8ff/8b5cf6?text=image4.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -444,7 +409,6 @@
             <a href="https://microswitchers.github.io/fireworks/" class="mt-4 inline-block bg-purple-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-purple-700 transition-colors text-center">Use Cause and Effect Fireworks</a>
           </div>
         </div>
-        <!-- Cause and Effect Ball Drop -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="image6.png" alt="Cause and Effect Ball Drop Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3e8ff/8b5cf6?text=image6.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -452,7 +416,6 @@
             <a href="https://microswitchers.github.io/bouncingballs/" class="mt-4 inline-block bg-purple-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-purple-700 transition-colors text-center">Use Cause and Effect Ball Drop</a>
           </div>
         </div>
-        <!-- AstroBounce -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="image9.png" alt="AstroBounce Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3e8ff/8b5cf6?text=image9.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -460,7 +423,6 @@
             <a href="https://microswitchers.github.io/Astro-Bounce/" class="mt-4 inline-block bg-purple-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-purple-700 transition-colors text-center">Use AstroBounce</a>
           </div>
         </div>
-        <!-- HarmonyHopper -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col md:col-span-2">
           <div class="h-56 w-full flex gap-2 p-2 bg-purple-50">
              <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer" src="image10.png" alt="HarmonyHopper Screenshot 1" onerror="this.onerror=null;this.src='https://placehold.co/300x400/f3e8ff/8b5cf6?text=image10.png';">
@@ -473,11 +435,9 @@
         </div>
       </div>
       
-      <!-- Section Divider -->
       <div class="section-divider"></div>
     </section>
     
-    <!-- Assistive Devices Section -->
     <section id="assistive-devices" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Assistive Devices</h2>
@@ -485,7 +445,6 @@
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Specialized tools that transform devices into assistive technology</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- GlowFrames -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
            <div class="h-56 w-full flex gap-2 p-2 bg-green-50">
              <img class="h-full w-1/2 object-cover object-top rounded-lg clickable-img cursor-pointer" src="glowframes.png" alt="GlowFrames Screenshot 1" onerror="this.onerror=null;this.src='https://placehold.co/300x400/dcfce7/22c55e?text=glowframes.png';">
@@ -496,7 +455,6 @@
             <a href="https://microswitchers.github.io/GlowFrames/" class="mt-4 inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition-colors text-center">Use GlowFrames</a>
           </div>
         </div>
-        <!-- Selection Scanner -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="scanning.png" alt="Selection Scanner Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/dcfce7/22c55e?text=scanning.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -514,11 +472,9 @@
         </div>
       </div>
       
-      <!-- Section Divider -->
       <div class="section-divider"></div>
     </section>
 
-    <!-- Microcontroller Devices Section -->
     <section id="microcontroller-devices" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Microcontroller Devices</h2>
@@ -550,11 +506,9 @@
         </div>
       </div>
       
-      <!-- Section Divider -->
       <div class="section-divider"></div>
     </section>
 
-    <!-- Experimental Projects Section -->
     <section id="experimental-projects" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-slate-900 mb-4">Experimental Projects</h2>
@@ -562,7 +516,6 @@
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Cutting-edge prototypes and research-driven applications</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Assistive Device Activation Tester -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="buttontest.png" alt="Assistive Device Activation Tester Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffe4e6/f43f5e?text=buttontest.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -570,7 +523,6 @@
             <a href="https://microswitchers.github.io/SwitchandButtonTester/" class="mt-4 inline-block bg-rose-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-rose-700 transition-colors text-center">Use the Assistive Device Activation Tester</a>
           </div>
         </div>
-        <!-- Appointment Reminder App -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="appointmentreminder.png" alt="Appointment Reminder App Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffe4e6/f43f5e?text=appointmentreminder.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -583,12 +535,10 @@
 
   </main>
 
-  <!-- Footer -->
   <footer id="about" class="bg-slate-800 text-white border-t border-slate-700">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 text-center md:text-left mb-12">
         
-        <!-- Project Info - Takes up more space -->
         <div class="lg:col-span-3 space-y-6">
           <h3 class="text-2xl font-bold text-white mb-6">About This Project</h3>
           <div class="text-slate-300 text-base leading-relaxed space-y-4">
@@ -602,9 +552,7 @@
           </div>
         </div>
         
-        <!-- Creator & Resources Combined -->
         <div class="lg:col-span-2 space-y-8">
-          <!-- Creator Info -->
           <div class="space-y-4">
             <h3 class="text-xl font-bold text-white mb-4">Created By</h3>
             <div class="space-y-3">
@@ -614,7 +562,6 @@
             </div>
           </div>
           
-          <!-- Resources -->
           <div class="space-y-4">
             <h3 class="text-xl font-bold text-white">Resources</h3>
             <a href="https://github.com/MicroSwitchers?tab=repositories" class="block text-blue-400 hover:text-blue-300 hover:underline text-base transition-colors font-medium">
@@ -628,7 +575,6 @@
         </div>
       </div>
       
-      <!-- MicroSwitchers Branding - Full Width Row -->
       <div class="border-t border-slate-600 pt-8 mb-8">
         <div class="bg-slate-700/30 rounded-lg p-6">
           <div class="flex items-center justify-center space-x-4">
@@ -641,21 +587,18 @@
         </div>
       </div>
       
-      <!-- Bottom Bar -->
       <div class="border-t border-slate-600 pt-8 text-center">
         <p class="text-slate-400 text-sm">&copy; 2025 Niall Brown. All rights reserved.</p>
       </div>
     </div>
   </footer>
   
-  <!-- Back-to-Top Button -->
   <button id="back-to-top" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 z-50">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
     </svg>
   </button>
 
-  <!-- Image Modal -->
   <div id="image-modal" class="hidden fixed top-0 left-0 z-50 w-full h-full bg-black/80 flex items-center justify-center">
     <span id="close-modal" class="absolute top-6 right-8 text-white text-5xl font-bold cursor-pointer">&times;</span>
     <img id="modal-image" class="max-w-[90%] max-h-[90%]">
@@ -773,7 +716,6 @@
     });
   </script>
 
-  <!-- PWA Service Worker Registration -->
   <script>
     // Register service worker for PWA functionality
     if ('serviceWorker' in navigator) {
