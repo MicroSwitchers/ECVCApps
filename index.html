@@ -182,7 +182,7 @@
         
         <div class="relative z-10">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
-                MicroSwitchers - Experimental<br>
+                MicroSwitchers - <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">Experimental</span><br>
                 <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">Apps and Tools</span>
             </h1>
             <p class="mt-8 max-w-2xl text-xl text-slate-600 leading-relaxed">
@@ -487,20 +487,8 @@
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Hardware and software tools for single switch interaction</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Assistive Device Activation Tester -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="buttontest.png" alt="Assistive Device Activation Tester Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ffe4e6/f43f5e?text=buttontest.png';">
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow">
-              <div class="text-xs inline-block bg-rose-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Utility</div>
-              <h3 class="text-xl font-semibold text-slate-900 mb-2">Assistive Device Activation Tester</h3>
-              <p class="text-slate-600 mb-4">For testing how assistive human interface devices interact with various button formats.</p>
-            </div>
-            <a href="https://microswitchers.github.io/SwitchandButtonTester/" class="mt-4 inline-block bg-rose-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-rose-700 transition-colors text-center">Use the Activation Tester</a>
-          </div>
-        </div>
         <!-- 3D Printed Single Switch -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col md:col-span-2">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col md:col-span-3">
           <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-rose-50 to-rose-100">
              <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer" src="switchconcept.png" alt="Concept design of the 3D printed switch" onerror="this.onerror=null;this.src='https://placehold.co/300x400/ffe4e6/f43f5e?text=Concept';">
              <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer" src="3Dprintswitch.jpg" alt="Photograph of the 3D printed switch prototype" onerror="this.onerror=null;this.src='https://placehold.co/300x400/ffe4e6/f43f5e?text=Prototype';">
@@ -513,7 +501,7 @@
                     <div class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full font-medium">Concept</div>
                 </div>
                 <h3 class="text-xl font-semibold text-slate-900 mb-2">3D Printed Single Switch</h3>
-                <p class="text-slate-600 mb-4">This is a very early brainstorming project to look at how to make inexpensive adapted single switches that respond to very light activation force. The switch is currently pinned on one side to make it a flap switch, but I'm researching ways to make it a light touch button switch.</p>
+                <p class="text-slate-600 mb-4">This is a very early brainstorming project to look at how to design inexpensive adapted single switches that respond to very light activation force. I created it in Blender 3D and am providing a Blender file and an STL 3D print file for download. The switch is currently pinned on one side to make it a flap switch, but I'm researching ways to make it a light touch button switch. Ideas and feedback are appreciated.</p>
             </div>
             <div class="mt-4 flex flex-col sm:flex-row gap-3">
                 <a href="switchprint.stl" download="switchprint.stl" class="flex-1 text-center bg-rose-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-rose-700 transition-colors">
@@ -616,6 +604,18 @@
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Cutting-edge prototypes and research-driven applications</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Assistive Device Activation Tester -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
+          <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer" src="buttontest.png" alt="Assistive Device Activation Tester Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=buttontest.png';">
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex-grow">
+              <div class="text-xs inline-block bg-slate-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Utility</div>
+              <h3 class="text-xl font-semibold text-slate-900 mb-2">Assistive Device Activation Tester</h3>
+              <p class="text-slate-600 mb-4">For testing how assistive human interface devices interact with various button formats.</p>
+            </div>
+            <a href="https://microswitchers.github.io/SwitchandButtonTester/" class="mt-4 inline-block bg-slate-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-slate-700 transition-colors text-center">Use the Activation Tester</a>
+          </div>
+        </div>
         <!-- Appointment Reminder App -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
           <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="appointmentreminder.png" alt="Appointment Reminder App Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=appointmentreminder.png';">
@@ -909,6 +909,4 @@
   </script>
 </body>
 </html>
-
-
 
