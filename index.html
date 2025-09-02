@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Workshop - Prototype apps and Field Resources</title>
+  <title>Workshop - Prototype apps and Field Resources</title>
   <meta name="description" content="A collection of prototype apps and field resources by Niall Brown, including calculators, braille tools, single switch apps, assistive devices, and microcontroller projects.">
   <meta name="keywords" content="assistive technology, accessibility, braille, single switch, calculator, CVI, prototype apps, early intervention, low vision">
   <meta name="author" content="Niall Brown">
@@ -11,11 +11,11 @@
   <!-- PWA Meta Tags -->
   <meta name="theme-color" content="#3b82f6">
   <meta name="msapplication-TileColor" content="#3b82f6">
-  <meta name="msapplication-TileImage" content="./appsicon.svg">
+  <meta name="msapplication-TileImage" content="./appsicon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Digital Workshop">
-  <meta name="application-name" content="Digital Workshop">
+  <meta name="apple-mobile-web-app-title" content="Workshop">
+  <meta name="application-name" content="Workshop">
   
   <!-- PWA Manifest -->
   <link rel="manifest" href="./manifest.json">
@@ -24,19 +24,19 @@
   <meta name="msapplication-config" content="./browserconfig.xml">
   
   <!-- Icons for all platforms -->
-  <link rel="icon" type="image/svg+xml" href="./appsicon.svg">
-  <link rel="icon" type="image/png" sizes="192x192" href="./appsicon.svg">
-  <link rel="icon" type="image/png" sizes="512x512" href="./appsicon.svg">
-  <link rel="apple-touch-icon" href="./appsicon.svg">
-  <link rel="apple-touch-icon" sizes="192x192" href="./appsicon.svg">
-  <link rel="apple-touch-icon" sizes="512x512" href="./appsicon.svg">
-  <link rel="shortcut icon" href="./appsicon.svg">
+  <link rel="icon" type="image/png" href="./appsicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./appsicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="./appsicon.png">
+  <link rel="apple-touch-icon" href="./appsicon.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="./appsicon.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="./appsicon.png">
+  <link rel="shortcut icon" href="./appsicon.png">
   
   <!-- Windows specific -->
-  <meta name="msapplication-square70x70logo" content="./appsicon.svg">
-  <meta name="msapplication-square150x150logo" content="./appsicon.svg">
-  <meta name="msapplication-wide310x150logo" content="./appsicon.svg">
-  <meta name="msapplication-square310x310logo" content="./appsicon.svg">
+  <meta name="msapplication-square70x70logo" content="./appsicon.png">
+  <meta name="msapplication-square150x150logo" content="./appsicon.png">
+  <meta name="msapplication-wide310x150logo" content="./appsicon.png">
+  <meta name="msapplication-square310x310logo" content="./appsicon.png">
   
   <!-- Tailwind CSS for modern styling -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -122,9 +122,9 @@
       <div class="flex items-center justify-between h-20">
         <!-- Logo and Title -->
         <div class="flex items-center space-x-4">
-          <img src="appsicon.svg" alt="App Menu Icon" class="h-8 w-8">
+          <img src="appsicon.png" alt="App Menu Icon" class="h-10 w-10">
           <div>
-            <h2 class="text-lg font-semibold text-slate-900">Digital Workshop</h2>
+            <h2 class="text-lg font-semibold text-slate-900">Workshop</h2>
           </div>
         </div>
         <!-- Desktop Navigation -->
@@ -173,7 +173,7 @@
   <main class="container mx-auto px-4 sm:px-6 lg:px-8">
   
     <!-- Hero Section -->
-    <section class="hero-gradient text-left pt-12 sm:pt-16 pb-16 fade-in-section relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+    <section class="hero-gradient pt-12 sm:pt-16 pb-16 fade-in-section relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
         <!-- Decorative elements -->
         <div class="absolute inset-0 overflow-hidden">
             <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -181,11 +181,14 @@
         </div>
         
         <div class="relative z-10">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
-                MicroSwitchers Digital Workshop - <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">Experimental</span><br>
-                <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">Apps and Tools</span>
-            </h1>
-            <p class="mt-8 max-w-2xl text-xl text-slate-600 leading-relaxed">
+            <div class="flex flex-col sm:flex-row items-start gap-x-8 gap-y-6">
+                <img src="appsicon.png" alt="Digital Workshop Logo" class="h-24 w-24 sm:h-28 sm:w-28 lg:h-32 lg:w-32 flex-shrink-0 rounded-3xl shadow-lg bg-blue-100 p-2 border border-blue-200">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight text-center sm:text-left">
+                    MicroSwitchers Workshop
+                    <span class="block text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent mt-2">Experimental Apps and Tools</span>
+                </h1>
+            </div>
+            <p class="mt-8 max-w-3xl text-xl text-slate-600 leading-relaxed">
                 By <span class="font-semibold text-slate-800">Niall Brown</span> — A collection of my ongoing projects dedicated to exploring technology related to blind and low-vision early intervention and related fields.
             </p>
             <div class="mt-10 flex flex-col sm:flex-row justify-start gap-4">
@@ -200,7 +203,7 @@
                 </a>
             </div>
             <!-- PWA Installation Tip -->
-            <div class="mt-12 bg-blue-100/70 backdrop-blur-sm border border-blue-200/50 text-blue-900 p-4 rounded-xl shadow-sm max-w-2xl" role="alert">
+            <div class="mt-12 bg-blue-100/70 backdrop-blur-sm border border-blue-200/50 text-blue-900 p-4 rounded-xl shadow-sm max-w-3xl" role="alert">
               <p class="flex items-center text-sm">
                 <span class="font-bold text-lg mr-3">💡</span>
                 <span>
@@ -214,7 +217,7 @@
     <!-- About Section -->
     <section id="about" class="py-16 lg:py-20 fade-in-section">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">A Digital Workshop</h2>
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">The Workshop</h2>
         <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
         <div class="mt-8 text-lg text-slate-600 leading-relaxed text-left space-y-4">
           <p>Welcome to my digital workshop, a collection of my ongoing projects dedicated to exploring technology in blind and low-vision early intervention. This space serves as a workbench for ideas, featuring a mix of 3D-printed tools, vibe-coded web applications, and microcontroller-based devices.</p>
@@ -689,7 +692,7 @@
       <div class="border-t border-slate-600 pt-8 mb-8">
         <div class="bg-slate-700/30 rounded-lg p-6">
           <div class="flex items-center justify-center space-x-4">
-            <img src="logocut.png" alt="MicroSwitchers Logo" class="h-16 w-16 rounded-lg bg-white/10 p-2 flex-shrink-0">
+            <img src="appsicon.png" alt="MicroSwitchers Logo" class="h-16 w-16 rounded-lg bg-white/10 p-2 flex-shrink-0">
             <div>
               <p class="text-slate-200 text-xl font-semibold">MicroSwitchers</p>
               <p class="text-slate-400 text-base">Experimental Project</p>
@@ -920,6 +923,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
