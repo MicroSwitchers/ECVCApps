@@ -92,7 +92,7 @@
     
     /* Hero gradient background */
     .hero-gradient {
-        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(147, 51, 234, 0.08) 50%, rgba(236, 72, 153, 0.06) 100%);
     }
     
     /* Section dividers */
@@ -104,13 +104,14 @@
     
     /* Enhanced button styling */
     .btn-primary {
-        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         transition: all 0.3s ease;
     }
     .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+        background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
     }
   </style>
 </head>
@@ -185,7 +186,7 @@
                 <img src="appsicon.png" alt="Digital Workshop Logo" class="h-24 w-24 sm:h-28 sm:w-28 lg:h-32 lg:w-32 flex-shrink-0 rounded-3xl shadow-lg bg-blue-100 p-2 border border-blue-200">
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight text-center sm:text-left">
                     MicroSwitchers Workshop
-                    <span class="block text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent mt-2">Experimental Apps and Tools</span>
+                    <span class="block text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 bg-clip-text text-transparent mt-2">Experimental Apps and Tools</span>
                 </h1>
             </div>
             <p class="mt-8 max-w-3xl text-xl text-slate-600 leading-relaxed">
@@ -218,7 +219,7 @@
     <section id="about" class="py-16 lg:py-20 fade-in-section">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl font-bold text-slate-900 mb-4">The Workshop</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 mx-auto rounded-full"></div>
         <div class="mt-8 text-lg text-slate-600 leading-relaxed text-left space-y-4">
           <p>Welcome to my digital workshop, a collection of my ongoing projects dedicated to exploring technology in blind and low-vision early intervention. This space serves as a workbench for ideas, featuring a mix of 3D-printed tools, vibe-coded web applications, and microcontroller-based devices.</p>
           <p>Some of these projects are polished and may be ready for everyday use, while others are active experiments and proofs-of-concept. The goal is to innovate and share possibilities, so please feel free to explore, adapt, and build upon these projects.</p>
@@ -234,13 +235,13 @@
     <section id="gaze-tracking" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h3 class="text-3xl font-bold text-slate-900 mb-4">Gaze Tracking</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-indigo-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 mx-auto rounded-full"></div>
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Tools designed for use with gaze tracking hardware</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- GazeCanvas v1 -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-          <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 to-indigo-100">
+          <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
              <img class="h-full w-2/3 object-cover object-left rounded-lg clickable-img cursor-pointer" src="gazet1.png" alt="GazeCanvas v1 main screenshot" onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=gazet1.png';">
              <img class="h-full w-1/3 object-cover object-right rounded-lg clickable-img cursor-pointer" src="gazet1bar.png" alt="GazeCanvas v1 side panel" onerror="this.onerror=null;this.src='https://placehold.co/200x600/e0e7ff/6366f1?text=gazet1bar.png';">
           </div>
@@ -258,7 +259,7 @@
         </div>
         <!-- GazeCanvas v2 -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-          <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 to-indigo-100">
+          <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
              <img class="h-full w-2/3 object-cover object-left rounded-lg clickable-img cursor-pointer" src="gazet2.png" alt="GazeCanvas v2 main screenshot" onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=gazet2.png';">
              <img class="h-full w-1/3 object-cover object-left rounded-lg clickable-img cursor-pointer" src="gazet2bar.png" alt="GazeCanvas v2 side panel" onerror="this.onerror=null;this.src='https://placehold.co/200x600/e0e7ff/6366f1?text=gazet2bar.png';">
           </div>
@@ -276,7 +277,7 @@
         </div>
         <!-- 3D Printed Tobii Cradle -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col md:col-span-2">
-          <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 to-indigo-100">
+          <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
              <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer" src="tcradle1.jpg" alt="3D printed cradle for Tobii Eye Tracker 5, view one" onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=tcradle1.jpg';">
              <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer" src="tcradle2.jpg" alt="3D printed cradle for Tobii Eye Tracker 5, view two" onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=tcradle2.jpg';">
           </div>
@@ -303,13 +304,13 @@
     <section id="calculator-apps" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h3 class="text-3xl font-bold text-slate-900 mb-4">Calculator Apps</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-500 mx-auto rounded-full"></div>
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Simple calculation tools to help with everyday field tasks</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- CVI Range Rating II Calculator -->
         <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden card-hover-effect flex flex-col border border-white/20">
-          <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-blue-50 to-blue-100">
+          <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100">
              <img class="h-full w-1/2 object-cover object-top rounded-lg clickable-img cursor-pointer" src="cvicalc1.jpg" alt="CVI Calculator Screenshot 1" onerror="this.onerror=null;this.src='https://placehold.co/300x400/e0f2fe/0ea5e9?text=cvicalc1.jpg';">
              <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer" src="cvicalc2.png" alt="CVI Calculator Screenshot 2" onerror="this.onerror=null;this.src='https://placehold.co/300x400/e0f2fe/0ea5e9?text=cvicalc2.png';">
           </div>
@@ -366,7 +367,7 @@
     <section id="braille" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h3 class="text-3xl font-bold text-slate-900 mb-4">Braille Apps</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-teal-500 to-teal-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-teal-400 via-emerald-500 to-green-500 mx-auto rounded-full"></div>
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Interactive tools for visual Braille learning and practice</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -450,13 +451,13 @@
     <section id="adapted-single-switches" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h3 class="text-3xl font-bold text-slate-900 mb-4">Adapted Single Switches</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-rose-500 to-rose-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-rose-400 via-pink-500 to-fuchsia-500 mx-auto rounded-full"></div>
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Hardware and software tools for single switch interaction</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- 3D Printed Single Switch -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col md:col-span-3">
-          <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-rose-50 to-rose-100">
+          <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100">
              <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer" src="switchconcept.png" alt="Concept design of the 3D printed switch" onerror="this.onerror=null;this.src='https://placehold.co/300x400/ffe4e6/f43f5e?text=Concept';">
              <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer" src="3Dprintswitch.jpg" alt="Photograph of the 3D printed switch prototype" onerror="this.onerror=null;this.src='https://placehold.co/300x400/ffe4e6/f43f5e?text=Prototype';">
           </div>
@@ -490,7 +491,7 @@
     <section id="single-switch-apps" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h3 class="text-3xl font-bold text-slate-900 mb-4">Single Switch Apps</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-400 via-violet-500 to-purple-600 mx-auto rounded-full"></div>
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Engaging cause-and-effect applications for single switch users</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -520,7 +521,7 @@
         </div>
         <!-- HarmonyHopper -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col md:col-span-2">
-          <div class="h-56 w-full flex gap-2 p-2 bg-purple-50">
+          <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-purple-50 via-violet-50 to-purple-100">
              <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer" src="image10.png" alt="HarmonyHopper Screenshot 1" onerror="this.onerror=null;this.src='https://placehold.co/300x400/f3e8ff/8b5cf6?text=image10.png';">
              <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer" src="image11.png" alt="HarmonyHopper Screenshot 2" onerror="this.onerror=null;this.src='https://placehold.co/300x400/f3e8ff/8b5cf6?text=image11.png';">
           </div>
@@ -539,35 +540,19 @@
     <section id="assistive-devices" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h3 class="text-3xl font-bold text-slate-900 mb-4">Assistive Devices</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-green-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-emerald-400 via-green-500 to-lime-500 mx-auto rounded-full"></div>
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">simple assistive device apps that turn your phone or tablet into an assistive device</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- GlowFrames -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-           <div class="h-56 w-full flex gap-2 p-2 bg-green-50">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col md:col-span-2">
+           <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-emerald-50 via-green-50 to-lime-50">
              <img class="h-full w-1/2 object-cover object-top rounded-lg clickable-img cursor-pointer" src="glowframes.png" alt="GlowFrames Screenshot 1" onerror="this.onerror=null;this.src='https://placehold.co/300x400/dcfce7/22c55e?text=glowframes.png';">
-             <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer" src="glowframes2.png" alt="GlowFrames Screenshot 2" onerror="this.onerror=null;this.src='https://placehold.co/300x400/dcfce7/22c55e?text=glowframes2.png';">
+             <img class="h-full w-1/2 object-cover object-top rounded-lg clickable-img cursor-pointer" src="glowframes2.png" alt="GlowFrames Screenshot 2" onerror="this.onerror=null;this.src='https://placehold.co/300x400/dcfce7/22c55e?text=glowframes2.png';">
           </div>
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow"><div class="text-xs inline-block bg-green-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Assistive Devices</div><h3 class="text-xl font-semibold text-slate-900 mb-2">GlowFrames</h3><p class="text-slate-600 mb-4">An app for making a tablet or phone into a light box. Illuminated shapes can be arranged to illuminate translucent materials.</p></div>
             <a href="https://microswitchers.github.io/GlowFrames/" class="mt-4 inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition-colors text-center">Use GlowFrames</a>
-          </div>
-        </div>
-        <!-- Selection Scanner -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img cursor-pointer" src="scanning.png" alt="Selection Scanner Screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/dcfce7/22c55e?text=scanning.png';">
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow">
-              <div class="text-xs inline-block bg-green-600 text-white px-2 py-1 rounded-full mb-2 font-semibold">Assistive Devices</div>
-              <div class="flex flex-wrap gap-1 mb-2">
-                <span class="text-xs inline-block bg-red-600 text-white px-2 py-1 rounded-full font-medium">Experimental</span>
-                <span class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full font-medium">Concept</span>
-              </div>
-              <h3 class="text-xl font-semibold text-slate-900 mb-2">Selection Scanner</h3>
-              <p class="text-slate-600 mb-4">A simple auditory scanning app that reads words in a timed sequence. The user can select the word using a single switch or another signal to their communication partner.</p>
-            </div>
-            <a href="https://microswitchers.github.io/selectionscanner/" class="mt-4 inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition-colors text-center">Use Selection Scanner</a>
           </div>
         </div>
       </div>
@@ -580,7 +565,7 @@
     <section id="microcontroller-devices" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h3 class="text-3xl font-bold text-slate-900 mb-4">Microcontroller Devices</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-orange-400 via-amber-500 to-yellow-500 mx-auto rounded-full"></div>
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Hardware solutions for enhanced accessibility and interaction</p>
       </div>
        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect">
@@ -616,7 +601,7 @@
     <section id="experimental-projects" class="py-12 fade-in-section">
       <div class="text-center mb-12">
         <h3 class="text-3xl font-bold text-slate-900 mb-4">Experimental Projects</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-slate-500 to-slate-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-slate-400 via-gray-500 to-zinc-500 mx-auto rounded-full"></div>
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Early prototypes and concepts.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
