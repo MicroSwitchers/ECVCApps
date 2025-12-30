@@ -147,8 +147,8 @@
         <!-- Desktop Navigation -->
         <nav class="hidden xl:flex items-center space-x-2">
           <a href="#gaze-tracking"
-            class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Gaze
-            Tracking</a>
+            class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Assessment
+            & Gaze</a>
           <a href="#calculator-apps"
             class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Calculators</a>
           <a href="#braille"
@@ -164,8 +164,7 @@
             Devices</a>
           <a href="#microcontroller-devices"
             class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Microcontrollers</a>
-          <a href="#aac"
-            class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">AAC</a>
+
           <a href="#experimental-projects"
             class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Experimental</a>
           <button id="installButton"
@@ -187,8 +186,8 @@
       <div id="mobile-menu" class="hidden xl:hidden pb-4">
         <nav class="flex flex-col space-y-2">
           <a href="#gaze-tracking"
-            class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Gaze
-            Tracking</a>
+            class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Assessment
+            & Gaze</a>
           <a href="#calculator-apps"
             class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Calculators</a>
           <a href="#braille"
@@ -204,8 +203,7 @@
             Devices</a>
           <a href="#microcontroller-devices"
             class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Microcontrollers</a>
-          <a href="#aac"
-            class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">AAC</a>
+
           <a href="#experimental-projects"
             class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Experimental</a>
           <button id="installButtonMobile"
@@ -220,6 +218,7 @@
   <!-- Main Content -->
   <main class="container mx-auto px-4 sm:px-6 lg:px-8">
 
+    <!-- Hero Section -->
     <!-- Hero Section -->
     <section
       class="hero-gradient pt-12 sm:pt-16 pb-16 relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
@@ -299,22 +298,78 @@
     <!-- Section Divider -->
     <div class="section-divider"></div>
 
-    <!-- Gaze Tracking Section -->
+
+
+    <!-- Image Assessment, AAC and Gaze Tracking Section -->
     <section id="gaze-tracking" class="py-12">
       <div class="text-center mb-12">
-        <h3 class="text-3xl font-bold text-slate-900 mb-4">Gaze Tracking</h3>
+        <h3 class="text-3xl font-bold text-slate-900 mb-4">Image Assessment, AAC and Gaze Tracking</h3>
         <div class="w-24 h-1 bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 mx-auto rounded-full"></div>
-        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Tools designed for use with gaze tracking hardware</p>
+        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Tools designed for use with gaze tracking hardware and
+          visual assessment</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <!-- AAC Visual Sandbox -->
+        <div
+          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
+          <div
+            class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-pink-50 via-rose-50 to-red-50">
+            <img
+              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="aacsandbox1.png" alt="AAC Visual Sandbox Interface"
+              onerror="this.onerror=null;this.src='https://placehold.co/800x600/fce7f3/db2777?text=AAC+Sandbox+1';">
+            <img
+              class="h-full w-1/2 object-cover object-left rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="aacsandbox2.png" alt="AAC Visual Sandbox Settings"
+              onerror="this.onerror=null;this.src='https://placehold.co/800x600/fce7f3/db2777?text=AAC+Sandbox+2';">
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex-grow">
+              <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
+                <li><span
+                    class="text-xs inline-block bg-pink-600 text-white px-2 py-1 rounded-full font-semibold">AAC</span>
+                </li>
+              </ul>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">AAC Visual Sandbox</h3>
+              <p class="text-slate-700 mb-4 leading-relaxed">An app for rapidly displaying images in simple arrays and
+                trying out
+                different visual adaptations. Designed for rapid setup, this tool allows professionals to quickly pull
+                up
+                a few pictures for assessment purposes on any device.</p>
+
+              <div class="mb-4 bg-slate-50 p-4 rounded-lg border border-slate-100">
+                <p class="text-sm font-semibold text-slate-700 mb-2">Key Features:</p>
+                <ul class="text-sm text-slate-600 columns-1 sm:columns-2 gap-4 space-y-1 list-disc list-inside">
+                  <li>Voice output (TTS)</li>
+                  <li>Magnification tools</li>
+                  <li>Colour customization</li>
+                  <li>Quick text-based symbols</li>
+                  <li>Find-It games</li>
+                  <li>Other Visual Adaptations</li>
+                </ul>
+                <p class="text-xs text-slate-500 mt-3 pt-2 border-t border-slate-200">
+                  <span class="font-semibold text-amber-600">Note:</span> This app is designed for rapid setup and
+                  experimentation. It does not save arrays between sessions.
+                </p>
+              </div>
+            </div>
+            <a href="https://microswitchers.github.io/ACCVisualSandbox/"
+              class="mt-4 block text-center bg-pink-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-pink-700 transition-colors">Use
+              AAC Visual Sandbox</a>
+          </div>
+        </div>
+
         <!-- GazeCanvas v1 -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
-            <img class="h-full w-2/3 object-cover object-left rounded-lg clickable-img cursor-pointer shadow-sm"
+          <div
+            class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
+            <img
+              class="h-full w-2/3 object-cover object-left rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="gazet1.png" alt="GazeCanvas v1 main screenshot"
               onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=gazet1.png';">
-            <img class="h-full w-1/3 object-cover object-right rounded-lg clickable-img cursor-pointer shadow-sm"
+            <img
+              class="h-full w-1/3 object-cover object-right rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="gazet1bar.png" alt="GazeCanvas v1 side panel"
               onerror="this.onerror=null;this.src='https://placehold.co/200x600/e0e7ff/6366f1?text=gazet1bar.png';">
           </div>
@@ -343,11 +398,14 @@
         <!-- GazeCanvas v2 -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
-            <img class="h-full w-2/3 object-cover object-left rounded-lg clickable-img cursor-pointer shadow-sm"
+          <div
+            class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
+            <img
+              class="h-full w-2/3 object-cover object-left rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="gazet2.png" alt="GazeCanvas v2 main screenshot"
               onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=gazet2.png';">
-            <img class="h-full w-1/3 object-cover object-left rounded-lg clickable-img cursor-pointer shadow-sm"
+            <img
+              class="h-full w-1/3 object-cover object-left rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="gazet2bar.png" alt="GazeCanvas v2 side panel"
               onerror="this.onerror=null;this.src='https://placehold.co/200x600/e0e7ff/6366f1?text=gazet2bar.png';">
           </div>
@@ -367,6 +425,23 @@
                 manage visual targets like images, video, shapes and text for use with a gaze tracking device overlay.
                 Animation can be applied to the targets and triggered by pressing the numbers on a standard keyboard.
                 This requires a gaze tracking device with its own overlay software.</p>
+              <div class="mb-4 bg-slate-50 p-4 rounded-lg border border-slate-100">
+                <p class="text-sm font-semibold text-slate-700 mb-2">Key Features:</p>
+                <ul class="text-sm text-slate-600 columns-1 sm:columns-2 gap-4 space-y-1 list-disc list-inside">
+                  <li>Media Library</li>
+                  <li>Fast image loading</li>
+                  <li>Auto-Load Folders</li>
+                  <li>Include Movement</li>
+                  <li>Add Text</li>
+                  <li>Quick Background Colours</li>
+                  <li>Foreground and Background Images</li>
+                  <li>Create Complexity Images</li>
+                </ul>
+                <p class="text-xs text-slate-500 mt-3 pt-2 border-t border-slate-200">
+                  <span class="font-semibold text-amber-600">Note:</span> This app is designed for rapid setup and
+                  experimentation. It does not save arrays between sessions.
+                </p>
+              </div>
             </div>
             <a href="https://microswitchers.github.io/gazetrakercanvas2/"
               class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use
@@ -376,11 +451,14 @@
         <!-- 3D Printed Tobii Cradle -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
-            <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer"
+          <div
+            class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
+            <img
+              class="h-full w-1/2 object-cover object-center rounded-lg clickable-img border border-slate-300 cursor-pointer"
               src="tcradle1.jpg" alt="3D printed cradle for Tobii Eye Tracker 5, view one"
               onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=tcradle1.jpg';">
-            <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer shadow-sm"
+            <img
+              class="h-full w-1/2 object-cover object-center rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="tcradle2.jpg" alt="3D printed cradle for Tobii Eye Tracker 5, view two"
               onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=tcradle2.jpg';">
           </div>
@@ -410,8 +488,7 @@
       </div>
     </section>
 
-    <!-- Section Divider -->
-    <div class="section-divider"></div>
+
 
     <!-- Calculator Apps Section -->
     <section id="calculator-apps" class="py-12">
@@ -421,16 +498,19 @@
         <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Simple calculation tools to help with everyday field
           tasks</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- CVI Range Rating II Calculator -->
         <div
           class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden card-hover-effect flex flex-col">
-          <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100">
-            <img class="h-full w-1/2 object-cover object-top rounded-lg clickable-img cursor-pointer shadow-sm"
+          <div
+            class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100">
+            <img
+              class="h-full w-1/2 object-cover object-top rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="cvicalc1.jpg" alt="CVI Calculator Screenshot 1"
               onerror="this.onerror=null;this.src='https://placehold.co/300x400/e0f2fe/0ea5e9?text=cvicalc1.jpg';">
-            <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer shadow-sm" src="cvicalc2.png"
-              alt="CVI Calculator Screenshot 2"
+            <img
+              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="cvicalc2.png" alt="CVI Calculator Screenshot 2"
               onerror="this.onerror=null;this.src='https://placehold.co/300x400/e0f2fe/0ea5e9?text=cvicalc2.png';">
           </div>
           <div class="p-6 flex-grow flex flex-col">
@@ -455,8 +535,9 @@
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
           <!-- Replace src with your image path -->
-          <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer shadow-sm" src="agecalc.png"
-            alt="Age by Weeks and Category Calculator Screenshot"
+          <img
+            class="h-56 w-full object-cover object-top clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            src="agecalc.png" alt="Age by Weeks and Category Calculator Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=agecalc.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
@@ -481,7 +562,8 @@
         <!-- Excel Formula Generator -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer shadow-sm"
+          <img
+            class="h-56 w-full object-cover object-top clickable-img border border-slate-300 cursor-pointer shadow-sm"
             src="excelformulasscreen.png" alt="Excel Formula Generator interface showing formula creation tools"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=excelformulasscreen.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -517,12 +599,12 @@
         <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Interactive tools for visual Braille learning and
           practice</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Mechanical Braille Writer Simulator -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img cursor-pointer shadow-sm" src="mecbraille.jpg"
-            alt="Mechanical Braille Writer Simulator Screenshot"
+          <img class="h-56 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            src="mecbraille.jpg" alt="Mechanical Braille Writer Simulator Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/a7f3d0/0f766e?text=mecbraille.jpg';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
@@ -571,12 +653,14 @@
         <!-- SixKey - Braille Practice Pad -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <div class="h-56 w-full flex gap-2 p-2 bg-teal-50">
-            <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer shadow-sm" src="sixkey1.jpg"
-              alt="SixKey Practice Pad Screenshot 1"
+          <div class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-teal-50">
+            <img
+              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="sixkey1.jpg" alt="SixKey Practice Pad Screenshot 1"
               onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=sixkey1.jpg';">
-            <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer shadow-sm" src="sixkey.png"
-              alt="SixKey Practice Pad Screenshot 2"
+            <img
+              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="sixkey.png" alt="SixKey Practice Pad Screenshot 2"
               onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=sixkey.png';">
           </div>
           <div class="p-6 flex-grow flex flex-col">
@@ -617,8 +701,8 @@
         <!-- BrailleFlex -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img cursor-pointer shadow-sm" src="brailleflex.jpg"
-            alt="BrailleFlex Screenshot"
+          <img class="h-56 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            src="brailleflex.jpg" alt="BrailleFlex Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/a7f3d0/0f766e?text=brailleflex.jpg';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
@@ -671,19 +755,19 @@
         <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Hardware and software tools for single switch
           interaction</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="flex justify-center">
         <!-- 3D Printed Single Switch -->
         <div
-          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-3">
+          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col w-full max-w-5xl">
           <!-- Gallery Scroll Container -->
-          <div class="relative h-96 w-full bg-slate-100 group overflow-hidden">
+          <div class="relative h-96 w-full bg-slate-100 group overflow-hidden border-b border-slate-200">
             <div id="alligator-scroll-container"
               class="flex h-full w-full overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar bg-slate-100">
               <!-- Slide 1 -->
               <div
                 class="flex-shrink-0 w-1/2 h-full p-2 snap-start bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 flex items-center justify-center">
                 <img src="asswitch1.jpg"
-                  class="h-full w-full object-cover rounded-lg shadow-sm clickable-img cursor-pointer"
+                  class="h-full w-full object-cover rounded-lg shadow-sm clickable-img border border-slate-300 cursor-pointer"
                   alt="Alligator Switch View 1"
                   onerror="this.onerror=null;this.src='https://placehold.co/300x500/ffe4e6/f43f5e?text=Switch+1';">
               </div>
@@ -692,7 +776,7 @@
               <div
                 class="flex-shrink-0 w-1/2 h-full p-2 snap-start bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 flex items-center justify-center">
                 <img src="asswitch3.jpg"
-                  class="h-full w-full object-cover rounded-lg shadow-sm clickable-img cursor-pointer"
+                  class="h-full w-full object-cover rounded-lg shadow-sm clickable-img border border-slate-300 cursor-pointer"
                   alt="Alligator Switch View 3"
                   onerror="this.onerror=null;this.src='https://placehold.co/300x500/ffe4e6/f43f5e?text=Switch+3';">
               </div>
@@ -700,7 +784,7 @@
               <div
                 class="flex-shrink-0 w-1/2 h-full p-2 snap-start bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 flex items-center justify-center">
                 <img src="switchconcept.png"
-                  class="h-full w-full object-cover rounded-lg shadow-sm clickable-img cursor-pointer"
+                  class="h-full w-full object-cover rounded-lg shadow-sm clickable-img border border-slate-300 cursor-pointer"
                   alt="Alligator Switch Concept"
                   onerror="this.onerror=null;this.src='https://placehold.co/300x500/ffe4e6/f43f5e?text=Concept';">
               </div>
@@ -831,8 +915,7 @@
       </div>
     </section>
 
-    <!-- Section Divider -->
-    <div class="section-divider"></div>
+
 
     <!-- Single Switch Apps Section -->
     <section id="single-switch-apps" class="py-12">
@@ -846,8 +929,8 @@
         <!-- Cause and Effect Fireworks -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img cursor-pointer shadow-sm" src="image4.png"
-            alt="Cause and Effect Fireworks Screenshot"
+          <img class="h-56 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            src="image4.png" alt="Cause and Effect Fireworks Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3e8ff/8b5cf6?text=image4.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
@@ -869,8 +952,8 @@
         <!-- Cause and Effect Ball Drop -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img cursor-pointer shadow-sm" src="image6.png"
-            alt="Cause and Effect Ball Drop Screenshot"
+          <img class="h-56 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            src="image6.png" alt="Cause and Effect Ball Drop Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3e8ff/8b5cf6?text=image6.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
@@ -892,8 +975,8 @@
         <!-- AstroBounce -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img cursor-pointer shadow-sm" src="image9.png"
-            alt="AstroBounce Screenshot"
+          <img class="h-56 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            src="image9.png" alt="AstroBounce Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3e8ff/8b5cf6?text=image9.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
@@ -915,12 +998,15 @@
         <!-- HarmonyHopper -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <div class="h-56 w-full flex gap-2 p-2 bg-gradient-to-br from-purple-50 via-violet-50 to-purple-100">
-            <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer shadow-sm" src="image10.png"
-              alt="HarmonyHopper Screenshot 1"
+          <div
+            class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-purple-50 via-violet-50 to-purple-100">
+            <img
+              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="image10.png" alt="HarmonyHopper Screenshot 1"
               onerror="this.onerror=null;this.src='https://placehold.co/300x400/f3e8ff/8b5cf6?text=image10.png';">
-            <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer shadow-sm" src="image11.png"
-              alt="HarmonyHopper Screenshot 2"
+            <img
+              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="image11.png" alt="HarmonyHopper Screenshot 2"
               onerror="this.onerror=null;this.src='https://placehold.co/300x400/f3e8ff/8b5cf6?text=image11.png';">
           </div>
           <div class="p-6 flex-grow flex flex-col">
@@ -956,11 +1042,14 @@
       <div class="flex justify-center">
         <!-- GlowFrames -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col w-full max-w-2xl">
-          <div class="h-80 w-full flex gap-2 p-2 bg-gradient-to-br from-emerald-50 via-green-50 to-lime-50">
-            <img class="h-full w-1/2 object-cover object-top rounded-lg clickable-img cursor-pointer shadow-sm"
+          <div
+            class="h-80 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-emerald-50 via-green-50 to-lime-50">
+            <img
+              class="h-full w-1/2 object-cover object-top rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="glowframes.png" alt="GlowFrames Screenshot 1"
               onerror="this.onerror=null;this.src='https://placehold.co/300x400/dcfce7/22c55e?text=glowframes.png';">
-            <img class="h-full w-1/2 object-cover object-top rounded-lg clickable-img cursor-pointer shadow-sm"
+            <img
+              class="h-full w-1/2 object-cover object-top rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="glowframes2.png" alt="GlowFrames Screenshot 2"
               onerror="this.onerror=null;this.src='https://placehold.co/300x400/dcfce7/22c55e?text=glowframes2.png';">
           </div>
@@ -997,9 +1086,10 @@
       <div class="flex justify-center">
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col w-full max-w-2xl">
-          <div class="h-80 w-full flex gap-2 p-2 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
-            <img class="h-full w-full object-contain clickable-img cursor-pointer shadow-sm" src="microcontroller.png"
-              alt="Microcontroller Device"
+          <div
+            class="h-80 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
+            <img class="h-full w-full object-contain clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="microcontroller.png" alt="Microcontroller Device"
               onerror="this.onerror=null;this.src='https://placehold.co/800x600/ffedd5/f97316?text=Microcontroller';">
           </div>
           <div class="p-6 flex-grow flex flex-col">
@@ -1036,65 +1126,7 @@
       <div class="section-divider"></div>
     </section>
 
-    <!-- AAC Section -->
-    <section id="aac" class="py-12">
-      <div class="text-center mb-12">
-        <h3 class="text-3xl font-bold text-slate-900 mb-4">AAC</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-pink-400 via-rose-500 to-red-500 mx-auto rounded-full"></div>
-        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Augmentative and Alternative Communication Tools</p>
-      </div>
-      <div class="flex justify-center">
-        <!-- AAC Visual Sandbox -->
-        <div
-          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col w-full max-w-2xl">
-          <div class="h-80 w-full flex gap-2 p-2 bg-gradient-to-br from-pink-50 via-rose-50 to-red-50">
-            <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer shadow-sm"
-              src="aacsandbox1.png" alt="AAC Visual Sandbox Interface"
-              onerror="this.onerror=null;this.src='https://placehold.co/800x600/fce7f3/db2777?text=AAC+Sandbox+1';">
-            <img class="h-full w-1/2 object-cover object-left rounded-lg clickable-img cursor-pointer shadow-sm"
-              src="aacsandbox2.png" alt="AAC Visual Sandbox Settings"
-              onerror="this.onerror=null;this.src='https://placehold.co/800x600/fce7f3/db2777?text=AAC+Sandbox+2';">
-          </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow">
-              <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
-                <li><span
-                    class="text-xs inline-block bg-pink-600 text-white px-2 py-1 rounded-full font-semibold">AAC</span>
-                </li>
-              </ul>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">AAC Visual Sandbox</h3>
-              <p class="text-slate-700 mb-4 leading-relaxed">An app for rapidly displaying images in simple arrays and
-                trying out
-                different visual adaptations. Designed for rapid setup, this tool allows professionals to quickly pull
-                up
-                a few pictures for assessment purposes on any device.</p>
 
-              <div class="mb-4 bg-slate-50 p-4 rounded-lg border border-slate-100">
-                <p class="text-sm font-semibold text-slate-700 mb-2">Key Features:</p>
-                <ul class="text-sm text-slate-600 columns-1 sm:columns-2 gap-4 space-y-1 list-disc list-inside">
-                  <li>Voice output (TTS)</li>
-                  <li>Magnification tools</li>
-                  <li>Colour customization</li>
-                  <li>Quick text-based symbols</li>
-                  <li>Find-It games</li>
-                  <li>Other Visual Adaptations</li>
-                </ul>
-                <p class="text-xs text-slate-500 mt-3 pt-2 border-t border-slate-200">
-                  <span class="font-semibold text-amber-600">Note:</span> This app is designed for rapid setup and
-                  experimentation. It does not save arrays between sessions.
-                </p>
-              </div>
-            </div>
-            <a href="https://microswitchers.github.io/ACCVisualSandbox/"
-              class="mt-4 inline-block bg-pink-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-pink-700 transition-colors text-center">Use
-              AAC Visual Sandbox</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section Divider -->
-      <div class="section-divider"></div>
-    </section>
 
     <!-- Experimental Projects Section -->
     <section id="experimental-projects" class="py-12">
@@ -1107,8 +1139,9 @@
         <!-- Assistive Device Activation Tester -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover object-top clickable-img cursor-pointer shadow-sm" src="buttontest.png"
-            alt="Assistive Device Activation Tester Screenshot"
+          <img
+            class="h-56 w-full object-cover object-top clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            src="buttontest.png" alt="Assistive Device Activation Tester Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=buttontest.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
@@ -1129,8 +1162,8 @@
         <!-- Appointment Reminder App -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img cursor-pointer shadow-sm" src="appointmentreminder.png"
-            alt="Appointment Reminder App Screenshot"
+          <img class="h-56 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            src="appointmentreminder.png" alt="Appointment Reminder App Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=appointmentreminder.png';">
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
