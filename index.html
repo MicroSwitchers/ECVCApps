@@ -250,7 +250,7 @@
           dedicated to exploring technology related to blind and low-vision early intervention and related fields.
         </p>
         <div class="mt-10 flex flex-col sm:flex-row justify-start gap-4">
-          <a href="#calculator-apps"
+          <a href="#gaze-tracking"
             class="btn-primary inline-block text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition-all text-center">
             Explore Apps
             <svg class="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -675,14 +675,58 @@
         <!-- 3D Printed Single Switch -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-3">
-          <div class="h-96 w-full flex gap-2 p-2 bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100">
-            <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer"
-              src="switchconcept.png" alt="Concept design of the 3D printed switch"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ffe4e6/f43f5e?text=Concept';">
-            <img class="h-full w-1/2 object-cover object-center rounded-lg clickable-img cursor-pointer shadow-sm"
-              src="3Dprintswitch.jpg" alt="Photograph of the 3D printed switch prototype"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ffe4e6/f43f5e?text=Prototype';">
+          <!-- Gallery Scroll Container -->
+          <div class="relative h-96 w-full bg-slate-100 group overflow-hidden">
+            <div id="alligator-scroll-container"
+              class="flex h-full w-full overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar bg-slate-100">
+              <!-- Slide 1 -->
+              <div
+                class="flex-shrink-0 w-1/2 h-full p-2 snap-start bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 flex items-center justify-center">
+                <img src="asswitch1.jpg"
+                  class="h-full w-full object-cover rounded-lg shadow-sm clickable-img cursor-pointer"
+                  alt="Alligator Switch View 1"
+                  onerror="this.onerror=null;this.src='https://placehold.co/300x500/ffe4e6/f43f5e?text=Switch+1';">
+              </div>
+
+              <!-- Slide 3 -->
+              <div
+                class="flex-shrink-0 w-1/2 h-full p-2 snap-start bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 flex items-center justify-center">
+                <img src="asswitch3.jpg"
+                  class="h-full w-full object-cover rounded-lg shadow-sm clickable-img cursor-pointer"
+                  alt="Alligator Switch View 3"
+                  onerror="this.onerror=null;this.src='https://placehold.co/300x500/ffe4e6/f43f5e?text=Switch+3';">
+              </div>
+              <!-- Slide 4 -->
+              <div
+                class="flex-shrink-0 w-1/2 h-full p-2 snap-start bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 flex items-center justify-center">
+                <img src="switchconcept.png"
+                  class="h-full w-full object-cover rounded-lg shadow-sm clickable-img cursor-pointer"
+                  alt="Alligator Switch Concept"
+                  onerror="this.onerror=null;this.src='https://placehold.co/300x500/ffe4e6/f43f5e?text=Concept';">
+              </div>
+            </div>
+
+            <!-- Prev Button -->
+            <button onclick="scrollAlligator(-1)"
+              class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-rose-600 p-2 rounded-full shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-rose-500 opacity-0 group-hover:opacity-100 z-10"
+              aria-label="Scroll left">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+
+            <!-- Next Button -->
+            <button onclick="scrollAlligator(1)"
+              class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-rose-600 p-2 rounded-full shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-rose-500 opacity-0 group-hover:opacity-100 z-10"
+              aria-label="Scroll right">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
           </div>
+
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
               <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
@@ -691,24 +735,93 @@
                   </span></li>
                 <li><span class="text-xs inline-block bg-orange-500 text-white px-2 py-1 rounded-full font-semibold">3D
                     Printing</span></li>
-                <li><span
-                    class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full font-medium">Concept
-                  </span></li>
               </ul>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">3D Printed Single Switch</h3>
-              <p class="text-slate-700 mb-4 leading-relaxed">This is a very early brainstorming project to look at how
-                to design
-                inexpensive adapted single switches that respond to very light activation force. I created it in Blender
-                3D and am providing a Blender file and an STL 3D print file for download. The switch is currently pinned
-                on one side to make it a flap switch, but I'm researching ways to make it a light touch button switch.
-                Ideas and feedback are appreciated.</p>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">The Alligator Switch</h3>
+              <p class="text-slate-700 mb-4 leading-relaxed">
+                The Alligator Switch is a 3D-printable access tool designed to support individuals with unique movement
+                patterns. Its low-profile, contoured shape allows it to be positioned at various angles under a user’s
+                hand to find the most ergonomic fit, while the activation mechanism requires minimal movement.
+              </p>
+              <p class="text-slate-700 mb-4 leading-relaxed">
+                This print-in-place design is printed as a single unit. With the addition of a tactile switch and a
+                cord, the entire assembly consists of only three parts. This project is ideal for makers with moderate
+                3D printing experience and basic soldering skills.
+              </p>
+
+              <details class="group mb-4 marker:content-none">
+                <summary
+                  class="flex items-center font-bold text-slate-800 cursor-pointer hover:text-rose-600 transition-colors list-none">
+                  <span class="mr-2 transition-transform group-open:rotate-90">▶</span>
+                  🛠️ Build Specifications & Materials
+                </summary>
+                <div class="mt-2 pl-4 border-l-2 border-rose-200">
+                  <ul class="list-none space-y-2 text-sm text-slate-700">
+                    <li><strong class="font-semibold text-slate-900">Material:</strong> PETG – Recommended for its
+                      durability. PLA is more prone to cracking under the repeated pressure applied to the hinges.</li>
+                    <li><strong class="font-semibold text-slate-900">Print Orientation:</strong> Upright – Position with
+                      hinges on the base so print lines orbit the hinges rather than passing through them for maximum
+                      strength.</li>
+                    <li><strong class="font-semibold text-slate-900">Tactile Switch:</strong> Omron B3F-4055 (or
+                      similar) – Chosen for its specific push-back force. Note: If using a different switch, you may
+                      need
+                      to adjust the base tolerances.</li>
+                    <li><strong class="font-semibold text-slate-900">Cord:</strong> 3.5mm Male Mono Jack – Or a 3.5mm
+                      mono plug cord/patch cable to allow for adjustable lengths.</li>
+                    <li><strong class="font-semibold text-slate-900">Adhesive:</strong> Hot Glue – Used to secure the
+                      switch and the cable in its channel.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details class="group mb-4 marker:content-none">
+                <summary
+                  class="flex items-center font-bold text-slate-800 cursor-pointer hover:text-rose-600 transition-colors list-none">
+                  <span class="mr-2 transition-transform group-open:rotate-90">▶</span>
+                  📖 Assembly & Pro-Tips
+                </summary>
+                <div class="mt-2 text-sm text-slate-700 pl-4 border-l-2 border-rose-200 space-y-2">
+                  <p><strong class="font-semibold">Switch Placement:</strong> Use tweezers to carefully pry the switch
+                    open and place it inside. A small bead of hot glue on the bottom of the switch can help raise it by
+                    a millimeter to achieve the perfect activation feel.</p>
+                  <p><strong class="font-semibold">Testing & Adjustment:</strong> Always test the tactile switch
+                    activation before gluing. The design intentionally leaves some space for builders to dial in the
+                    perfect activation feel. If needed (and only if needed), a bead of hot glue or a small shim can
+                    boost
+                    the switch up by a millimeter or two.</p>
+                  <p><strong class="font-semibold">Usage:</strong> When positioned correctly, the user can rest their
+                    hand
+                    gently on the switch, and a small movement will activate it.</p>
+                  <p><strong class="font-semibold">Feedback:</strong> When calibrated correctly, the switch provides a
+                    highly satisfying tactile and auditory "click."</p>
+                </div>
+              </details>
+
+              <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-md">
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-amber-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd"
+                        d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <div class="ml-3">
+                    <h3 class="text-sm font-medium text-amber-800">Safety Note</h3>
+                    <div class="mt-2 text-sm text-amber-700">
+                      <p>All single switches pose a potential choking hazard due to the cord or risk of breakage. This
+                        device should be used under supervision with children or any individual at risk of placing small
+                        parts in their mouth.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="mt-4 flex flex-col sm:flex-row gap-3">
-              <a href="switchprint.stl" download="switchprint.stl"
+              <a href="Single Flap Alligator Switch V3.stl" download="Single Flap Alligator Switch V3.stl"
                 class="flex-1 text-center bg-rose-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-rose-700 transition-colors">
                 Download .STL
               </a>
-              <a href="switchblend.blend" download="switchblend.blend"
+              <a href="Single Flap Alligator Switch V3.blend" download="Single Flap Alligator Switch V3.blend"
                 class="flex-1 text-center bg-slate-500 text-white font-semibold px-5 py-2 rounded-lg hover:bg-slate-600 transition-colors">
                 Download .BLEND
               </a>
@@ -938,7 +1051,7 @@
             <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer shadow-sm"
               src="aacsandbox1.png" alt="AAC Visual Sandbox Interface"
               onerror="this.onerror=null;this.src='https://placehold.co/800x600/fce7f3/db2777?text=AAC+Sandbox+1';">
-            <img class="h-full w-1/2 object-cover rounded-lg clickable-img cursor-pointer shadow-sm"
+            <img class="h-full w-1/2 object-cover object-left rounded-lg clickable-img cursor-pointer shadow-sm"
               src="aacsandbox2.png" alt="AAC Visual Sandbox Settings"
               onerror="this.onerror=null;this.src='https://placehold.co/800x600/fce7f3/db2777?text=AAC+Sandbox+2';">
           </div>
@@ -1301,6 +1414,20 @@
       console.log('Running as PWA');
       // Add any PWA-specific functionality here
       document.body.classList.add('pwa-mode');
+    }
+  </script>
+  <script>
+    // Alligator Switch Gallery Scroll Logic
+    function scrollAlligator(direction) {
+      const container = document.getElementById('alligator-scroll-container');
+      if (container) {
+        // Scroll by half the container width
+        const scrollAmount = container.clientWidth * 0.5;
+        container.scrollBy({
+          left: scrollAmount * direction,
+          behavior: 'smooth'
+        });
+      }
     }
   </script>
 </body>
