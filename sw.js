@@ -1,8 +1,11 @@
 // Service Worker for App Menu PWA
-const CACHE_NAME = 'app-menu-v1.0.0';
+// Update this version string whenever you make changes to trigger cache refresh
+const CACHE_VERSION = '2026.02.09.1';
+const CACHE_NAME = `app-menu-v${CACHE_VERSION}`;
 const urlsToCache = [
   './',
   './index.html',
+  './switches.html',
   './manifest.json',
   './icon.svg',
   // Add critical images
@@ -58,37 +61,56 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - network-first for HTML, cache-first for assets
 self.addEventListener('fetch', (event) => {
+  const request = event.request;
+  
+  // Network-first for HTML documents (ensures fresh content)
+  if (request.destination === 'document' || request.url.endsWith('.html')) {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          // Clone and cache the fresh response
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(request, responseToCache);
+          });
+          return response;
+        })
+        .catch(() => {
+          // Offline - fall back to cache
+          return caches.match(request).then((cached) => {
+            return cached || caches.match('./index.html');
+          });
+        })
+    );
+    return;
+  }
+  
+  // Cache-first for other assets (images, CSS, JS)
   event.respondWith(
-    caches.match(event.request)
+    caches.match(request)
       .then((response) => {
-        // Return cached version or fetch from network
         if (response) {
           return response;
         }
         
-        // Clone the request because it's a stream
-        const fetchRequest = event.request.clone();
+        const fetchRequest = request.clone();
         
         return fetch(fetchRequest).then((response) => {
-          // Check if we received a valid response
           if (!response || response.status !== 200 || response.type !== 'basic') {
             return response;
           }
           
-          // Clone the response because it's a stream
           const responseToCache = response.clone();
-          
-          caches.open(CACHE_NAME)
-            .then((cache) => {
-              cache.put(event.request, responseToCache);
-            });
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(request, responseToCache);
+          });
           
           return response;
         }).catch(() => {
-          // If both cache and network fail, return a custom offline page
-          if (event.request.destination === 'document') {
+          // If fetch fails for document, return offline page
+          if (request.destination === 'document') {
             return caches.match('./index.html');
           }
         });
