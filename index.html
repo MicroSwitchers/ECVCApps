@@ -977,8 +977,13 @@
           const saved = JSON.parse(localStorage.getItem('storytap_library_v1')) || [];
           return saved.map(s => ({
             ...s,
-            status: s.status || 'ready',
-            progress: s.progress || 100,
+            // CRITICAL: Reset 'processing' to 'ready' on page load
+            // Prevents infinite crash-reload loop on iOS when a download
+            // caused a memory crash — without this, the download restarts
+            // immediately on reload, crashing again forever
+            status: (s.status === 'processing') ? 'ready' : (s.status || 'ready'),
+            progress: (s.status === 'processing') ? 0 : (s.progress || 100),
+            progressText: (s.status === 'processing') ? null : s.progressText,
             voice: s.voice || 'af_heart'
             // Speed no longer stored (always uses NATURAL_SPEED)
           }));
@@ -1097,125 +1102,135 @@
       const processStory = async (story) => {
         processingRef.current = story.id;
 
-        // Request notification permission once at start of first download
-        if ('Notification' in window && Notification.permission === 'default') {
-          Notification.requestPermission().catch(() => { });
-        }
+        try {
+          // Request notification permission once at start of first download
+          if ('Notification' in window && Notification.permission === 'default') {
+            Notification.requestPermission().catch(() => { });
+          }
 
-        const sentences = splitIntoSentences(story.text);
+          const sentences = splitIntoSentences(story.text);
 
-        // Plain title in cache list (removed "Title:" prefix for cleaner speech)
-        const titleText = story.title;
-        // Also cache "The End." so it's ready instantly
-        const allItemsToCache = [titleText, ...sentences, "The End."];
-        const total = allItemsToCache.length;
+          // Plain title in cache list (removed "Title:" prefix for cleaner speech)
+          const titleText = story.title;
+          // Also cache "The End." so it's ready instantly
+          const allItemsToCache = [titleText, ...sentences, "The End."];
+          const total = allItemsToCache.length;
 
-        if (sentences.length === 0) {
-          setLibrary(prev => prev.map(s => s.id === story.id ? { ...s, status: 'cached', progress: 100 } : s));
-          processingRef.current = null;
-          return;
-        }
-
-        // Ensure model is loaded before we start downloading
-        if (!ttsRef.current) {
-          setModelStatus('Loading voice engine for download...');
-          const success = await loadKokoroModel();
-          if (!success) {
-            console.error('Failed to load model for download');
-            setLibrary(prev => prev.map(s => s.id === story.id ? { ...s, status: 'ready', progress: 0 } : s));
+          if (sentences.length === 0) {
+            setLibrary(prev => prev.map(s => s.id === story.id ? { ...s, status: 'cached', progress: 100 } : s));
             processingRef.current = null;
             return;
           }
-        }
 
-        // Mobile-aware pacing: yield between items to keep UI responsive
-        const device = deviceInfoRef.current;
-        const isMobile = device.isMobile;
-        const isIOS = device.isIOS;
-        // Single delay per item — enough to prevent ANR without freezing progress
-        const ITEM_DELAY = isIOS ? 400 : (isMobile ? 150 : 30);
-        // Extra pause every N items to let GC run (especially important on iOS)
-        const GC_INTERVAL = isIOS ? 3 : (isMobile ? 5 : 10);
-        const GC_PAUSE = isIOS ? 800 : (isMobile ? 300 : 100);
-
-        let completed = 0;
-        let consecutiveErrors = 0;
-        const MAX_CONSECUTIVE_ERRORS = 5; // Bail out if too many failures in a row
-
-        // Set initial progress to show download has started
-        setLibrary(prev => prev.map(s => s.id === story.id ? {
-          ...s,
-          progress: 0,
-          progressText: `0 of ${total}`
-        } : s));
-
-        for (let i = 0; i < allItemsToCache.length; i++) {
-          // Check for cancellation before each item
-          if (processingRef.current !== story.id) {
-            console.log('Download cancelled for story:', story.id);
-            return;
-          }
-
-          try {
-            // Generate and cache audio (uses story's voice, speed locked to NATURAL_SPEED)
-            await generateKokoroAudio(allItemsToCache[i], story.voice, NATURAL_SPEED, true);
-            consecutiveErrors = 0; // Reset on success
-          } catch (e) {
-            console.warn('Error caching item:', e);
-            consecutiveErrors++;
-
-            // Pause after error to let browser recover
-            await new Promise(r => setTimeout(r, isIOS ? 1000 : 500));
-
-            // Bail out if device is struggling (too many failures in a row)
-            if (consecutiveErrors >= MAX_CONSECUTIVE_ERRORS) {
-              console.error('Too many consecutive errors, aborting download');
+          // Ensure model is loaded before we start downloading
+          if (!ttsRef.current) {
+            setModelStatus('Loading voice engine for download...');
+            const success = await loadKokoroModel();
+            if (!success) {
+              console.error('Failed to load model for download');
               setLibrary(prev => prev.map(s => s.id === story.id ? { ...s, status: 'ready', progress: 0 } : s));
               processingRef.current = null;
               return;
             }
           }
 
-          completed++;
-          const progressPercent = Math.round((completed / total) * 100);
+          // Mobile-aware pacing: yield between items to keep UI responsive
+          const device = deviceInfoRef.current;
+          const isMobile = device.isMobile;
+          const isIOS = device.isIOS;
+          // Single delay per item — enough to prevent ANR without freezing progress
+          const ITEM_DELAY = isIOS ? 400 : (isMobile ? 150 : 30);
+          // Extra pause every N items to let GC run (especially important on iOS)
+          const GC_INTERVAL = isIOS ? 3 : (isMobile ? 5 : 10);
+          const GC_PAUSE = isIOS ? 800 : (isMobile ? 300 : 100);
 
-          // Update UI every 3 items or on last item
-          if (i % 3 === 2 || i === allItemsToCache.length - 1) {
-            setLibrary(prev => prev.map(s => s.id === story.id ? {
-              ...s,
-              progress: progressPercent,
-              progressText: `${completed} of ${total}`
-            } : s));
-          }
+          let completed = 0;
+          let consecutiveErrors = 0;
+          const MAX_CONSECUTIVE_ERRORS = 5; // Bail out if too many failures in a row
 
-          // Yield to browser after each item (keeps UI responsive, prevents ANR)
-          await yieldToBrowser();
-          await new Promise(r => setTimeout(r, ITEM_DELAY));
-
-          // Extra GC pause at intervals to prevent memory pressure
-          if (i > 0 && i % GC_INTERVAL === 0) {
-            await new Promise(r => setTimeout(r, GC_PAUSE));
-          }
-        }
-
-        if (processingRef.current === story.id) {
+          // Set initial progress to show download has started
           setLibrary(prev => prev.map(s => s.id === story.id ? {
             ...s,
-            status: 'cached',
-            progress: 100,
-            progressText: null
+            progress: 0,
+            progressText: `0 of ${total}`
+          } : s));
+
+          for (let i = 0; i < allItemsToCache.length; i++) {
+            // Check for cancellation before each item
+            if (processingRef.current !== story.id) {
+              console.log('Download cancelled for story:', story.id);
+              return;
+            }
+
+            try {
+              // Generate and cache audio (uses story's voice, speed locked to NATURAL_SPEED)
+              await generateKokoroAudio(allItemsToCache[i], story.voice, NATURAL_SPEED, true);
+              consecutiveErrors = 0; // Reset on success
+            } catch (e) {
+              console.warn('Error caching item:', e);
+              consecutiveErrors++;
+
+              // Pause after error to let browser recover
+              await new Promise(r => setTimeout(r, isIOS ? 1000 : 500));
+
+              // Bail out if device is struggling (too many failures in a row)
+              if (consecutiveErrors >= MAX_CONSECUTIVE_ERRORS) {
+                console.error('Too many consecutive errors, aborting download');
+                setLibrary(prev => prev.map(s => s.id === story.id ? { ...s, status: 'ready', progress: 0 } : s));
+                processingRef.current = null;
+                return;
+              }
+            }
+
+            completed++;
+            const progressPercent = Math.round((completed / total) * 100);
+
+            // Update UI every 3 items or on last item
+            if (i % 3 === 2 || i === allItemsToCache.length - 1) {
+              setLibrary(prev => prev.map(s => s.id === story.id ? {
+                ...s,
+                progress: progressPercent,
+                progressText: `${completed} of ${total}`
+              } : s));
+            }
+
+            // Yield to browser after each item (keeps UI responsive, prevents ANR)
+            await yieldToBrowser();
+            await new Promise(r => setTimeout(r, ITEM_DELAY));
+
+            // Extra GC pause at intervals to prevent memory pressure
+            if (i > 0 && i % GC_INTERVAL === 0) {
+              await new Promise(r => setTimeout(r, GC_PAUSE));
+            }
+          }
+
+          if (processingRef.current === story.id) {
+            setLibrary(prev => prev.map(s => s.id === story.id ? {
+              ...s,
+              status: 'cached',
+              progress: 100,
+              progressText: null
+            } : s));
+            processingRef.current = null;
+            playCue('download_done');
+
+            // Send OS notification
+            sendNotification(
+              '✅ Story Ready!',
+              `"${story.title}" is ready to read.`
+            );
+
+            // Update cache stats display
+            updateCacheStats();
+          }
+        } catch (fatalError) {
+          // Safety net: if ANYTHING unexpected throws, reset the story so it
+          // doesn't get stuck in 'processing' and cause a crash-reload loop
+          console.error('processStory fatal error:', fatalError);
+          setLibrary(prev => prev.map(s => s.id === story.id ? {
+            ...s, status: 'ready', progress: 0, progressText: null
           } : s));
           processingRef.current = null;
-          playCue('download_done');
-
-          // Send OS notification
-          sendNotification(
-            '✅ Story Ready!',
-            `"${story.title}" is ready to read.`
-          );
-
-          // Update cache stats display
-          updateCacheStats();
         }
       };
 
