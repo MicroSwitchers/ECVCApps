@@ -1,99 +1,45 @@
 {
-  "name": "App Menu - Prototype apps and Field Resources",
-  "short_name": "App Menu",
-  "description": "A collection of prototype apps and field resources by Niall Brown, including calculators, braille tools, single switch apps, assistive devices, and microcontroller projects.",
+  "name": "StoryTap: Touch Books",
+  "short_name": "StoryTap",
+  "description": "Interactive touch stories for children with accessibility features.",
   "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#f8fafc",
-  "theme_color": "#3b82f6",
+  "id": "storytap-touch-books",
+  "display": "fullscreen",
+  "display_override": [
+    "fullscreen",
+    "standalone",
+    "minimal-ui"
+  ],
+  "background_color": "#0f172a",
+  "theme_color": "#6366f1",
   "orientation": "any",
   "scope": "./",
-  "lang": "en",
-  "categories": ["education", "productivity", "utilities", "accessibility"],
+  "categories": [
+    "education",
+    "kids",
+    "books"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
   "icons": [
     {
-      "src": "./appsicon.png",
-      "sizes": "48x48",
-      "type": "image/png",
-      "purpose": "any"
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     },
     {
-      "src": "./appsicon.png", 
+      "src": "icon.svg",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./appsicon.png",
-      "sizes": "512x512", 
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./appsicon.svg",
-      "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
-      "src": "./appsicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml", 
-      "purpose": "maskable"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Calculator Apps",
-      "short_name": "Calculators",
-      "description": "Access calculator applications",
-      "url": "./index.html#calculator-apps",
-      "icons": [
-        {
-          "src": "./appsicon.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
-        }
-      ]
-    },
-    {
-      "name": "Braille Apps",
-      "short_name": "Braille",
-      "description": "Access Braille learning tools",
-      "url": "./index.html#braille",
-      "icons": [
-        {
-          "src": "./appsicon.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
-        }
-      ]
-    },
-    {
-      "name": "Single Switch Apps",
-      "short_name": "Switch Apps",
-      "description": "Access single switch applications",
-      "url": "./index.html#single-switch-apps",
-      "icons": [
-        {
-          "src": "./appsicon.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
-        }
-      ]
-    },
-    {
-      "name": "Assistive Devices",
-      "short_name": "Assistive",
-      "description": "Access assistive device tools",
-      "url": "./index.html#assistive-devices",
-      "icons": [
-        {
-          "src": "./appsicon.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
-        }
-      ]
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ]
 }

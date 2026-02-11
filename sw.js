@@ -1,147 +1,148 @@
-// Service Worker for App Menu PWA
-// Update this version string whenever you make changes to trigger cache refresh
-const CACHE_VERSION = '2026.02.09.1';
-const CACHE_NAME = `app-menu-v${CACHE_VERSION}`;
-const urlsToCache = [
+const CACHE_NAME = 'storytap-v1.0.0';
+const ASSETS_TO_CACHE = [
   './',
   './index.html',
-  './switches.html',
   './manifest.json',
   './icon.svg',
-  // Add critical images
-  './cvicalc1.jpg',
-  './cvicalc2.png',
-  './agecalc.png',
-  './endtimecalc.png',
-  './mecbraille.jpg',
-  './sixkey1.jpg',
-  './sixkey.png',
-  './brailleflex.jpg',
-  // External resources
-  'https://cdn.tailwindcss.com',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
+  './quickstories.js'
 ];
 
-// Install event - cache resources
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-      .catch((error) => {
-        console.log('Cache installation failed:', error);
-        // Continue installation even if some resources fail to cache
-        return caches.open(CACHE_NAME)
-          .then((cache) => {
-            // Cache essential files only
-            const essentialFiles = ['./', './index.html', './manifest.json', './icon.svg'];
-            return cache.addAll(essentialFiles);
-          });
-      })
-  );
-  self.skipWaiting();
-});
+// External resources to cache for offline support
+const EXTERNAL_RESOURCES = [
+  'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Crimson+Pro:wght@400;500;600&display=swap'
+];
 
-// Activate event - clean up old caches
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
+self.addEventListener('install', (e) => {
+  self.skipWaiting();
+  e.waitUntil(
+    caches.open(CACHE_NAME).then(async (cache) => {
+      console.log('SW: Caching core assets');
+
+      // Cache local assets
+      await cache.addAll(ASSETS_TO_CACHE).catch(err => {
+        console.warn('SW: Some local assets failed to cache', err);
+      });
+
+      // Try to cache external resources (fonts), but don't fail if offline
+      for (const url of EXTERNAL_RESOURCES) {
+        try {
+          await cache.add(url);
+        } catch (err) {
+          console.warn('SW: External resource failed to cache:', url);
+        }
+      }
     })
   );
-  self.clients.claim();
 });
 
-// Fetch event - network-first for HTML, cache-first for assets
-self.addEventListener('fetch', (event) => {
-  const request = event.request;
-  
-  // Network-first for HTML documents (ensures fresh content)
-  if (request.destination === 'document' || request.url.endsWith('.html')) {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          // Clone and cache the fresh response
-          const responseToCache = response.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(request, responseToCache);
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keyList) => {
+      return Promise.all(keyList.map((key) => {
+        if (key !== CACHE_NAME) {
+          console.log('SW: Removing old cache', key);
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+  return self.clients.claim();
+});
+
+self.addEventListener('fetch', (e) => {
+  const url = new URL(e.request.url);
+
+  // Skip non-GET requests
+  if (e.request.method !== 'GET') return;
+
+  // Skip chrome-extension and other non-http(s) requests
+  if (!url.protocol.startsWith('http')) return;
+
+  // Navigation requests: Network first, fall back to cache
+  if (e.request.mode === 'navigate') {
+    e.respondWith(
+      fetch(e.request)
+        .then(response => {
+          // Clone and cache the response
+          const responseClone = response.clone();
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(e.request, responseClone);
           });
           return response;
         })
         .catch(() => {
-          // Offline - fall back to cache
-          return caches.match(request).then((cached) => {
-            return cached || caches.match('./index.html');
-          });
+          return caches.match('./index.html') || caches.match(e.request);
         })
     );
     return;
   }
-  
-  // Cache-first for other assets (images, CSS, JS)
-  event.respondWith(
-    caches.match(request)
-      .then((response) => {
-        if (response) {
-          return response;
-        }
-        
-        const fetchRequest = request.clone();
-        
-        return fetch(fetchRequest).then((response) => {
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
+
+  // Font files: Cache first (fonts rarely change)
+  if (url.hostname.includes('fonts.googleapis.com') ||
+    url.hostname.includes('fonts.gstatic.com') ||
+    url.pathname.endsWith('.woff2') ||
+    url.pathname.endsWith('.woff')) {
+    e.respondWith(
+      caches.match(e.request).then(cached => {
+        if (cached) return cached;
+        return fetch(e.request).then(response => {
+          if (response.ok) {
+            const responseClone = response.clone();
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(e.request, responseClone);
+            });
           }
-          
-          const responseToCache = response.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(request, responseToCache);
-          });
-          
           return response;
-        }).catch(() => {
-          // If fetch fails for document, return offline page
-          if (request.destination === 'document') {
-            return caches.match('./index.html');
-          }
         });
       })
-  );
-});
-
-// Background sync for when the app comes back online
-self.addEventListener('sync', (event) => {
-  if (event.tag === 'background-sync') {
-    console.log('Background sync triggered');
-    // Add any background sync logic here
+    );
+    return;
   }
-});
 
-// Push notifications (if needed in the future)
-self.addEventListener('push', (event) => {
-  console.log('Push message received');
-  // Add push notification logic here if needed
-});
+  // CDN resources (esm.sh, unpkg, huggingface, etc): Cache first with revalidation
+  if (url.hostname.includes('esm.sh') ||
+    url.hostname.includes('unpkg.com') ||
+    url.hostname.includes('huggingface.co') ||
+    url.hostname.includes('cdn.')) {
+    e.respondWith(
+      caches.open(CACHE_NAME).then(async (cache) => {
+        const cachedResponse = await cache.match(e.request);
 
-// Handle app shortcuts
-self.addEventListener('notificationclick', (event) => {
-  event.notification.close();
-  
-  event.waitUntil(
-    clients.matchAll().then((clientList) => {
-      if (clientList.length > 0) {
-        return clientList[0].focus();
-      }
-      return clients.openWindow('./index.html');
-    })
+        // Start network fetch in background
+        const networkFetch = fetch(e.request).then((networkResponse) => {
+          if (networkResponse && networkResponse.ok) {
+            cache.put(e.request, networkResponse.clone());
+          }
+          return networkResponse;
+        }).catch(() => null);
+
+        // Return cached if available, else wait for network
+        return cachedResponse || networkFetch;
+      })
+    );
+    return;
+  }
+
+  // Local assets: Network First (Freshness over speed)
+  // This ensures users always get the latest code/stories if online.
+  e.respondWith(
+    fetch(e.request)
+      .then(response => {
+        if (!response || response.status !== 200 || response.type !== 'basic') {
+          return response;
+        }
+
+        // Clone and update cache
+        const responseToCache = response.clone();
+        caches.open(CACHE_NAME).then(cache => {
+          cache.put(e.request, responseToCache);
+        });
+
+        return response;
+      })
+      .catch(() => {
+        // Network failed, fall back to cache
+        return caches.match(e.request);
+      })
   );
 });
