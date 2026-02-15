@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Switch Adaptation - Workshop</title>
+  <title>Parent Resources - Workshop</title>
   <meta name="description"
-    content="Explore switch adaptation projects including 3D-printable accessible switches designed for individuals with unique movement patterns.">
+    content="A collection of apps and tools for parents, including single switch apps, touch screen apps, a light box app, and gaze tracking canvas.">
   <meta name="keywords"
-    content="switch adaptation, single switch, accessibility, assistive technology, 3D printing, accessible switches">
+    content="parent resources, assistive technology, single switch, touch screen apps, light box, gaze tracking, accessibility">
   <meta name="author" content="Niall Brown">
 
   <!-- PWA Meta Tags -->
@@ -52,14 +52,12 @@
     rel="stylesheet">
 
   <style>
-    /* Use the Inter font family defined above */
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
       min-height: 100vh;
     }
 
-    /* Card hover effect */
     .card-hover-effect {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       backdrop-filter: blur(10px);
@@ -70,73 +68,48 @@
       box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25), 0 0 0 1px rgb(255 255 255 / 0.1);
     }
 
-    /* Hero gradient background */
     .hero-gradient {
-      background: linear-gradient(135deg, rgba(244, 63, 94, 0.08) 0%, rgba(236, 72, 153, 0.08) 50%, rgba(251, 146, 60, 0.06) 100%);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(99, 102, 241, 0.08) 50%, rgba(139, 92, 246, 0.06) 100%);
     }
 
-    /* Section dividers */
     .section-divider {
       background: linear-gradient(90deg, transparent 0%, rgba(148, 163, 184, 0.3) 50%, transparent 100%);
       height: 1px;
       margin: 4rem 0;
     }
 
-    /* Enhanced button styling */
-    .btn-primary {
-      background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
-      box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3);
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(244, 63, 94, 0.5);
-      background: linear-gradient(135deg, #e11d48 0%, #db2777 100%);
-    }
-
-    /* Accessibility: Global Focus Styles */
     :focus-visible {
-      outline: 2px solid #e11d48;
+      outline: 2px solid #3b82f6;
       outline-offset: 2px;
     }
 
-    /* Typography Enhancements */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1, h2, h3, h4, h5, h6 {
       font-family: 'Outfit', sans-serif;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   </style>
 </head>
 
-<body class="text-slate-800 antialiased selection:bg-rose-100 selection:text-rose-900">
+<body class="text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-900">
 
+  <!-- Header -->
   <!-- Header and Navigation -->
   <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-40 border-b border-slate-200">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <!-- Logo and Title -->
+      <div class="flex items-center justify-center h-20">
+        <!-- Title -->
         <div class="flex items-center space-x-4">
           <img src="appsicon.png" alt="App Menu Icon" class="h-10 w-10">
-          <div>
-            <h2 class="text-lg font-semibold text-slate-900">Workshop</h2>
-            <p class="text-sm text-slate-500">Switch Adaptation</p>
-          </div>
+          <h2 class="text-lg font-semibold text-slate-900">Parent Resources</h2>
         </div>
-        <!-- Back to Main Page -->
-        <nav class="flex items-center">
-          <a href="index.html"
-            class="px-4 py-2 text-sm font-medium text-rose-600 hover:bg-rose-50 hover:text-rose-700 rounded-md transition-colors flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-            </svg>
-            Back to Workshop
-          </a>
-        </nav>
       </div>
     </div>
   </header>
@@ -147,40 +120,114 @@
     <section class="hero-gradient rounded-3xl p-8 md:p-12 mb-12">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
-          Switch Adaptation
+          Parent Resources
         </h1>
         <p class="text-xl text-slate-700 mb-6 leading-relaxed">
-          Exploring accessible switch design and adaptation for individuals with unique movement patterns and access needs.
+          A collection of apps and tools for parents to use with their children
         </p>
-        <div class="w-24 h-1 bg-gradient-to-r from-rose-400 via-pink-500 to-fuchsia-500 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 mx-auto rounded-full"></div>
       </div>
     </section>
 
-    <!-- Introduction Section -->
-    <section class="max-w-4xl mx-auto mb-12">
-      <div class="bg-white rounded-xl shadow-md border border-slate-100 p-8">
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">About Switch Adaptation</h2>
-        <p class="text-slate-700 leading-relaxed mb-4">
-          Switch adaptation involves modifying or creating accessible switches to meet the unique physical needs of individuals who require alternative methods of interaction with technology and their environment. 
-        </p>
-        <p class="text-slate-700 leading-relaxed">
-          These projects focus on making technology accessible through 3D Printing, Simple Electronics and Vibe Coding.
-        </p>
+    <!-- Literacy Tools Section -->
+    <section id="literacy-tools" class="py-12">
+      <div class="text-center mb-12">
+        <h3 class="text-3xl font-bold text-slate-900 mb-4">Literacy Tools</h3>
+        <div class="w-24 h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500 mx-auto rounded-full"></div>
+        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Tools to support literacy development and reading comprehension</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Salient Feature Highlighting -->
+        <div
+          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
+          <div
+            class="h-96 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
+            <img
+              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="sfh.png" alt="Salient Feature Highlighting Screenshot 1"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x400/d1fae5/10b981?text=SFH';">
+            <img
+              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="sfh1.png" alt="Salient Feature Highlighting Screenshot 2"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x400/d1fae5/10b981?text=SFH';">
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex-grow">
+              <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
+                <li><span class="text-xs inline-block bg-emerald-600 text-white px-2 py-1 rounded-full font-semibold">
+                    Literacy</span></li>
+                <li><span class="text-xs inline-block bg-teal-600 text-white px-2 py-1 rounded-full font-semibold">
+                    Visual Learning</span></li>
+                <li><span class="text-xs inline-block bg-cyan-600 text-white px-2 py-1 rounded-full font-semibold">
+                    Comparative Language</span></li>
+              </ul>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Salient Feature Highlighting (SFH)</h3>
+              <p class="text-slate-700 mb-4 leading-relaxed">A tool for building concepts about pictures by comparing images. The app features two panels that support parents in having conversations that compare pictures, helping to highlight key features (salient features) and discuss similarities and differences between images.</p>
+            </div>
+            <a href="https://microswitchers.github.io/sfh/"
+              class="mt-4 inline-block bg-emerald-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-emerald-700 transition-colors text-center">Use
+              Salient Feature Highlighting</a>
+          </div>
+        </div>
+
+        <!-- Story Tap -->
+        <div
+          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
+          <div
+            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-cyan-50 via-teal-50 to-emerald-50">
+            <img
+              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="storytap1.png" alt="Story Tap Screenshot 1"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Story+Tap';">
+            <img
+              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="storytap.png" alt="Story Tap Screenshot 2"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Story+Tap';">
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex-grow">
+              <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
+                <li><span
+                    class="text-xs inline-block bg-red-500 text-white px-2 py-1 rounded-full font-semibold">⚠️ Experimental</span></li>
+                <li><span
+                    class="text-xs inline-block bg-emerald-600 text-white px-2 py-1 rounded-full font-semibold">Literacy</span></li>
+                <li><span
+                    class="text-xs inline-block bg-teal-600 text-white px-2 py-1 rounded-full font-semibold">Touch Target</span></li>
+                <li><span
+                    class="text-xs inline-block bg-cyan-600 text-white px-2 py-1 rounded-full font-semibold">Audio Stories</span></li>
+                <li><span
+                    class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full font-semibold">Local AI</span></li>
+                <li><span
+                    class="text-xs inline-block bg-pink-600 text-white px-2 py-1 rounded-full font-semibold">Auditory Cues</span></li>
+                <li><span
+                    class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-semibold">Haptic Cues</span></li>
+              </ul>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Story Tap</h3>
+              <p class="text-slate-700 mb-4 leading-relaxed">
+                An auditory learning tool for listening to stories. Parents can process their own personalised 5-10 sentence stories into an audio book or voice output tool for their child. The app is designed for auditory learning—children can tap through story pages independently like a cause and effect toy, listening as it reads the book in high-quality audio. The app processes everything on your phone or tablet, never sending anything off your device, and it's free—this has only become possible in recent months. The caveat is it may take up to 15-45 minutes on some phones to initially process the story. When that is done, it can be played over and over. The app has a host of visual access options, as well as auditory and haptic cues.
+              </p>
+              <p class="text-slate-600 text-sm mb-4">
+                Runs on the free, open source community project <a href="https://github.com/hexgrad/kokoro" target="_blank" class="text-teal-600 hover:text-teal-700 underline">Kokoro TTS</a>.
+              </p>
+            </div>
+            <a href="https://microswitchers.github.io/storytap/"
+              class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use
+              Story Tap</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Adapted Single Switches Section -->
+    <!-- 3D Printed Switch Section -->
     <section id="adapted-single-switches" class="py-12">
       <div class="text-center mb-12">
-        <h3 class="text-3xl font-bold text-slate-900 mb-4">Adapted Single Switches</h3>
+        <h3 class="text-3xl font-bold text-slate-900 mb-4">3D Printed Switch</h3>
         <div class="w-24 h-1 bg-gradient-to-r from-rose-400 via-pink-500 to-fuchsia-500 mx-auto rounded-full"></div>
-        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Hardware and software tools for single switch
-          interaction</p>
+        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">A 3D-printable access tool for single switch interaction</p>
       </div>
-      <div class="flex justify-center">
-        <!-- 3D Printed Single Switch -->
+      <div class="grid grid-cols-1 gap-8">
         <div
-          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col w-full max-w-5xl">
+          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col max-w-5xl mx-auto w-full">
           <!-- Gallery Scroll Container -->
           <div class="relative h-96 w-full bg-slate-100 group overflow-hidden border-b border-slate-200">
             <div id="alligator-scroll-container"
@@ -193,8 +240,7 @@
                   alt="Alligator Switch View 1"
                   onerror="this.onerror=null;this.src='https://placehold.co/300x500/ffe4e6/f43f5e?text=Switch+1';">
               </div>
-
-              <!-- Slide 3 -->
+              <!-- Slide 2 -->
               <div
                 class="flex-shrink-0 w-1/2 h-full p-2 snap-start bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 flex items-center justify-center">
                 <img src="asswitch3.jpg"
@@ -202,7 +248,7 @@
                   alt="Alligator Switch View 3"
                   onerror="this.onerror=null;this.src='https://placehold.co/300x500/ffe4e6/f43f5e?text=Switch+3';">
               </div>
-              <!-- Slide 4 -->
+              <!-- Slide 3 -->
               <div
                 class="flex-shrink-0 w-1/2 h-full p-2 snap-start bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 flex items-center justify-center">
                 <img src="switchconcept.png"
@@ -269,8 +315,7 @@
                       strength.</li>
                     <li><strong class="font-semibold text-slate-900">Tactile Switch:</strong> Omron B3F-4055 (or
                       similar) – Chosen for its specific push-back force. Note: If using a different switch, you may
-                      need
-                      to adjust the base tolerances.</li>
+                      need to adjust the base tolerances.</li>
                     <li><strong class="font-semibold text-slate-900">Cord:</strong> 3.5mm Male Mono Jack – Or a 3.5mm
                       mono plug cord/patch cable to allow for adjustable lengths.</li>
                     <li><strong class="font-semibold text-slate-900">Adhesive:</strong> Hot Glue – Used to secure the
@@ -292,11 +337,9 @@
                   <p><strong class="font-semibold">Testing & Adjustment:</strong> Always test the tactile switch
                     activation before gluing. The design intentionally leaves some space for builders to dial in the
                     perfect activation feel. If needed (and only if needed), a bead of hot glue or a small shim can
-                    boost
-                    the switch up by a millimeter or two.</p>
+                    boost the switch up by a millimeter or two.</p>
                   <p><strong class="font-semibold">Usage:</strong> When positioned correctly, the user can rest their
-                    hand
-                    gently on the switch, and a small movement will activate it.</p>
+                    hand gently on the switch, and a small movement will activate it.</p>
                   <p><strong class="font-semibold">Feedback:</strong> When calibrated correctly, the switch provides a
                     highly satisfying tactile and auditory "click."</p>
                 </div>
@@ -332,6 +375,89 @@
                 Download .BLEND
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Single Tap Screen Apps Section -->
+    <section id="single-tap-apps" class="py-12">
+      <div class="section-divider"></div>
+      <div class="text-center mb-12">
+        <h3 class="text-3xl font-bold text-slate-900 mb-4">Single Tap Screen Apps</h3>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 via-teal-500 to-emerald-500 mx-auto rounded-full"></div>
+        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Especially designed to detect light touch on a touch screen device, but can also be activated by single switch access</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <!-- Sensory Tap -->
+        <div
+          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
+          <div
+            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-cyan-50 via-teal-50 to-emerald-50">
+            <img
+              class="h-full w-1/2 object-cover object-right rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="sensorytap.png" alt="Sensory Tap Screenshot 1"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Sensory+Tap';">
+            <img
+              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="sensorytap1.png" alt="Sensory Tap Screenshot 2"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Sensory+Tap';">
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex-grow">
+              <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
+                <li><span
+                    class="text-xs inline-block bg-teal-600 text-white px-2 py-1 rounded-full font-semibold">Touch Target</span></li>
+                <li><span
+                    class="text-xs inline-block bg-cyan-600 text-white px-2 py-1 rounded-full font-semibold">Visual Patterns</span></li>
+              </ul>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Sensory Tap</h3>
+              <p class="text-slate-700 mb-4 leading-relaxed">A large colourful touch point on the screen for children to target, creating colourful patterns as feedback on their actions.</p>
+            </div>
+            <a href="https://microswitchers.github.io/SensoryTap/"
+              class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use
+              Sensory Tap</a>
+          </div>
+        </div>
+
+        <!-- Touch Deck -->
+        <div
+          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
+          <div
+            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-cyan-50 via-teal-50 to-emerald-50">
+            <img
+              class="h-full w-1/3 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="touchdeck3.png" alt="Touch Deck Screenshot 1"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Touch+Deck';">
+            <img
+              class="h-full w-1/3 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="touchdeck1.png" alt="Touch Deck Screenshot 2"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Touch+Deck';">
+            <img
+              class="h-full w-1/3 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="touchdeck2.png" alt="Touch Deck Screenshot 3"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Touch+Deck';">
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex-grow">
+              <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
+                <li><span
+                    class="text-xs inline-block bg-teal-600 text-white px-2 py-1 rounded-full font-semibold">Touch Target</span></li>
+                <li><span
+                    class="text-xs inline-block bg-cyan-600 text-white px-2 py-1 rounded-full font-semibold">Voice Output</span></li>
+                <li><span
+                    class="text-xs inline-block bg-pink-600 text-white px-2 py-1 rounded-full font-semibold">Auditory Cues</span></li>
+                <li><span
+                    class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-semibold">Haptic Cues</span></li>
+              </ul>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Touch Deck</h3>
+              <p class="text-slate-700 mb-4 leading-relaxed">
+                A customisable large button app with up to 4 colourful buttons that can speak phrases or play recorded audio when tapped. Buttons can be repositioned, resized, and colour-coded. Each button supports up to 3 rotating phrases with text-to-speech or your own voice recordings. Includes haptic and auditory feedback options, activation cooldown settings, and full-screen mode. Perfect for simple communication, choice-making, or as a cause and effect activity.
+              </p>
+            </div>
+            <a href="https://microswitchers.github.io/touchdeck/"
+              class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use
+              Touch Deck</a>
           </div>
         </div>
       </div>
@@ -449,177 +575,107 @@
       </div>
     </section>
 
-    <!-- Single Tap Screen Apps Section -->
-    <section id="single-tap-apps" class="py-12">
+    <!-- Light Box App Section -->
+    <section id="light-box" class="py-12">
       <div class="section-divider"></div>
       <div class="text-center mb-12">
-        <h3 class="text-3xl font-bold text-slate-900 mb-4">Single Tap Screen Apps</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 via-teal-500 to-emerald-500 mx-auto rounded-full"></div>
-        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Especially designed to detect light touch on a touch screen device, but can also be activated by single switch access</p>
+        <h3 class="text-3xl font-bold text-slate-900 mb-4">Light Box App</h3>
+        <div class="w-24 h-1 bg-gradient-to-r from-emerald-400 via-green-500 to-lime-500 mx-auto rounded-full"></div>
+        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Turn your phone or tablet into a light box</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-        <!-- Sensory Tap -->
-        <div
-          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- GlowFrames -->
+        <div class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
           <div
-            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-cyan-50 via-teal-50 to-emerald-50">
+            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-emerald-50 via-green-50 to-lime-50">
             <img
-              class="h-full w-1/2 object-cover object-right rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
-              src="sensorytap.png" alt="Sensory Tap Screenshot 1"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Sensory+Tap';">
+              class="h-full w-1/2 object-cover object-top rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="glowframes.png" alt="GlowFrames Screenshot 1"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x400/dcfce7/22c55e?text=glowframes.png';">
             <img
-              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
-              src="sensorytap1.png" alt="Sensory Tap Screenshot 2"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Sensory+Tap';">
+              class="h-full w-1/2 object-cover object-top rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="glowframes2.png" alt="GlowFrames Screenshot 2"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x400/dcfce7/22c55e?text=glowframes2.png';">
           </div>
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
               <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
-                <li><span
-                    class="text-xs inline-block bg-teal-600 text-white px-2 py-1 rounded-full font-semibold">Touch Target</span></li>
-                <li><span
-                    class="text-xs inline-block bg-cyan-600 text-white px-2 py-1 rounded-full font-semibold">Visual Patterns</span></li>
+                <li><span class="text-xs inline-block bg-green-600 text-white px-2 py-1 rounded-full font-semibold">
+                    Assistive Devices</span></li>
               </ul>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Sensory Tap</h3>
-              <p class="text-slate-700 mb-4 leading-relaxed">A large colourful touch point on the screen for children to target, creating colourful patterns as feedback on their actions.</p>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">GlowFrames</h3>
+              <p class="text-slate-700 mb-4 leading-relaxed">An app for making a tablet or phone into a light box.
+                Illuminated shapes
+                can be arranged to illuminate translucent materials.</p>
             </div>
-            <a href="https://microswitchers.github.io/SensoryTap/"
-              class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use
-              Sensory Tap</a>
-          </div>
-        </div>
-
-        <!-- Story Tap -->
-        <div
-          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
-          <div
-            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-cyan-50 via-teal-50 to-emerald-50">
-            <img
-              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
-              src="storytap1.png" alt="Story Tap Screenshot 1"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Story+Tap';">
-            <img
-              class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
-              src="storytap.png" alt="Story Tap Screenshot 2"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Story+Tap';">
-          </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow">
-              <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
-                <li><span
-                    class="text-xs inline-block bg-red-500 text-white px-2 py-1 rounded-full font-semibold">⚠️ Experimental</span></li>
-                <li><span
-                    class="text-xs inline-block bg-teal-600 text-white px-2 py-1 rounded-full font-semibold">Touch Target</span></li>
-                <li><span
-                    class="text-xs inline-block bg-cyan-600 text-white px-2 py-1 rounded-full font-semibold">Audio Stories</span></li>
-                <li><span
-                    class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full font-semibold">Local AI</span></li>
-                <li><span
-                    class="text-xs inline-block bg-pink-600 text-white px-2 py-1 rounded-full font-semibold">Auditory Cues</span></li>
-                <li><span
-                    class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-semibold">Haptic Cues</span></li>
-              </ul>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Story Tap</h3>
-              <p class="text-slate-700 mb-4 leading-relaxed">
-                Parents can process their own personalised 5-10 sentence stories into an audio book, or voice output tool for their child. The app is on rails, so children can tap through the pages independently like a cause and effect toy, as it reads the book in high-quality audio. The app processes everything on your phone or tablet, never sending anything off your device, and it's free—this has only become possible in recent months. The caveat is it may take up to 15-45 minutes on some phones to initially process the story. When that is done, it can be played over and over. The app has a host of visual access options, as well as auditory and haptic cues.
-              </p>
-              <p class="text-slate-600 text-sm mb-4">
-                Runs on the free, open source community project <a href="https://github.com/hexgrad/kokoro" target="_blank" class="text-teal-600 hover:text-teal-700 underline">Kokoro TTS</a>.
-              </p>
-            </div>
-            <a href="https://microswitchers.github.io/storytap/"
-              class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use
-              Story Tap</a>
-          </div>
-        </div>
-
-        <!-- Touch Deck -->
-        <div
-          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
-          <div
-            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-cyan-50 via-teal-50 to-emerald-50">
-            <img
-              class="h-full w-1/3 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
-              src="touchdeck3.png" alt="Touch Deck Screenshot 1"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Touch+Deck';">
-            <img
-              class="h-full w-1/3 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
-              src="touchdeck1.png" alt="Touch Deck Screenshot 2"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Touch+Deck';">
-            <img
-              class="h-full w-1/3 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
-              src="touchdeck2.png" alt="Touch Deck Screenshot 3"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Touch+Deck';">
-          </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow">
-              <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
-                <li><span
-                    class="text-xs inline-block bg-teal-600 text-white px-2 py-1 rounded-full font-semibold">Touch Target</span></li>
-                <li><span
-                    class="text-xs inline-block bg-cyan-600 text-white px-2 py-1 rounded-full font-semibold">Voice Output</span></li>
-                <li><span
-                    class="text-xs inline-block bg-pink-600 text-white px-2 py-1 rounded-full font-semibold">Auditory Cues</span></li>
-                <li><span
-                    class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-semibold">Haptic Cues</span></li>
-              </ul>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Touch Deck</h3>
-              <p class="text-slate-700 mb-4 leading-relaxed">
-                A customisable large button app with up to 4 colourful buttons that can speak phrases or play recorded audio when tapped. Buttons can be repositioned, resized, and colour-coded. Each button supports up to 3 rotating phrases with text-to-speech or your own voice recordings. Includes haptic and auditory feedback options, activation cooldown settings, and full-screen mode. Perfect for simple communication, choice-making, or as a cause and effect activity.
-              </p>
-            </div>
-            <a href="https://microswitchers.github.io/touchdeck/"
-              class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use
-              Touch Deck</a>
+            <a href="https://microswitchers.github.io/GlowFrames/"
+              class="mt-4 inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition-colors text-center">Use
+              GlowFrames</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Microcontroller Switch Device Section -->
-    <section id="microcontroller-devices" class="py-12">
+    <!-- Gaze Canvas Section -->
+    <section id="gaze-canvas" class="py-12">
       <div class="section-divider"></div>
       <div class="text-center mb-12">
-        <h3 class="text-3xl font-bold text-slate-900 mb-4">Microcontroller Switch Devices</h3>
-        <div class="w-24 h-1 bg-gradient-to-r from-orange-400 via-amber-500 to-yellow-500 mx-auto rounded-full"></div>
-        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Hardware solutions for enhanced switch accessibility and
-          interaction</p>
+        <h3 class="text-3xl font-bold text-slate-900 mb-4">Gaze Tracking Canvas</h3>
+        <div class="w-24 h-1 bg-gradient-to-r from-indigo-400 via-purple-500 to-indigo-600 mx-auto rounded-full"></div>
+        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Visual target management for gaze tracking devices</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- GazeCanvas v2 -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
           <div
-            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100">
-            <img class="h-full w-full object-contain rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
-              src="microcontroller.png" alt="Microcontroller Device"
-              onerror="this.onerror=null;this.src='https://placehold.co/800x600/f1f5f9/64748b?text=Microcontroller';">
+            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
+            <img
+              class="h-full w-2/3 object-cover object-left rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="gazet2.png" alt="GazeCanvas v2 main screenshot"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x600/e0e7ff/6366f1?text=gazet2.png';">
+            <img
+              class="h-full w-1/3 object-cover object-left rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
+              src="gazet2bar.png" alt="GazeCanvas v2 side panel"
+              onerror="this.onerror=null;this.src='https://placehold.co/200x600/e0e7ff/6366f1?text=gazet2bar.png';">
           </div>
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
-              <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
+              <ul class="flex items-center justify-between mb-2" aria-label="Tags">
                 <li><span
-                    class="text-xs inline-block bg-orange-600 text-white px-2 py-1 rounded-full font-semibold">Hardware
-                  </span></li>
-                <li><span class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-medium">
-                    Microcontroller</span></li>
+                    class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-semibold">Gaze
+                    Tracking</span></li>
                 <li><span
-                    class="text-xs inline-block bg-red-600 text-white px-2 py-1 rounded-full font-medium">Experimental
-                  </span></li>
+                    class="text-xs inline-block bg-slate-200 text-slate-700 px-2 py-1 rounded-full font-medium">V2</span>
+                </li>
               </ul>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">3-Function Cause & Effect Single Switch Port</h3>
-              <div class="text-slate-700 mb-4 space-y-2 leading-relaxed">
-                <p>A microcontroller-based project that offers three different cause-and-effect functions for single
-                  switch users.</p>
-                <ul class="list-disc list-inside text-sm pl-2">
-                  <li>Regular Left Mouse Click (click-hold-release)</li>
-                  <li>Direct Left Mouse Click (click-auto release)</li>
-                  <li>Timed Left Mouse Click (click-custom timer- auto release)</li>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">GazeCanvas v2</h3>
+              <p class="text-slate-700 mb-4 leading-relaxed">Version 2 of GazeCanvas is an image canvas designed to be
+                efficiently
+                manage visual targets like images, video, shapes and text for use with a gaze tracking device overlay.
+                Animation can be applied to the targets and triggered by pressing the numbers on a standard keyboard.
+                This requires a gaze tracking device with its own overlay software.</p>
+              <div class="mb-4 bg-slate-50 p-4 rounded-lg border border-slate-100">
+                <p class="text-sm font-semibold text-slate-700 mb-2">Key Features:</p>
+                <ul class="text-sm text-slate-600 columns-1 sm:columns-2 gap-4 space-y-1 list-disc list-inside">
+                  <li>Media Library</li>
+                  <li>Fast image loading</li>
+                  <li>Auto-Load Folders</li>
+                  <li>Include Movement</li>
+                  <li>Add Text</li>
+                  <li>Quick Background Colours</li>
+                  <li>Foreground and Background Images</li>
+                  <li>Create Complexity Images</li>
                 </ul>
+                <p class="text-xs text-slate-500 mt-3 pt-2 border-t border-slate-200">
+                  <span class="font-semibold text-amber-600">Note:</span> This app is designed for rapid setup and
+                  experimentation. It does not save arrays between sessions.
+                </p>
               </div>
             </div>
-            <a href="https://github.com/MicroSwitchers/3-Function-Cause-and-Effect-Single-Switch-Port"
-              class="mt-4 inline-block bg-orange-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-orange-700 transition-colors text-center">Learn
-              More</a>
+            <a href="https://microswitchers.github.io/gazetrakercanvas2/"
+              class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use
+              GazeCanvas v2</a>
           </div>
         </div>
       </div>
@@ -647,9 +703,8 @@
           </div>
         </div>
 
-        <!-- Creator & Resources Combined -->
+        <!-- Creator Info -->
         <div class="lg:col-span-2 space-y-8">
-          <!-- Creator Info -->
           <div class="space-y-4">
             <h3 class="text-xl font-bold text-white mb-4">Created By</h3>
             <div class="space-y-3">
@@ -658,25 +713,6 @@
               <p class="text-slate-400 text-sm">Recipient of the Canadian Deafblind Association Innovation and
                 Creativity Award</p>
             </div>
-          </div>
-
-          <!-- Resources -->
-          <div class="space-y-4">
-            <h3 class="text-xl font-bold text-white">Resources</h3>
-            <a href="index.html"
-              class="block text-rose-400 hover:text-rose-300 hover:underline text-base transition-colors font-medium mb-2">
-              ← Back to Workshop
-            </a>
-            <a href="https://github.com/MicroSwitchers?tab=repositories"
-              class="block text-blue-400 hover:text-blue-300 hover:underline text-base transition-colors font-medium">
-              <svg class="inline-block w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-              View Source Code
-            </a>
-            <p class="text-slate-400 text-sm leading-relaxed">Access and use the source code for these projects. Most
-              projects are released under the MIT license, allowing free use, modification, and distribution.</p>
           </div>
         </div>
       </div>
@@ -704,7 +740,7 @@
 
   <!-- Back-to-Top Button -->
   <button id="back-to-top"
-    class="hidden fixed bottom-6 right-6 bg-rose-600 text-white p-3 rounded-full shadow-lg hover:bg-rose-700 transition-all duration-300 z-50">
+    class="hidden fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 z-50">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
       class="w-6 h-6">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
@@ -719,9 +755,15 @@
   </div>
 
   <script>
-    // --- Back to Top Button Logic ---
-    const backToTopButton = document.getElementById('back-to-top');
+    // Alligator Switch Gallery Scroll
+    function scrollAlligator(direction) {
+      const container = document.getElementById('alligator-scroll-container');
+      const slideWidth = container.offsetWidth / 2;
+      container.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+    }
 
+    // Back to Top
+    const backToTopButton = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
       if (window.pageYOffset > 300) {
         backToTopButton.classList.remove('hidden');
@@ -729,12 +771,11 @@
         backToTopButton.classList.add('hidden');
       }
     });
-
     backToTopButton.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // --- Image Modal Logic ---
+    // Image Modal
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-image');
     const closeModal = document.getElementById('close-modal');
@@ -751,32 +792,17 @@
       modal.style.display = 'none';
     });
 
-    // Close modal when clicking outside the image
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.style.display = 'none';
       }
     });
 
-    // Close with escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === "Escape") {
         modal.style.display = 'none';
       }
     });
-
-    // Alligator Switch Gallery Scroll Logic
-    function scrollAlligator(direction) {
-      const container = document.getElementById('alligator-scroll-container');
-      if (container) {
-        // Scroll by half the container width
-        const scrollAmount = container.clientWidth * 0.5;
-        container.scrollBy({
-          left: scrollAmount * direction,
-          behavior: 'smooth'
-        });
-      }
-    }
   </script>
 </body>
 
