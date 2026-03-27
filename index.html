@@ -209,7 +209,6 @@
   <main class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
 
     <!-- Hero Section -->
-    <!-- Hero Section -->
     <section
       class="hero-gradient pt-12 sm:pt-16 pb-16 relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
       <!-- Decorative elements -->
@@ -287,8 +286,6 @@
 
     <!-- Section Divider -->
     <div class="section-divider"></div>
-
-
 
     <!-- Image Assessment, AAC and Gaze Tracking Section -->
     <section id="gaze-tracking" class="py-12">
@@ -477,8 +474,6 @@
         </div>
       </div>
     </section>
-
-
 
     <!-- Braille Section -->
     <section id="braille" class="py-12">
@@ -682,7 +677,6 @@
         </a>
       </div>
     </section>
-    <!-- Single Switch Apps & Microcontroller - Now on switches.html -->
 
     <!-- Literacy Tools Section -->
     <section id="literacy-tools" class="py-12">
@@ -881,6 +875,29 @@
         <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Early prototypes and concepts.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- GridFlowAAC -->
+        <div
+          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
+          <img
+            class="h-56 w-full object-cover object-top clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            src="grid.png" alt="GridFlowAAC App Screenshot"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=grid.png';">
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex-grow">
+              <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
+                <li><span class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-semibold">
+                    AAC</span></li>
+                <li><span class="text-xs inline-block bg-slate-600 text-white px-2 py-1 rounded-full font-semibold">
+                    Experimental</span></li>
+              </ul>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">GridFlowAAC</h3>
+              <p class="text-slate-700 mb-4 leading-relaxed">An experimental Augmentative and Alternative Communication (AAC) tool exploring fluid grid layouts and customizable symbol interactions for early language development.</p>
+            </div>
+            <a href="https://microswitchers.github.io/gridflowaac/"
+              class="mt-4 inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors text-center">Use
+              GridFlowAAC</a>
+          </div>
+        </div>
         <!-- Assistive Device Activation Tester -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
@@ -936,7 +953,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 text-center md:text-left mb-12">
 
-        <!-- Project Info - Takes up more space -->
+        <!-- Project Info -->
         <div class="lg:col-span-3 space-y-6">
           <h3 class="text-2xl font-bold text-white mb-6">About These Projects</h3>
           <div class="text-slate-300 text-base leading-relaxed space-y-4">
@@ -1052,8 +1069,6 @@
       });
     });
 
-
-
     // --- Image Modal Logic ---
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-image');
@@ -1117,27 +1132,11 @@
 
   <!-- PWA Service Worker Registration -->
   <script>
-    // Register service worker for PWA functionality
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
           .then((registration) => {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-
-            // Check for updates
-            registration.addEventListener('updatefound', () => {
-              const newWorker = registration.installing;
-              if (newWorker) {
-                newWorker.addEventListener('statechange', () => {
-                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                    // New content is available, show update notification
-                    if (confirm('New version available! Reload to update?')) {
-                      window.location.reload();
-                    }
-                  }
-                });
-              }
-            });
+            console.log('ServiceWorker registration successful');
           })
           .catch((error) => {
             console.log('ServiceWorker registration failed: ', error);
@@ -1145,32 +1144,22 @@
       });
     }
 
-    // PWA Install Prompt
     let deferredPrompt;
     const installButton = document.getElementById('installButton');
     const installButtonMobile = document.getElementById('installButtonMobile');
 
     window.addEventListener('beforeinstallprompt', (e) => {
-      // Prevent the mini-infobar from appearing on mobile
       e.preventDefault();
-      // Stash the event so it can be triggered later
       deferredPrompt = e;
-      // Show the install buttons
       installButton.classList.remove('hidden');
       installButtonMobile.classList.remove('hidden');
     });
 
-    // Handle click for both desktop and mobile install buttons
     const handleInstallClick = async () => {
       if (deferredPrompt) {
-        // Show the install prompt
         deferredPrompt.prompt();
-        // Wait for the user to respond to the prompt
         const { outcome } = await deferredPrompt.userChoice;
-        console.log(`User response to the install prompt: ${outcome}`);
-        // Clear the deferredPrompt variable
         deferredPrompt = null;
-        // Hide the install buttons
         installButton.classList.add('hidden');
         installButtonMobile.classList.add('hidden');
       }
@@ -1179,34 +1168,11 @@
     installButton.addEventListener('click', handleInstallClick);
     installButtonMobile.addEventListener('click', handleInstallClick);
 
-    // Hide install button if app is already installed
     window.addEventListener('appinstalled', () => {
-      console.log('PWA was installed');
       installButton.classList.add('hidden');
       installButtonMobile.classList.add('hidden');
       deferredPrompt = null;
     });
-
-    // Track if the app is running as a PWA
-    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
-      console.log('Running as PWA');
-      // Add any PWA-specific functionality here
-      document.body.classList.add('pwa-mode');
-    }
-  </script>
-  <script>
-    // Alligator Switch Gallery Scroll Logic
-    function scrollAlligator(direction) {
-      const container = document.getElementById('alligator-scroll-container');
-      if (container) {
-        // Scroll by half the container width
-        const scrollAmount = container.clientWidth * 0.5;
-        container.scrollBy({
-          left: scrollAmount * direction,
-          behavior: 'smooth'
-        });
-      }
-    }
   </script>
 </body>
 
