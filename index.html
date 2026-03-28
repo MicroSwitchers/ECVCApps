@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
@@ -66,7 +66,7 @@
     }
 
     .card-hover-effect:hover {
-      transform: translateY(-12px) scale(1.02);
+      transform: translateY(-8px) scale(1.015);
       box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25), 0 0 0 1px rgb(255 255 255 / 0.1);
     }
 
@@ -147,21 +147,28 @@
         <!-- Desktop Navigation -->
         <nav class="hidden xl:flex items-center space-x-2">
           <a href="#gaze-tracking"
-            class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Assessment
+            class="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Assessment
             & Gaze</a>
           <a href="#calculator-apps"
-            class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Calculators</a>
+            class="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Calculators</a>
           <a href="#braille"
-            class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Braille</a>
-          <a href="switches.html"
-            class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Switch
-            Adaptation</a>
+            class="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Braille</a>
+          <div class="flex items-center border-l border-r border-slate-200 px-1 mx-1">
+            <a href="#switch-adaptation"
+              class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Switch
+              Adaptation</a>
+            <a href="switches.html"
+              class="px-3 py-2 text-xs font-semibold text-rose-600 bg-rose-50 hover:bg-rose-100 rounded-md ml-1"
+              title="Go to 'Switch and Tap' Hub Page">
+              Hub Page ↗
+            </a>
+          </div>
           <a href="#assistive-devices"
-            class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Assistive
+            class="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Assistive
             Devices</a>
 
           <a href="#experimental-projects"
-            class="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Experimental</a>
+            class="px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Experimental</a>
           <button id="installButton"
             class="ml-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md transition-colors duration-200 hidden">
             Install as App
@@ -187,9 +194,13 @@
             class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Calculators</a>
           <a href="#braille"
             class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Braille</a>
-          <a href="switches.html"
+          <a href="#switch-adaptation"
             class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Switch
             Adaptation</a>
+          <a href="switches.html"
+            class="block px-3 py-2 ml-6 text-sm font-medium text-rose-600 bg-rose-50 hover:bg-rose-100 rounded-md border-l-2 border-rose-200">
+            ↳ Go to 'Switch and Tap' Hub Page
+          </a>
           <a href="#assistive-devices"
             class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md">Assistive
             Devices</a>
@@ -237,10 +248,17 @@
           By <span class="font-semibold text-slate-800">Niall Brown</span> — A collection of my ongoing projects
           dedicated to exploring technology related to blind and low-vision early intervention and related fields.
         </p>
-        <div class="mt-10 flex flex-col sm:flex-row justify-start gap-4">
+        <div class="mt-10 flex flex-col sm:flex-row flex-wrap justify-start gap-4">
           <a href="#gaze-tracking"
             class="btn-primary inline-block text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition-all text-center">
-            Explore Apps
+            Explore All Apps
+            <svg class="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a href="switches.html"
+            class="inline-block bg-rose-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-rose-700 transition-all text-center shadow-md">
+            'Switch and Tap' Access Workshop
             <svg class="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
             </svg>
@@ -300,7 +318,7 @@
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
           <div
-            class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-pink-50 via-rose-50 to-red-50">
+            class="h-64 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-pink-50 via-rose-50 to-red-50">
             <img
               class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="aacsandbox1.png" alt="AAC Visual Sandbox Interface"
@@ -334,6 +352,13 @@
                   <li>Find-It games</li>
                   <li>Other Visual Adaptations</li>
                 </ul>
+                <p class="mt-4 mb-2"><a href="https://github.com/MicroSwitchers/ACCVisualSandbox" target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-indigo-600 hover:text-indigo-800 hover:underline font-semibold flex items-center gap-1"><svg
+                      class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>Get the HTML5 Code on Git Hub</a></p>
                 <p class="text-xs text-slate-500 mt-3 pt-2 border-t border-slate-200">
                   <span class="font-semibold text-amber-600">Note:</span> This app is designed for rapid setup and
                   experimentation. It does not save arrays between sessions.
@@ -341,7 +366,7 @@
               </div>
             </div>
             <a href="https://microswitchers.github.io/ACCVisualSandbox/"
-              class="mt-4 block text-center bg-pink-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-pink-700 transition-colors">Use
+              class="mt-auto block w-full text-center bg-pink-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-pink-700 transition-all shadow-sm hover:shadow-md">Use
               AAC Visual Sandbox</a>
           </div>
         </div>
@@ -350,7 +375,7 @@
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
           <div
-            class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
+            class="h-64 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
             <img
               class="h-full w-2/3 object-cover object-left rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="gazet1.png" alt="GazeCanvas v1 main screenshot"
@@ -378,7 +403,7 @@
                 requires a gaze tracking device with its own overlay software.</p>
             </div>
             <a href="https://microswitchers.github.io/gazecanvas/"
-              class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use
+              class="mt-auto block w-full text-center bg-indigo-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-indigo-700 transition-all shadow-sm hover:shadow-md">Use
               GazeCanvas v1</a>
           </div>
         </div>
@@ -386,7 +411,7 @@
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
           <div
-            class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
+            class="h-64 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
             <img
               class="h-full w-2/3 object-cover object-left rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="gazet2.png" alt="GazeCanvas v2 main screenshot"
@@ -431,7 +456,7 @@
               </div>
             </div>
             <a href="https://microswitchers.github.io/gazetrakercanvas2/"
-              class="mt-4 block text-center bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Use
+              class="mt-auto block w-full text-center bg-indigo-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-indigo-700 transition-all shadow-sm hover:shadow-md">Use
               GazeCanvas v2</a>
           </div>
         </div>
@@ -439,7 +464,7 @@
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
           <div
-            class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
+            class="h-64 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-100">
             <img
               class="h-full w-1/2 object-cover object-center rounded-lg clickable-img border border-slate-300 cursor-pointer"
               src="tcradle1.jpg" alt="3D printed cradle for Tobii Eye Tracker 5, view one"
@@ -487,7 +512,7 @@
         <!-- Mechanical Braille Writer Simulator -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
+          <img class="h-64 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
             src="mecbraille.jpg" alt="Mechanical Braille Writer Simulator Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/a7f3d0/0f766e?text=mecbraille.jpg';">
           <div class="p-6 flex-grow flex flex-col">
@@ -530,14 +555,14 @@
                 aria-expanded="false" aria-controls="desc-braillesim">Read More</button>
             </div>
             <a href="https://microswitchers.github.io/braillesim/"
-              class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use
+              class="mt-auto block w-full text-center bg-teal-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-teal-700 transition-all shadow-sm hover:shadow-md">Use
               the Mechanical Braille Writer Simulator</a>
           </div>
         </div>
         <!-- SixKey - Braille Practice Pad -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <div class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-teal-50">
+          <div class="h-64 w-full flex gap-2 p-2 border-b border-slate-200 bg-teal-50">
             <img
               class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="sixkey1.jpg" alt="SixKey Practice Pad Screenshot 1"
@@ -576,16 +601,23 @@
               <button
                 class="read-more-btn text-blue-600 font-bold text-sm mt-2 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
                 aria-expanded="false" aria-controls="desc-sixkey">Read More</button>
+              <p class="mt-4 mb-6"><a href="https://github.com/MicroSwitchers/sixkey" target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-indigo-600 hover:text-indigo-800 hover:underline font-semibold flex items-center gap-1"><svg
+                    class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>Get the HTML5 Code on Git Hub</a></p>
             </div>
             <a href="https://microswitchers.github.io/sixkey/"
-              class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use
+              class="mt-auto block w-full text-center bg-teal-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-teal-700 transition-all shadow-sm hover:shadow-md">Use
               the SixKey - Braille Practice Pad</a>
           </div>
         </div>
         <!-- BrailleFlex -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
+          <img class="h-64 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
             src="brailleflex.jpg" alt="BrailleFlex Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/a7f3d0/0f766e?text=brailleflex.jpg';">
           <div class="p-6 flex-grow flex flex-col">
@@ -621,7 +653,7 @@
                 aria-expanded="false" aria-controls="desc-brailleflex">Read More</button>
             </div>
             <a href="https://microswitchers.github.io/BrailleFlex/"
-              class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use
+              class="mt-auto block w-full text-center bg-teal-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-teal-700 transition-all shadow-sm hover:shadow-md">Use
               BrailleFlex</a>
           </div>
         </div>
@@ -636,42 +668,91 @@
       <div class="text-center mb-12">
         <h3 class="text-3xl font-bold text-slate-900 mb-4">Switch Adaptation</h3>
         <div class="w-24 h-1 bg-gradient-to-r from-rose-400 via-pink-500 to-fuchsia-500 mx-auto rounded-full"></div>
-        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Hardware, software, and microcontroller tools for single switch access</p>
+        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Hardware, software, and microcontroller tools for
+          single switch access</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="w-full">
         <a href="switches.html"
-          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full group">
-          <div class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100">
-            <img
-              class="h-full w-1/2 object-cover rounded-lg border border-slate-300 shadow-sm"
-              src="asswitch1.jpg" alt="Alligator Switch"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ffe4e6/f43f5e?text=Switch';">
-            <img
-              class="h-full w-1/2 object-cover object-right rounded-lg border border-slate-300 shadow-sm"
-              src="sensorytap.png" alt="Sensory Tap App"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/f3e8ff/8b5cf6?text=Apps';">
+          class="block bg-gradient-to-br from-rose-500 via-pink-600 to-fuchsia-600 rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-2 overflow-hidden group border border-rose-400 relative">
+
+          <!-- Decorative Background Elements -->
+          <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <svg class="absolute -right-20 -top-20 w-64 h-64 text-white" fill="currentColor" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="50"></circle>
+            </svg>
+            <svg class="absolute -left-10 -bottom-10 w-32 h-32 text-white" fill="currentColor" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="50"></circle>
+            </svg>
           </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex-grow">
-              <div class="flex items-center justify-between mb-2">
-                <ul class="flex flex-wrap gap-2" aria-label="Tags">
-                  <li><span
-                      class="text-xs inline-block bg-rose-600 text-white px-2 py-1 rounded-full font-semibold">Hardware</span></li>
-                  <li><span class="text-xs inline-block bg-purple-600 text-white px-2 py-1 rounded-full font-semibold">Cause & Effect Apps</span></li>
-                  <li><span class="text-xs inline-block bg-orange-500 text-white px-2 py-1 rounded-full font-semibold">Microcontroller</span></li>
-                </ul>
-                <span class="text-xs inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">📑 Multiple Projects</span>
+
+          <div class="flex flex-col relative z-10">
+            <!-- Image Gallery Area (Top) -->
+            <div
+              class="w-full pt-10 pb-6 px-6 md:pt-16 md:pb-12 md:px-12 bg-white/5 backdrop-blur-sm border-b border-white/10">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 items-center">
+
+                <!-- Image 1: Microcontroller (Left) -->
+                <div
+                  class="aspect-square w-full rounded-2xl bg-white p-2 md:p-3 shadow-lg transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:-rotate-2">
+                  <img src="microcontroller.png" alt="Microcontroller Project"
+                    class="w-full h-full object-cover rounded-xl border border-slate-100"
+                    onerror="this.onerror=null;this.src='https://placehold.co/400/ffe4e6/f43f5e?text=Hardware';">
+                </div>
+
+                <!-- Image 2: Main Switch Image (Center - slightly larger) -->
+                <div
+                  class="aspect-square w-full rounded-2xl bg-white p-2 md:p-3 shadow-2xl transform transition-transform duration-500 scale-105 sm:scale-110 z-10 group-hover:scale-110 sm:group-hover:scale-125 group-hover:-translate-y-2">
+                  <img src="asswitch1.jpg" alt="Alligator Switch"
+                    class="w-full h-full object-cover rounded-xl border border-slate-100"
+                    onerror="this.onerror=null;this.src='https://placehold.co/400/ffe4e6/f43f5e?text=Switch';">
+                </div>
+
+                <!-- Image 3: Sensory Tap App (Right) -->
+                <div
+                  class="aspect-square w-full rounded-2xl bg-white p-2 md:p-3 shadow-lg transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-2">
+                  <img src="sensorytap.png" alt="Sensory Tap App"
+                    class="w-full h-full object-cover rounded-xl border border-slate-100"
+                    onerror="this.onerror=null;this.src='https://placehold.co/400/f3e8ff/8b5cf6?text=Apps';">
+                </div>
+
               </div>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Switch Adaptation Projects</h3>
-              <p class="text-slate-700 mb-4 leading-relaxed">
-                Explore a collection of switch adaptation resources including 3D-printable switches, single switch apps, cause-and-effect software, and microcontroller projects designed for single switch users.
-              </p>
             </div>
-            <div class="mt-4 flex items-center justify-center gap-2 bg-rose-600 text-white font-semibold px-5 py-3 rounded-lg group-hover:bg-rose-700 transition-colors">
-              <span>View All Switch Adaptation Projects</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
+
+            <!-- Content Area (Bottom) -->
+            <div
+              class="w-full p-8 md:p-12 text-white flex flex-col md:flex-row items-center md:items-start justify-between gap-8 md:gap-12">
+              <!-- Text side -->
+              <div class="flex-1 text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+                  <ul class="flex flex-wrap gap-2" aria-label="Tags">
+                    <li><span
+                        class="text-[10px] inline-block bg-white/10 border border-white/20 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">Hardware</span>
+                    </li>
+                    <li><span
+                        class="text-[10px] inline-block bg-white/10 border border-white/20 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">Software</span>
+                    </li>
+                  </ul>
+                </div>
+                <h3
+                  class="text-2xl md:text-3xl font-bold mb-4 drop-shadow-sm group-hover:text-rose-100 transition-colors">
+                  The MicroSwitchers Workshop 'Switch and Tap' Interaction Hub</h3>
+                <p class="text-rose-100 text-base md:text-lg leading-relaxed">
+                  Explore a collection of 3D-printable switches, single-switch apps, accessible tap apps, and
+                  microcontroller access devices designed for single switch access.
+                </p>
+              </div>
+
+              <!-- Button side -->
+              <div class="flex flex-col items-center md:items-end shrink-0 pt-2 lg:pt-6">
+                <div
+                  class="inline-flex items-center justify-center gap-2 bg-white text-rose-600 font-bold px-8 py-4 rounded-xl shadow-lg group-hover:bg-rose-50 transition-all hover:shadow-xl transform group-hover:-translate-y-1 border border-rose-100">
+                  <span>Enter Switch Hub</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                    stroke="currentColor" class="w-6 h-6 group-hover:translate-x-1 transition-transform">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </a>
@@ -684,14 +765,15 @@
       <div class="text-center mb-12">
         <h3 class="text-3xl font-bold text-slate-900 mb-4">Literacy Tools</h3>
         <div class="w-24 h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500 mx-auto rounded-full"></div>
-        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Tools to support literacy development and reading comprehension</p>
+        <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Tools to support literacy development and reading
+          comprehension</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Salient Feature Highlighting -->
         <div
-          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
+          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2">
           <div
-            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
+            class="h-64 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
             <img
               class="h-full w-1/2 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="sfh.png" alt="Salient Feature Highlighting Screenshot 1"
@@ -712,10 +794,20 @@
                     Comparative Language</span></li>
               </ul>
               <h3 class="text-xl font-bold text-slate-900 mb-2">Salient Feature Highlighting (SFH)</h3>
-              <p class="text-slate-700 mb-4 leading-relaxed">A tool for building concepts about pictures by comparing images. The app features two panels that support parents in having conversations that compare pictures, helping to highlight key features (salient features) and discuss similarities and differences between images.</p>
+              <p class="text-slate-700 mb-4 leading-relaxed">A tool for building concepts about pictures by comparing
+                images. The app features two panels that support parents in having conversations that compare pictures,
+                helping to highlight key features (salient features) and discuss similarities and differences between
+                images.</p>
+              <p class="mt-4 mb-6"><a href="https://github.com/MicroSwitchers/sfh" target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-indigo-600 hover:text-indigo-800 hover:underline font-semibold flex items-center gap-1"><svg
+                    class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>Get the HTML5 Code on Git Hub</a></p>
             </div>
             <a href="https://microswitchers.github.io/sfh/"
-              class="mt-4 inline-block bg-emerald-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-emerald-700 transition-colors text-center">Use
+              class="mt-auto block w-full text-center bg-emerald-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-emerald-700 transition-all shadow-sm hover:shadow-md">Use
               Salient Feature Highlighting</a>
           </div>
         </div>
@@ -732,9 +824,10 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- GlowFrames -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
           <div
-            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-emerald-50 via-green-50 to-lime-50">
+            class="h-64 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-emerald-50 via-green-50 to-lime-50">
             <img
               class="h-full w-1/2 object-cover object-top rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="glowframes.png" alt="GlowFrames Screenshot 1"
@@ -754,9 +847,16 @@
               <p class="text-slate-700 mb-4 leading-relaxed">An app for making a tablet or phone into a light box.
                 Illuminated shapes
                 can be arranged to illuminate translucent materials.</p>
+              <p class="mt-4 mb-6"><a href="https://github.com/MicroSwitchers/GlowFrames" target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-indigo-600 hover:text-indigo-800 hover:underline font-semibold flex items-center gap-1"><svg
+                    class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>Get the HTML5 Code on Git Hub</a></p>
             </div>
             <a href="https://microswitchers.github.io/GlowFrames/"
-              class="mt-4 inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition-colors text-center">Use
+              class="mt-auto block w-full text-center bg-green-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-green-700 transition-all shadow-sm hover:shadow-md">Use
               GlowFrames</a>
           </div>
         </div>
@@ -779,7 +879,7 @@
         <div
           class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden card-hover-effect flex flex-col">
           <div
-            class="h-56 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100">
+            class="h-64 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100">
             <img
               class="h-full w-1/2 object-cover object-top rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
               src="cvicalc1.jpg" alt="CVI Calculator Screenshot 1"
@@ -803,7 +903,7 @@
                 totals for the CVI Range Rating II method. This process is based on the work of Dr. Roman-Lantzy.</p>
             </div>
             <a href="https://microswitchers.github.io/RangeCalc/"
-              class="btn-primary mt-4 inline-block text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 transition-all text-center">Use
+              class="mt-auto block w-full text-center btn-primary text-white font-semibold px-5 py-3 rounded-xl hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">Use
               the CVI Range Rating II Calculator</a>
           </div>
         </div>
@@ -812,7 +912,7 @@
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
           <!-- Replace src with your image path -->
           <img
-            class="h-56 w-full object-cover object-top clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            class="h-64 w-full object-cover object-top clickable-img border border-slate-300 cursor-pointer shadow-sm"
             src="agecalc.png" alt="Age by Weeks and Category Calculator Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=agecalc.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -831,7 +931,7 @@
                 function for faster input and a 'countdown to kindergarten' alert for transition to school planning.</p>
             </div>
             <a href="https://microswitchers.github.io/agebyweekscalc/"
-              class="mt-4 inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">Use
+              class="mt-auto block w-full text-center bg-blue-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">Use
               the Age by Weeks and Category Calculator</a>
           </div>
         </div>
@@ -839,7 +939,7 @@
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
           <img
-            class="h-56 w-full object-cover object-top clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            class="h-64 w-full object-cover object-top clickable-img border border-slate-300 cursor-pointer shadow-sm"
             src="excelformulasscreen.png" alt="Excel Formula Generator interface showing formula creation tools"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/64748b?text=excelformulasscreen.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -857,7 +957,7 @@
                 ages and age categories in Excel.</p>
             </div>
             <a href="https://microswitchers.github.io/timecalcformulas/"
-              class="mt-4 inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center">Use
+              class="mt-auto block w-full text-center bg-blue-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">Use
               the Excel Formula Generator</a>
           </div>
         </div>
@@ -874,15 +974,15 @@
         <div class="w-24 h-1 bg-gradient-to-r from-slate-400 via-gray-500 to-zinc-500 mx-auto rounded-full"></div>
         <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto">Early prototypes and concepts.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- GridFlowAAC -->
         <div
-          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
+          class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2">
           <img
-            class="h-56 w-full object-cover object-top clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            class="h-72 w-full object-cover object-top clickable-img border-b border-slate-200 cursor-pointer shadow-sm"
             src="grid.png" alt="GridFlowAAC App Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=grid.png';">
-          <div class="p-6 flex-grow flex flex-col">
+          <div class="p-6 md:p-8 flex-grow flex flex-col">
             <div class="flex-grow">
               <ul class="flex flex-wrap gap-2 mb-2" aria-label="Tags">
                 <li><span class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-semibold">
@@ -890,19 +990,42 @@
                 <li><span class="text-xs inline-block bg-slate-600 text-white px-2 py-1 rounded-full font-semibold">
                     Experimental</span></li>
               </ul>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">GridFlowAAC</h3>
-              <p class="text-slate-700 mb-4 leading-relaxed">An experimental Augmentative and Alternative Communication (AAC) tool exploring fluid grid layouts and customizable symbol interactions for early language development.</p>
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">GridFlowAAC</h3>
+              <div class="text-slate-700 mb-4 leading-relaxed space-y-3">
+                <p>GridFlowAAC is an experimental tool for rapidly designing Augmentative and Alternative Communication
+                  (AAC) grids, offering a clear at-a-glance overview of an entire configuration. It uses a modular
+                  node-based system to construct AAC layouts across a variety of page formats and features, making the
+                  process easy and more visual than most AAC software.</p>
+                <p>This project was designed with an adult family member in mind where we do not require cloud saving
+                  and some of the file management options offered in other AAC software. If you'd like to extend or
+                  customize it, forking this open source project is recommended.</p>
+                <p><a href="https://github.com/MicroSwitchers/gridflowaac" target="_blank" rel="noopener noreferrer"
+                    class="text-indigo-600 hover:text-indigo-800 hover:underline font-semibold flex items-center gap-1"><svg
+                      class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>Get the HTML5 Code on Git Hub</a></p>
+                <div class="mt-4 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                  <p class="text-sm text-slate-700">
+                    <span class="font-bold text-amber-700">Please note:</span> while the app should function correctly
+                    from this link, I recommend that it is considered unstable and experimental at this time, and may
+                    not be a reliable long-term solution to build a complete AAC system for daily use at this stage.
+                  </p>
+                </div>
+              </div>
             </div>
-            <a href="https://microswitchers.github.io/gridflowaac/"
-              class="mt-4 inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors text-center">Use
-              GridFlowAAC</a>
+            <div class="flex justify-end mt-4">
+              <a href="https://microswitchers.github.io/gridflowaac/"
+                class="mt-auto block w-full sm:w-auto text-center bg-indigo-600 text-white font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition-all shadow-sm hover:shadow-md">Use
+                GridFlowAAC</a>
+            </div>
           </div>
         </div>
         <!-- Assistive Device Activation Tester -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
           <img
-            class="h-56 w-full object-cover object-top clickable-img border border-slate-300 cursor-pointer shadow-sm"
+            class="h-64 w-full object-cover object-top clickable-img border border-slate-300 cursor-pointer shadow-sm"
             src="buttontest.png" alt="Assistive Device Activation Tester Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=buttontest.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -912,19 +1035,29 @@
                     Utility</span></li>
               </ul>
               <h3 class="text-xl font-bold text-slate-900 mb-2">Assistive Device Activation Tester</h3>
-              <p class="text-slate-700 mb-4 leading-relaxed">For testing how assistive human interface devices interact
-                with various
-                button formats.</p>
+              <div class="text-slate-700 mb-4 leading-relaxed space-y-3">
+                <p>This app is for testing assistive human interface devices (HID Mouse) interactions with various user
+                  interface button formats, including some unusual scenarios where further interaction considerations
+                  were needed to elicit the correct interaction pattern.</p>
+                <p>I have used it primarily to test assistive device microcontroller projects.</p>
+                <p><a href="https://github.com/MicroSwitchers/SwitchandButtonTester" target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-indigo-600 hover:text-indigo-800 hover:underline font-semibold flex items-center gap-1"><svg
+                      class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>Get the HTML5 Code on Git Hub</a></p>
+              </div>
             </div>
             <a href="https://microswitchers.github.io/SwitchandButtonTester/"
-              class="mt-4 inline-block bg-slate-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-slate-700 transition-colors text-center">Use
+              class="mt-auto block w-full text-center bg-slate-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-slate-700 transition-all shadow-sm hover:shadow-md">Use
               the Activation Tester</a>
           </div>
         </div>
         <!-- Appointment Reminder App -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col">
-          <img class="h-56 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
+          <img class="h-64 w-full object-cover clickable-img border border-slate-300 cursor-pointer shadow-sm"
             src="appointmentreminder.png" alt="Appointment Reminder App Screenshot"
             onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=appointmentreminder.png';">
           <div class="p-6 flex-grow flex flex-col">
@@ -935,11 +1068,12 @@
               </ul>
               <h3 class="text-xl font-bold text-slate-900 mb-2">Appointment Reminder App</h3>
               <p class="text-slate-700 mb-4 leading-relaxed">A visual timer that provides alerts for upcoming
-                appointments. Meant to be
-                left open on a desktop computer to give a persistent visual reminder.</p>
+                appointments. Meant to be left open on a desktop computer to give a persistent visual reminder. It is
+                particularly focused on providing visual and auditory cues for people with difficulty perceiving,
+                feeling, or accurately estimating the passage of time.</p>
             </div>
             <a href="https://microswitchers.github.io/AppointmentReminderApp/"
-              class="mt-4 inline-block bg-slate-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-slate-700 transition-colors text-center">Use
+              class="mt-auto block w-full text-center bg-slate-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-slate-700 transition-all shadow-sm hover:shadow-md">Use
               the Appointment Reminder App</a>
           </div>
         </div>
