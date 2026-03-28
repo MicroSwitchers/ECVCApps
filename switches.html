@@ -535,23 +535,58 @@
           </div>
         </div>
 
-        <!-- Touch Deck -->
+        <!-- TapDeck -->
         <div
           class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden card-hover-effect flex flex-col md:col-span-2 max-w-4xl mx-auto w-full">
-          <div
-            class="h-72 w-full flex gap-2 p-2 border-b border-slate-200 bg-gradient-to-br from-cyan-50 via-teal-50 to-emerald-50">
-            <img
-              class="h-full w-1/3 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
-              src="touchdeck3.png" alt="Touch Deck Screenshot 1"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Touch+Deck';">
-            <img
-              class="h-full w-1/3 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
-              src="touchdeck1.png" alt="Touch Deck Screenshot 2"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Touch+Deck';">
-            <img
-              class="h-full w-1/3 object-cover rounded-lg clickable-img border border-slate-300 cursor-pointer shadow-sm"
-              src="touchdeck2.png" alt="Touch Deck Screenshot 3"
-              onerror="this.onerror=null;this.src='https://placehold.co/300x400/ccfbf1/14b8a6?text=Touch+Deck';">
+          <!-- Gallery Scroll Container -->
+          <div class="relative h-96 w-full bg-gradient-to-br from-cyan-50 via-teal-50 to-emerald-50 group overflow-hidden border-b border-slate-200">
+            <div id="tapdeck-scroll-container"
+              class="flex h-full w-full overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar bg-transparent">
+              <!-- Slide 1 -->
+              <div class="flex-shrink-0 w-1/2 h-full p-2 snap-start flex items-center justify-center">
+                <img class="h-full w-full object-cover rounded-lg shadow-sm clickable-img border border-slate-300 cursor-pointer"
+                  src="touchdeck.png" alt="TapDeck Screenshot 1"
+                  onerror="this.onerror=null;this.src='https://placehold.co/800x600/ccfbf1/14b8a6?text=TapDeck';">
+              </div>
+              <!-- Slide 2 -->
+              <div class="flex-shrink-0 w-1/2 h-full p-2 snap-start flex items-center justify-center">
+                <img class="h-full w-full object-cover rounded-lg shadow-sm clickable-img border border-slate-300 cursor-pointer"
+                  src="touchdeck1.png" alt="TapDeck Screenshot 2"
+                  onerror="this.onerror=null;this.src='https://placehold.co/800x600/ccfbf1/14b8a6?text=TapDeck';">
+              </div>
+              <!-- Slide 3 -->
+              <div class="flex-shrink-0 w-1/2 h-full p-2 snap-start flex items-center justify-center">
+                <img class="h-full w-full object-cover rounded-lg shadow-sm clickable-img border border-slate-300 cursor-pointer"
+                  src="touchdeck2.png" alt="TapDeck Screenshot 3"
+                  onerror="this.onerror=null;this.src='https://placehold.co/800x600/ccfbf1/14b8a6?text=TapDeck';">
+              </div>
+              <!-- Slide 4 -->
+              <div class="flex-shrink-0 w-1/2 h-full p-2 snap-start flex items-center justify-center">
+                <img class="h-full w-full object-cover rounded-lg shadow-sm clickable-img border border-slate-300 cursor-pointer"
+                  src="touchdeck3.png" alt="TapDeck Screenshot 4"
+                  onerror="this.onerror=null;this.src='https://placehold.co/800x600/ccfbf1/14b8a6?text=TapDeck';">
+              </div>
+            </div>
+
+            <!-- Prev Button -->
+            <button onclick="scrollTapDeck(-1)"
+              class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-teal-600 p-2 rounded-full shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-teal-500 opacity-0 group-hover:opacity-100 z-10"
+              aria-label="Scroll left">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+
+            <!-- Next Button -->
+            <button onclick="scrollTapDeck(1)"
+              class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-teal-600 p-2 rounded-full shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-teal-500 opacity-0 group-hover:opacity-100 z-10"
+              aria-label="Scroll right">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
           </div>
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex-grow">
@@ -565,7 +600,7 @@
                 <li><span
                     class="text-xs inline-block bg-indigo-600 text-white px-2 py-1 rounded-full font-semibold">Haptic Cues</span></li>
               </ul>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Touch Deck</h3>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">TapDeck</h3>
               <p class="text-slate-700 mb-4 leading-relaxed">
                 A customisable large button app with up to 4 colourful buttons that can speak phrases or play recorded audio when tapped. Buttons can be repositioned, resized, and colour-coded. Each button supports up to 3 rotating phrases with text-to-speech or your own voice recordings. Includes haptic and auditory feedback options, activation cooldown settings, and full-screen mode. Perfect for simple communication, choice-making, or as a cause and effect activity.
               </p>
@@ -573,7 +608,7 @@
             </div>
             <a href="https://microswitchers.github.io/touchdeckapp/"
               class="mt-4 inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-teal-700 transition-colors text-center">Use
-              Touch Deck</a>
+              TapDeck</a>
           </div>
         </div>
       </div>
@@ -771,6 +806,19 @@
     // Alligator Switch Gallery Scroll Logic
     function scrollAlligator(direction) {
       const container = document.getElementById('alligator-scroll-container');
+      if (container) {
+        // Scroll by half the container width
+        const scrollAmount = container.clientWidth * 0.5;
+        container.scrollBy({
+          left: scrollAmount * direction,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    // TapDeck Gallery Scroll Logic
+    function scrollTapDeck(direction) {
+      const container = document.getElementById('tapdeck-scroll-container');
       if (container) {
         // Scroll by half the container width
         const scrollAmount = container.clientWidth * 0.5;
